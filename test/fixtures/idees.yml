@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sans_titre:
+  objectif: MyString
+  description: MyText
+
+sans_objectif:
+  titre: MyString
+  description: MyText
+
+sans_description:
+  titre: MyString
+  objectif: MyString
+
+valide:
+  titre: MyString
+  objectif: MyString
+  description: MyText
+

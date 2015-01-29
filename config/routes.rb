@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   root 'pages#intro'
   get 'intro' => 'pages#intro'
   get 'mentions' => 'pages#mentions'
+  resources :idees
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

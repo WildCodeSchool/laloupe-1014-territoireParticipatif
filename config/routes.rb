@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#intro'
-  get 'intro' => 'pages#intro'
+  root 'projets#index'
   get 'mentions' => 'pages#mentions'
   resources :projets
 

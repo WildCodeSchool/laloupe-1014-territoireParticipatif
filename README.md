@@ -36,3 +36,8 @@ depuis la branche `nom_de_la_feature` dans le `master`
 
 Guard take care of re-running the tests when a file is saved.  
 Start guard in a dedicated console with: `guard start`
+
+## Serveur Staging
+
+[Démo de l'app](http://perchonsmaster77a5.ninefold-apps.com/) mise à jour automatiquement
+à chaque push sur le `master`

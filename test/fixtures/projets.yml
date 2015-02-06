@@ -17,3 +17,9 @@ valide:
   objectif: MyString
   description: MyText
 
+5jours_plus_tot:
+  titre: MyString
+  objectif: MyString
+  description: MyText
+  created_at: <%= 5.day.ago.to_s(:db) %>
+  updated_at: <%= 5.day.ago.to_s(:db) %>

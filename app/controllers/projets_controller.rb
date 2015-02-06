@@ -1,6 +1,6 @@
 class ProjetsController < ApplicationController
   def index
-    @projets = Projet.all
+    @projets = Projet.order(updated_at: :desc)
     render 'pages/intro'
   end
 

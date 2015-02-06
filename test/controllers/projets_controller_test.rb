@@ -10,6 +10,9 @@ class ProjetsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:projets)
+    assert_equal Projet.count, assigns(:projets).count
+    assert assigns(:projets).first.updated_at > assigns(:projets).last.updated_at,
+      "les projets ne sont pas classés par date de mise à jour décroissante"
     assert_template 'pages/intro'
   end
 
@@ -50,7 +53,7 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_redirected_to projet_path assigns(:projet)
   end
 
-  test "echec de mise à jour d'un projet" do
+  test "echec de mise à jour d'un projet sans titre" do
     patch :update, id: @projet.id, projet: {titre: '', objectif: 'MyString', description: 'MyString'}
     assert_template :edit
   end

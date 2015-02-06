@@ -1,5 +1,8 @@
 - provide(:title, "Intro des projets")
 %h1= yield :title
 = "#{@projets.size} projets en base"
+
+%hr
+
 .liste-projets
   = render partial: 'projets/projet', collection: @projets

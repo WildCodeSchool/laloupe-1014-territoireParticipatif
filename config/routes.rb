@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :contributeurs
   root 'projets#index'
   get 'mentions' => 'pages#mentions'
   resources :projets

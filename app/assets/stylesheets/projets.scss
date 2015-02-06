@@ -1,3 +1,45 @@
 // Place all the styles related to the projets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin content-padding() {
+  padding: 0.5rem 1.5rem
+}
+
+.liste-projets {
+  @include make-row();
+  .projet {
+    @include make-sm-column(4);
+    @include make-md-column(3);
+    height: 25em;
+    margin-bottom: 2.3rem;
+    .contenu {
+      @include content-padding();
+      background-color: lightgrey;
+      height: 80%;
+      .clic-fiche {
+        position: absolute;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        height: 100%;
+        z-index: 10;
+        text-decoration: none;
+        background-color:white;
+        opacity: 0;
+        filter: alpha(opacity=1);
+        &:hover, &:focus {
+          background-color: #71A5D2;
+          opacity: 0.3;
+          filter: alpha(opacity=0.3);
+        }
+      }
+    }
+    .bandeau {
+      @include content-padding();
+      background-color: grey;
+      color: #fff;
+      height: 20%;
+    }
+  }
+}
+

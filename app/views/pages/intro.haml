@@ -1,3 +1,5 @@
-- provide(:title, "Comment participer ?")
+- provide(:title, "Intro des projets")
 %h1= yield :title
 = "#{@projets.size} projets en base"
+.liste-projets
+  = render partial: 'projets/projet', collection: @projets

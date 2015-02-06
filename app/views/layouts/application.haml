@@ -6,10 +6,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - if contributeur_signed_in?
-      = link_to "Déconnexion", destroy_contributeur_session_path, method: :delete
-    - else
-      = link_to "Connexion", new_contributeur_session_path
-    %p(class="notice")= notice
-    %p(class="alert")= alert
-    = yield
+    .container
+      - if contributeur_signed_in?
+        = link_to "Déconnexion", destroy_contributeur_session_path, method: :delete
+      - else
+        = link_to "Connexion", new_contributeur_session_path
+      %p(class="notice")= notice
+      %p(class="alert")= alert
+      = yield
+

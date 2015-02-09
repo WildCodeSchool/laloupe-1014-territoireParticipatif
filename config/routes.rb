@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :contributeurs
   root 'projets#index'
   get 'mentions' => 'pages#mentions'
-  resources :projets
+  resources :projets do
+    resources :commentaires
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

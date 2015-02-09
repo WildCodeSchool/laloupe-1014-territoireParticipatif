@@ -24,7 +24,7 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_select 'p', @projet.description
   end
 
-  test "nouvelle projet" do
+  test "nouveau projet" do
     get :new
     assert_response :success
     assert_not_nil assigns(:projet)

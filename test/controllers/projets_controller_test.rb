@@ -20,6 +20,8 @@ class ProjetsControllerTest < ActionController::TestCase
     get :show, id: @projet.id
     assert_response :success
     assert_select 'h1', @projet.titre
+    assert_select 'p', @projet.objectif
+    assert_select 'p', @projet.description
   end
 
   test "nouvelle projet" do

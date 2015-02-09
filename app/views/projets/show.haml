@@ -1,1 +1,9 @@
-%h1= @projet.titre
+.blocprojet
+  .carreprojet
+    %h1= @projet.titre
+    %h3 Objectif du projet
+    %p= @projet.objectif
+    %h3 Description du projet
+    %p= @projet.description
+  .carrecommentaires
+    %h3 Commentaires

@@ -3,6 +3,6 @@
     = link_to '', projet_path(projet), class: 'clic-fiche'
     %h2= projet.titre
     %h4= projet.objectif
-    %p= projet.description.truncate(120)
+    %p= projet.description.try(:truncate, 120)
   .bandeau
     %p Emilien A.

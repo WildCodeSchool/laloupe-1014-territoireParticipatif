@@ -42,4 +42,19 @@
     }
   }
 }
-
+.blocprojet {
+  @include make-row();
+  .carreprojet {
+    @include make-sm-column-offset(1);
+    @include make-sm-column(10);
+    @include make-md-column(10);
+      background-color: lightgrey;
+      margin-bottom: 10px;
+    }
+  .carrecommentaires {
+    @include make-sm-column-offset(1);
+    @include make-sm-column(10);
+    @include make-md-column(10);
+      background-color: lightgrey;
+  }
+}

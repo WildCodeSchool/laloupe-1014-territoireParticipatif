@@ -4,3 +4,7 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+contrib:                                                                                                                                 
+  email: "contrib@wcs.fr"                                                                                                                
+  encrypted_password: "$2a$04$DR0.2yfWwD8AZlyeXx0gEuk2Qh.cNLF4cir0ZUB1iW7hwQhK/IfcC"
+  id: 1

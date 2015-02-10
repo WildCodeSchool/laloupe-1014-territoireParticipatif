@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 # backend
 gem 'puma'
 gem 'devise'
+gem 'shareable'
 
 group :development, :test do
   gem 'sqlite3'

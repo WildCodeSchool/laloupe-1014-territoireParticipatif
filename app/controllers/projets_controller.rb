@@ -1,4 +1,6 @@
 class ProjetsController < ApplicationController
+  before_action :authenticate_contributeur!, only: [:new, :edit, :create, :update]
+
   def index
     @projets = Projet.order(updated_at: :desc)
     render 'pages/intro'
@@ -15,19 +17,25 @@ class ProjetsController < ApplicationController
 
   def edit
     @projet = Projet.find(params[:id])
+    render_403 if current_contributeur != @projet.contributeur
   end
 
   def update
     @projet = Projet.find(params[:id])
-    if @projet.update(projet_params)
-      redirect_to @projet
+    if current_contributeur == @projet.contributeur
+      if @projet.update(projet_params)
+        redirect_to @projet
+      else
+        render :edit
+      end
     else
-      render :edit
+      render_403 
     end
   end
 
   def create
     @projet = Projet.new(projet_params)
+    @projet.contributeur_id = current_contributeur.id
     if @projet.save
       redirect_to @projet
     else

@@ -43,8 +43,11 @@ ActiveRecord::Schema.define(version: 20150209160524) do
     t.string   "titre"
     t.string   "objectif"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "contributeur_id"
   end
+
+  add_index "projets", ["contributeur_id"], name: "index_projets_on_contributeur_id"
 
 end

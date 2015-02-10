@@ -2,6 +2,9 @@
 %h1= yield :title
 = "#{@projets.size} projets en base"
 
+.action-new-projet
+  = link_to 'Ajouter un projet', new_projet_path, class: 'btn btn-primary btn-lg'
+
 %hr
 
 .liste-projets

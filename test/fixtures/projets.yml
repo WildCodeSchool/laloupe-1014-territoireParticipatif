@@ -13,10 +13,11 @@ sans_description:
   objectif: MyString
 
 valide:
+  id: 1
   titre: MyString
   objectif: MyString
   description: MyText
-  id: 1
+  contributeur_id: 1
 
 5jours_plus_tot:
   titre: MyString

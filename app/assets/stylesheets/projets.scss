@@ -28,7 +28,7 @@
         opacity: 0;
         filter: alpha(opacity=1);
         &:hover, &:focus {
-          background-color: #71A5D2;
+          background-color: $brand-primary;
           opacity: 0.3;
           filter: alpha(opacity=0.3);
         }

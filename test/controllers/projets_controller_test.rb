@@ -18,6 +18,8 @@ class ProjetsControllerTest < ActionController::TestCase
 
   test "afficher un projet" do
     get :show, id: @projet.id
+    assert_not_nil assigns(:projet)
+    assert_equal assigns(:projet).commentaires, assigns(:commentaires)
     assert_response :success
     assert_select 'h1', @projet.titre
     assert_select 'p', @projet.objectif

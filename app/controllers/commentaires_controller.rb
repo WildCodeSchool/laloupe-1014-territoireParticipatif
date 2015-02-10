@@ -1,6 +1,7 @@
 class CommentairesController < ApplicationController
   before_action :authenticate_contributeur!
   def new
+    @projet = Projet.find(params[:projet_id])
     @commentaire = Commentaire.new
   end
 

@@ -1,6 +1,8 @@
 .blocprojet
   .carreprojet
     %h1= @projet.titre
+    - if @projet.contributeur == current_contributeur
+      = link_to 'Modifier', edit_projet_path(@projet), class: 'btn btn-default pull-right'
     %h3 Objectif du projet
     %p= @projet.objectif
     %h3 Description du projet

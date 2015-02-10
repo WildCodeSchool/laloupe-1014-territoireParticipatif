@@ -12,10 +12,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sass-rails', '~> 5.0'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'shareable'
 # backend
 gem 'puma'
 gem 'devise'
-gem 'shareable'
 
 group :development, :test do
   gem 'sqlite3'

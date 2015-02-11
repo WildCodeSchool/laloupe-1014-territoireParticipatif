@@ -16,6 +16,8 @@ gem 'shareable'
 # backend
 gem 'puma'
 gem 'devise'
+gem 'gibbon'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3'

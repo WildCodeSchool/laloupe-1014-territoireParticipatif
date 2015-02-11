@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post 'newsletter/inscription' => 'newsletter#inscription'
   devise_for :contributeurs
   root 'projets#index'
   get 'mentions' => 'pages#mentions'

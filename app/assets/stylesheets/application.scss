@@ -14,8 +14,56 @@
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 $brand-primary: #E22F2F;
+$vert-du-perche: #20B13C;
+
+@font-face {
+    font-family: 'GravityBold';
+    src: asset-url('../fonts/Gravity-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GravityBook';
+    src: asset-url('../fonts/Gravity-Book.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GrooveNext';
+    src: asset-url('../fonts/GrooveNext.ttf') format('truetype');
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "pages";
 @import "projets";
+
+body{
+  font-family: 'GravityBook';
+  h1, h3{
+    font-family: 'GrooveNext'
+  }
+}
+
+footer{
+  padding: 30px;
+  color: #FFF;
+  background-color:$vert-du-perche;
+  @include make-row(12);
+  .footerlogo{
+    text-align: center;
+    @include make-sm-column(2);
+  }
+  .footerinfo{
+    text-align: center;
+ 
+    @include make-sm-column(4);
+  }
+  .footernewsletter{
+    text-align: center;
+
+    @include make-sm-column(6);
+    input{
+      color: darken(grey,20%);
+      background-color: lighten($vert-du-perche,10%);
+      border: 0px none;
+      padding: 5px;
+    }
+  }
+}

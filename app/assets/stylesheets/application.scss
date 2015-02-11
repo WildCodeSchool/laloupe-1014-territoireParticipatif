@@ -17,16 +17,16 @@ $brand-primary: #E22F2F;
 $vert-du-perche: #20B13C;
 
 @font-face {
-    font-family: 'GravityBold';
-    src: asset-url('../fonts/Gravity-Bold.ttf') format('truetype');
+  font-family: 'GravityBold';
+  src:url('Gravity-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'GravityBook';
-    src: asset-url('../fonts/Gravity-Book.ttf') format('truetype');
+  font-family: 'GravityBook';
+  src:url('Gravity-Book.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'GrooveNext';
-    src: asset-url('../fonts/GrooveNext.ttf') format('truetype');
+  font-family: 'GrooveNext';
+  src:url('GrooveNext.ttf') format('truetype');
 }
 
 @import "bootstrap-sprockets";

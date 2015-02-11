@@ -1,0 +1,11 @@
+.ligne-rouge
+.navbar.navbar-default
+  .container
+    = link_to "PERCHE", root_path, class: 'navbar-brand'
+    %p.navbar-text Nous tractons l'innovation
+    %ul.nav.navbar-nav.navbar-right
+      - if contributeur_signed_in?
+        %li= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete
+      - else
+        %li= link_to "Connexion", new_contributeur_session_path
+

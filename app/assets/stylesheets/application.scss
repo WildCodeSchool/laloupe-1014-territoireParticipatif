@@ -13,8 +13,14 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$brand-primary: #E22F2F;
-$vert-du-perche: #20B13C;
+$rouge: #ED1C24;
+$vert-du-perche: #52A846;
+$brand-primary: $rouge;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "pages";
+@import "projets";
 
 @font-face {
   font-family: 'GravityBold';
@@ -29,41 +35,80 @@ $vert-du-perche: #20B13C;
   src:url('GrooveNext.ttf') format('truetype');
 }
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "pages";
-@import "projets";
-
-body{
-  font-family: 'GravityBook';
-  h1, h3{
-    font-family: 'GrooveNext'
+html {
+  font-size: 16px;
+  body {
+    font-family: 'GravityBook';
+    h1, h2, h3 {
+      font-family: 'GravityBold'
+    }
   }
 }
 
-footer{
-  padding: 30px;
+.ligne-rouge {
+  height: .5rem;
+  background-color: $rouge;
+}
+
+.navbar-brand {
+  font-family: 'GrooveNext';
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+footer {
+  @include make-row(12);
+  margin-top: 2rem;
+  padding: 2rem;
   color: #FFF;
   background-color:$vert-du-perche;
-  @include make-row(12);
-  .footerlogo{
-    text-align: center;
-    @include make-sm-column(2);
+  h3 {
+    font-size: 1.1rem;
   }
-  .footerinfo{
-    text-align: center;
- 
+  .pays-perche {
+    @include make-sm-column(2);
+    img {
+      width: 100%;
+    }
+  }
+  address {
     @include make-sm-column(4);
   }
-  .footernewsletter{
+  .newsletter {
+    @include make-sm-column(4);
+    @include make-sm-column-offset(1);
     text-align: center;
-
-    @include make-sm-column(6);
-    input{
-      color: darken(grey,20%);
-      background-color: lighten($vert-du-perche,10%);
+    input {
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      color: $gray-dark;
+    }
+    input[type="email"] {
+      background-color: lighten($vert-du-perche,30%);
       border: 0px none;
-      padding: 5px;
+      border-radius: 3px;
+      margin-bottom: .8rem;
+      width: 100%;
+    }
+    input[type="submit"] {
+      padding: 0.3rem 1rem .1rem;
+      background-color: $gray-lighter;
+    }
+    // hack pour changer la couleur du placeholder dans tous les navigateurs
+    input::-webkit-input-placeholder {
+      color: grey;
+    }
+    input:-moz-placeholder {
+      /* FF 4-18 */
+      color: grey;
+    }
+    input::-moz-placeholder {
+      /* FF 19+ */
+      color: grey;
+    }
+    input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: grey;
     }
   }
 }

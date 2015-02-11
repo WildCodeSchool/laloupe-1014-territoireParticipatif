@@ -7,31 +7,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .navbar.navbar-default
-      .container
-        %a.navbar-brand= "#{yield :title}"
-        %ul.nav.navbar-nav
-          %li= link_to "Acceuil", root_path
-          - if contributeur_signed_in?
-            %li= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete
-          - else
-            %li= link_to "Connexion", new_contributeur_session_path
+    = render 'layouts/navbar'
     .container
       -if alert
         .alert.alert-danger{:role => "alert"}
-          %p(class="alert")= alert 
+          %p(class="alert")= alert
       -if notice
         .alert.alert-success{:role => "alert"}
           %p(class="notice")= notice
       = yield
+    = render 'layouts/footer'
 
-
-
-    %footer
-      .container
-        .footerlogo
-          = image_tag'paysperchelogopabo.png'
-        .footerinfo
-          y suis Percherons
-        = render 'layouts/newsletter'
-        

@@ -1,0 +1,15 @@
+%footer
+  .container
+    .pays-perche
+      = image_tag 'paysperchelogopabo.png'
+    %address
+      %h3 PAYS PERCHE D'EURE ET LOIR
+      18 rue de la Gare, 28240 La Loupe
+      %br 02 37 29 09 29
+      %br
+      %em y suis Percheron
+    .newsletter
+      %h3 Je veux recevoir la lettre d’information
+      = form_tag('/newsletter/inscription', method: :post) do
+        = email_field_tag(:email, nil, placeholder: 'Mon email')
+        = submit_tag "Valider", class: 'btn'

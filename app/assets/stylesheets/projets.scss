@@ -16,8 +16,9 @@
       @include content-padding();
       background-color: lightgrey;
       height: 80%;
-      border-radius: 5px 5px 0px 0px;
+      border-radius: 3px 3px 0px 0px;
       .clic-fiche {
+        border-radius: 3px;
         position: absolute;
         top: 0;
         left: 5%;
@@ -40,7 +41,7 @@
       background-color: grey;
       color: #fff;
       height: 20%;
-      border-radius:0px 0px 5px 5px;
+      border-radius:0px 0px 3px 3px;
     }
   }
 }

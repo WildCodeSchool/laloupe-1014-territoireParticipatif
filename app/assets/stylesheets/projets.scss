@@ -53,11 +53,15 @@
     @include make-md-column(10);
       background-color: lightgrey;
       margin-bottom: 10px;
+      border-radius: 3px 3px 0px 0px;
+      border-bottom: solid 1px #000;
     }
   .carrecommentaires {
     @include make-sm-column-offset(1);
     @include make-sm-column(10);
     @include make-md-column(10);
       background-color: lightgrey;
+      border-radius: 0px 0px 3px 3px;
+      border-top: solid 1px #000;
   }
 }

@@ -8,12 +8,13 @@
     %h3 Description du projet
     %p= @projet.description
     %p
-      =facebook_button :static_link => true
-      =twitter_button :static_link => true
+      = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+      = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
+
   .carrecommentaires
     %h3 Commentaires
     - @commentaires.each do |commentaire|
       %p= commentaire.contributeur.email
       %p= commentaire.message
     =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet) , controller: "commentaires", action: "new"
-    
+  

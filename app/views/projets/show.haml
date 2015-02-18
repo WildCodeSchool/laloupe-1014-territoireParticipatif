@@ -7,6 +7,8 @@
     %p= @projet.objectif
     %h3 Description du projet
     %p= @projet.description
+    %h3 Catégorie du projet
+    %p= @projet.try(:categorie).try(:nom)
     %p
       =facebook_button :static_link => true
       =twitter_button :static_link => true

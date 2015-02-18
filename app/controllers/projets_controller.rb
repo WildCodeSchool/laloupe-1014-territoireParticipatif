@@ -1,5 +1,5 @@
 class ProjetsController < ApplicationController
-  before_action :authenticate_contributeur!, only: [:new, :edit, :create, :update]
+  before_action :authenticate_contributeur!, only: [:new, :edit, :create, :update, :like]
 
   def index
     @projets = Projet.order(updated_at: :desc)
@@ -40,6 +40,16 @@ class ProjetsController < ApplicationController
       redirect_to @projet
     else
       render :new
+    end
+  end
+
+  def like
+    @projet = Projet.find(params[:id])
+    if @projet.likes.map {|like| like.contributeur_id}.include? current_contributeur.id
+      redirect_to @projet
+    else
+      @projet.likes.create(contributeur_id: current_contributeur.id)
+      redirect_to @projet
     end
   end
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'projets/:id/like' => 'projets#like', as: :like_projet
   post 'newsletter/inscription' => 'newsletter#inscription'
   devise_for :contributeurs
   root 'projets#index'

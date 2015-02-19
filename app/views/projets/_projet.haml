@@ -5,4 +5,4 @@
     %h4= projet.objectif
     %p= projet.description.try(:truncate, 120)
   .bandeau
-    %p= projet.contributeur.try(:email)
+    %p= projet.contributeur.try(:pseudo)

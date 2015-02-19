@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218152155) do
+ActiveRecord::Schema.define(version: 20150219103238) do
 
   create_table "commentaires", force: :cascade do |t|
     t.datetime "created_at",      null: false
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20150218152155) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pseudo"
+    t.string   "nom"
+    t.string   "prenom"
+    t.integer  "age"
+    t.integer  "cp"
+    t.string   "status"
+    t.string   "résident"
   end
 
   add_index "contributeurs", ["email"], name: "index_contributeurs_on_email", unique: true

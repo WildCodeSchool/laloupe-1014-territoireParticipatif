@@ -27,6 +27,31 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label "Nom d'utilisateur" %><br/>
+    <%= f.text_field :pseudo, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nom %><br/>
+    <%= f.text_field :nom, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prenom %><br/>
+    <%= f.text_field :prenom, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br/>
+    <%= f.number_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Code Postal" %><br/>
+    <%= f.number_field :cp, autofocus: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

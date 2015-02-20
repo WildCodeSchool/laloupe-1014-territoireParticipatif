@@ -27,6 +27,7 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'factory_girl_rails'
 end
 
 group :production do

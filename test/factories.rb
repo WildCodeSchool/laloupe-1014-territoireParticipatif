@@ -20,11 +20,16 @@ FactoryGirl.define do
     objectif "Initier les jeunes"
     description "Le code comme outil créatif"
     contributeur
+    categorie
   end
 
   factory :like do
     projet
     contributeur
+  end
+
+  factory :categorie do
+    nom 'Agriculture'
   end
 
 end

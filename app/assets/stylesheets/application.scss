@@ -66,25 +66,24 @@ footer {
   padding: 2rem;
   color: #FFF;
   background-color:$vert-du-perche;
-  border-top: solid .5rem #000;
+  border-top: solid .5rem darken($vert-du-perche, 15%);
   h3 {
     font-size: 1.1rem;
   }
   .pays-perche {
-    @include make-sm-column(3);
-    @include make-xs-column(6);
+    @include make-sm-column(2);
+    @include make-sm-column-offset(1);
     img {
-      width: 160px;
+      width: 100%;
+      max-width: 160px;
       padding-top: 35px;
     }
   }
   address {
     @include make-sm-column(4);
-    @include make-xs-column(6);
   }
   .newsletter {
     @include make-sm-column(4);
-    @include make-sm-column-offset(0);
     padding-top: 15px;
     text-align: center;
     input {

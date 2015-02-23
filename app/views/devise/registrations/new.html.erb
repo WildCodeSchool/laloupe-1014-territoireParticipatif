@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Inscription</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -9,7 +9,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "Mot de passe"%>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,37 +17,42 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label "Nom d'utilisateur" %><br/>
-    <%= f.text_field :pseudo, autofocus: true %>
+    <%= f.label :pseudo, "Nom d'utilisateur" %><br/>
+    <%= f.text_field :pseudo %>
   </div>
 
   <div class="field">
     <%= f.label :nom %><br/>
-    <%= f.text_field :nom, autofocus: true %>
+    <%= f.text_field :nom %>
   </div>
 
   <div class="field">
     <%= f.label :prenom %><br/>
-    <%= f.text_field :prenom, autofocus: true %>
+    <%= f.text_field :prenom %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br/>
-    <%= f.number_field :age, autofocus: true %>
+    <%= f.label :annee_naissance %><br/>
+    <%= f.number_field :annee_naissance %>
   </div>
 
   <div class="field">
-    <%= f.label "Code Postal" %><br/>
-    <%= f.number_field :cp, autofocus: true %>
+    <%= f.label :commune %><br/>
+    <%= f.text_field :commune %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br/>
+    <%= f.text_field :status %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "S'inscrire" %>
   </div>
 <% end %>
 

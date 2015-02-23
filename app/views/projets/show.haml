@@ -12,7 +12,10 @@
     %p
       = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
       = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
-      =link_to "Liker ce projet", like_projet_path(@projet.id)
+      - if @projet.liked_by? current_contributeur
+        =link_to "Je n'aime plus ce projet", unlike_projet_path(@projet.id)
+      - else
+        =link_to "J'aime ce projet", like_projet_path(@projet.id)
     %p= @projet.likes.count
   .carrecommentaires
     %h3 Commentaires

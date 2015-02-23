@@ -3,7 +3,8 @@ require 'test_helper'
 class ProjetTest < ActiveSupport::TestCase
 
   setup do
-    @projet = build(:projet)
+    @contributeur = build(:contributeur)
+    @projet = build(:projet, contributeur: @contributeur)
   end
 
   test "ne peux pas créer un projet sans titre" do
@@ -16,13 +17,28 @@ class ProjetTest < ActiveSupport::TestCase
     assert_not @projet.valid?
   end
 
-  test "ne peux pas créer une idée sans description" do
+  test "ne peux pas créer un projet sans description" do
     @projet.description = nil
     assert_not @projet.valid?
   end
 
-  test "peux créer une idée avec titre, objectif et description" do
+  test "ne peux pas créer un projet sans auteur" do
+    @projet.contributeur = nil
+    assert_not @projet.valid?
+  end
+
+  test "créer un projet valide" do
     assert @projet.valid?
+  end
+
+  test "liked_by? renvoie false si le projet n'a pas de like" do
+    assert_not @projet.liked_by? @contributeur
+  end
+
+  test "liked_by? renvoie true si le contributeur a liké le projet" do
+    @projet.save
+    @projet.likes.create(contributeur: @contributeur)
+    assert @projet.liked_by?(@contributeur)
   end
 
 end

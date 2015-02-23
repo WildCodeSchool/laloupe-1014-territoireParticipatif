@@ -49,10 +49,19 @@ class ProjetsController < ApplicationController
 
   def like
     @projet = Projet.find(params[:id])
-    if @projet.likes.map {|like| like.contributeur_id}.include? current_contributeur.id
+    if @projet.liked_by? current_contributeur
       redirect_to @projet
     else
       @projet.likes.create(contributeur_id: current_contributeur.id)
+      redirect_to @projet
+    end
+  end
+
+  def unlike
+    @projet = Projet.find(params[:id])
+    if @projet.liked_by? current_contributeur
+      @projet.likes.select { |like| like.contributeur_id == current_contributeur.id }.first.destroy
+    else
       redirect_to @projet
     end
   end

@@ -13,11 +13,13 @@ class ProjetsController < ApplicationController
 
   def new
     @projet = Projet.new
+    @categories = Categorie.all
   end
 
   def edit
     @projet = Projet.find(params[:id])
     render_403 if current_contributeur != @projet.contributeur
+    @categories = Categorie.all
   end
 
   def update
@@ -56,6 +58,6 @@ class ProjetsController < ApplicationController
   private
 
   def projet_params
-    params.require(:projet).permit(:titre, :objectif, :description)
+    params.require(:projet).permit(:titre, :objectif, :description, :categorie_id)
   end
 end

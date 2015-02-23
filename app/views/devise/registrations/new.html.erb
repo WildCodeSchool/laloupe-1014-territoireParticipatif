@@ -21,6 +21,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.check_box :charte %>
+    <%= f.label :charte, "J'ai lu et j'accepte la charte d'utilisation" %><br />
+    <%= link_to "Lire la charte d'utilisation", charte_path %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

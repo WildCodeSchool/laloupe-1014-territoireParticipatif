@@ -13,8 +13,8 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$rouge: #ED1C24;
-$vert-du-perche: #52A846;
+$rouge: #F20603;
+$vert-du-perche: #55A603;
 $brand-primary: $rouge;
 
 @import "bootstrap-sprockets";
@@ -56,19 +56,27 @@ html {
   font-size: 2rem;
 }
 
+.navbar {
+  border-radius: 0px;
+}
+
 footer {
   @include make-row(12);
   margin-top: 2rem;
   padding: 2rem;
   color: #FFF;
   background-color:$vert-du-perche;
+  border-top: solid .5rem darken($vert-du-perche, 15%);
   h3 {
     font-size: 1.1rem;
   }
   .pays-perche {
     @include make-sm-column(2);
+    @include make-sm-column-offset(1);
     img {
       width: 100%;
+      max-width: 160px;
+      padding-top: 35px;
     }
   }
   address {
@@ -76,22 +84,27 @@ footer {
   }
   .newsletter {
     @include make-sm-column(4);
-    @include make-sm-column-offset(1);
+    padding-top: 15px;
     text-align: center;
     input {
       padding: 0.8rem;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       color: $gray-dark;
+      height: 47px;
+    }
+    .input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn{
+      height: 47px;
+
     }
     input[type="email"] {
       background-color: lighten($vert-du-perche,30%);
       border: 0px none;
-      border-radius: 3px;
-      margin-bottom: .8rem;
+      border-radius: 6px 0px 0px 6px;
+
       width: 100%;
     }
     input[type="submit"] {
-      padding: 0.3rem 1rem .1rem;
+
       background-color: $gray-lighter;
     }
     // hack pour changer la couleur du placeholder dans tous les navigateurs
@@ -112,3 +125,4 @@ footer {
     }
   }
 }
+

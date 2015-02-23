@@ -10,8 +10,8 @@
     %h3 Catégorie du projet
     %p= @projet.try(:categorie).try(:nom)
     %p
-      =facebook_button :static_link => true
-      =twitter_button :static_link => true
+      = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+      = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
       =link_to "Liker ce projet", like_projet_path(@projet.id)
     %p= @projet.likes.count
   .carrecommentaires
@@ -20,5 +20,3 @@
       %p= commentaire.contributeur.email
       %p= commentaire.message
     =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet) , controller: "commentaires", action: "new"
-
-    

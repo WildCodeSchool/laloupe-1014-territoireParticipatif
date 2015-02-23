@@ -1,7 +1,6 @@
 - provide(:title, "Intro des projets")
 %h1= yield :title
 = "#{@projets.size} projets en base"
-
 .action-new-projet
   = link_to 'Je dépose un projet', new_projet_path, class: 'btn btn-primary btn-lg'
 
@@ -9,3 +8,4 @@
 
 .liste-projets
   = render partial: 'projets/projet', collection: @projets
+

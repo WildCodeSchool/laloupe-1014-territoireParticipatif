@@ -4,7 +4,10 @@ class ProjetsControllerTest < ActionController::TestCase
 
   def setup
     @contributeur = create(:contributeur)
-    @projet = create(:projet, contributeur: @contributeur)
+    @categorie = create(:categorie)
+    @projet = create(:projet,
+                     contributeur: @contributeur,
+                     categorie: @categorie)
   end
 
   test "lister les projets" do

@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'shareable'
+gem 'rails-i18n'
 # backend
 gem 'puma'
 gem 'devise'

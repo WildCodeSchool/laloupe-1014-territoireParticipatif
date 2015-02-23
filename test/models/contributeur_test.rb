@@ -18,6 +18,11 @@ class ContributeurTest < ActiveSupport::TestCase
     assert_not @contributeur.valid?
   end
 
+  test "ne pas créer un contributeur si il n'a pas signé la charte" do
+    @contributeur.charte = false
+    assert_not @contributeur.valid?
+  end
+
   test "créer un contributeur valide" do
     assert @contributeur.save
     assert Contributeur.count == @count + 1

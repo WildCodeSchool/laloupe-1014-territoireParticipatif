@@ -6,4 +6,6 @@ class Contributeur < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projets
   has_many :likes
+  validates :charte, acceptance: {accept: true}
 end
+

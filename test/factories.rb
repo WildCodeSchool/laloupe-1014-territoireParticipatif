@@ -7,6 +7,7 @@ FactoryGirl.define do
     email { generate :email }
     password '12345678'
     password_confirmation '12345678'
+    charte true
   end
 
   factory :commentaire do

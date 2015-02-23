@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :contributeurs
   root 'projets#index'
   get 'mentions' => 'pages#mentions'
+  get 'charte' => 'pages#charte'
   resources :projets do
     resources :commentaires
   end

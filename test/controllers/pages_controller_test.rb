@@ -11,4 +11,10 @@ class PagesControllerTest < ActionController::TestCase
     assert_select 'title', "Mentions légales - #{@base_title}"
   end
 
+  test "la page charte existe" do
+    get :charte
+    assert_response :success
+    assert_select 'title', "Charte d'utilisation - #{@base_title}"
+  end
+
 end

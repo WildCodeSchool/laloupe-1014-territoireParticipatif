@@ -3,8 +3,13 @@ FactoryGirl.define do
     "contributeur#{n}@wcs.fr"
   end
 
+  sequence :pseudo do |n|
+    "contrib_#{n}"
+  end
+
   factory :contributeur do
     email { generate :email }
+    pseudo { generate :pseudo }
     password '12345678'
     password_confirmation '12345678'
   end

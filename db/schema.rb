@@ -41,10 +41,9 @@ ActiveRecord::Schema.define(version: 20150219103238) do
     t.string   "pseudo"
     t.string   "nom"
     t.string   "prenom"
-    t.integer  "age"
-    t.integer  "cp"
+    t.integer  "annee_naissance"
+    t.string   "commune"
     t.string   "status"
-    t.string   "résident"
   end
 
   add_index "contributeurs", ["email"], name: "index_contributeurs_on_email", unique: true

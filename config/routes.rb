@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'projets/:id/unlike' => 'projets#unlike', as: :unlike_projet
   post 'newsletter/inscription' => 'newsletter#inscription'
   devise_for :contributeurs
-  root 'projets#index'
+  root 'pages#intro'
   get 'mentions' => 'pages#mentions'
   get 'charte' => 'pages#charte'
   resources :projets do

@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_animateur!, only: [:animation]
+
   def intro
   end
 
@@ -10,4 +12,8 @@ class PagesController < ApplicationController
 
   def howto
   end
+
+  def animation
+  end
+
 end

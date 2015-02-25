@@ -29,4 +29,22 @@ class PagesControllerTest < ActionController::TestCase
     assert_select 'h1', titre
   end
 
+  test "un visiteur ne peux pas accéder à la page animation" do
+    get :animation
+    assert_redirected_to new_contributeur_session_path
+  end
+
+  test "un contributeur ne peux pas accéder à la page animation" do
+    sign_in create(:contributeur)
+    get :animation
+    assert_redirected_to root_path
+  end
+
+  test "un animateur peut accéder à la page animation" do
+    sign_in create(:animateur)
+    get :animation
+    assert_response :success
+    assert_select 'title', /Animation/
+  end
+
 end

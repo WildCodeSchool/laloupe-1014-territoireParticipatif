@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'newsletter/inscription' => 'newsletter#inscription'
   devise_for :contributeurs
   root 'projets#index'
+  get 'animation' => 'pages#animation'
   get 'mentions' => 'pages#mentions'
   get 'charte' => 'pages#charte'
   get 'comment-ca-marche' => 'pages#howto'

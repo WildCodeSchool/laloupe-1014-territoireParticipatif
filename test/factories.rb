@@ -13,6 +13,11 @@ FactoryGirl.define do
     password '12345678'
     password_confirmation '12345678'
     charte true
+    type 'Contributeur'
+
+    factory :animateur do
+      type 'Animateur'
+    end
   end
 
   factory :commentaire do

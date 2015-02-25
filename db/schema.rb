@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223195624) do
+ActiveRecord::Schema.define(version: 20150225173704) do
 
   create_table "categories", force: :cascade do |t|
     t.string "nom"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150223195624) do
     t.string   "commune"
     t.string   "status"
     t.boolean  "charte",                 default: false
+    t.string   "type"
   end
 
   add_index "contributeurs", ["email"], name: "index_contributeurs_on_email", unique: true

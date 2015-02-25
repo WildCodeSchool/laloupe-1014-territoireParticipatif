@@ -9,4 +9,11 @@ class Contributeur < ActiveRecord::Base
   validates_presence_of :pseudo
   validates_uniqueness_of :pseudo
   validates :charte, acceptance: {accept: true}
+
+  scope :animateurs, -> { where(type: 'Animateur') }
+
+  def self.types
+    %w( Animateur )
+  end
 end
+

@@ -1,0 +1,3 @@
+class Animateur < Contributeur
+
+end

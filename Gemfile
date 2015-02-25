@@ -22,7 +22,7 @@ gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'

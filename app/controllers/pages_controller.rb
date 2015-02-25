@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def mentions
   end
+
+  def howto
+  end
 end

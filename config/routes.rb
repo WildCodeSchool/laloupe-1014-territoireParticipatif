@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'projets#index'
   get 'mentions' => 'pages#mentions'
   get 'charte' => 'pages#charte'
+  get 'comment-ca-marche' => 'pages#howto'
   resources :projets do
     resources :commentaires
   end

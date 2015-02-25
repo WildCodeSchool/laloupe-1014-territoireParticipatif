@@ -12,6 +12,23 @@ class ContributeurTest < ActiveSupport::TestCase
     assert_not @contributeur.valid?
   end
 
+  test "ne doit pas créer un contributeur sans pseudo" do
+    @contributeur.pseudo = ''
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur avec un email déjà utilisé" do
+    @contributeur.save
+    contributeur = build(:contributeur, email: @contributeur.email)
+    assert_not contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur avec un pseudo déjà utilisé" do
+    @contributeur.save
+    contributeur = build(:contributeur, pseudo: @contributeur.pseudo)
+    assert_not contributeur.valid?
+  end
+
   test "ne doit pas créer un contributeur avec un mot de passe trop court" do
     @contributeur.password = 'aaa'
     @contributeur.password = 'aaa'

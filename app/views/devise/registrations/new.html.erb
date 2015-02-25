@@ -11,7 +11,7 @@
   <div class="field">
     <%= f.label :password, "Mot de passe"%>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caractères minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -22,7 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :pseudo, "Nom d'utilisateur" %><br/>
+    <%= f.label :pseudo, "Nom d'utilisateur" %>
+    <em>(Public)</em><br/>
     <%= f.text_field :pseudo %>
   </div>
 
@@ -32,23 +33,28 @@
   </div>
 
   <div class="field">
-    <%= f.label :prenom %><br/>
+    <%= f.label :prenom, "Prénom" %><br/>
     <%= f.text_field :prenom %>
   </div>
 
   <div class="field">
-    <%= f.label :annee_naissance %><br/>
-    <%= f.number_field :annee_naissance %>
+    <%= f.label :annee_naissance, "Année de naissance" %><br/>
+    <%= f.date_select :annee_naissance, discard_day: true, discard_month: true, start_year: Date.today.year - 7, end_year: Date.today.year - 115 %>
   </div>
 
   <div class="field">
-    <%= f.label :commune %><br/>
+    <%= f.label :commune, "Commune de résidence" %><br/>
     <%= f.text_field :commune %>
   </div>
 
   <div class="field">
-    <%= f.label :status %><br/>
-    <%= f.text_field :status %>
+    <%= f.label :status, "Lien avec le territoire" %><br/>
+    <%= f.select :status, [ ["Résident-e", 'resident'],
+                            ["Travaille", 'work'],
+                            ["En transit", 'transit'],
+                            ["Résidence secondaire", 'resident2nd'],
+                            ["Autre", 'other'] ] %>
+    <em>sur le territoire du Pays Perche</em>
   </div>
 
   <div class="actions">
@@ -56,4 +62,7 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<p>
+  J'ai déjà un compte :
+  <%= render "devise/shared/links" %>
+</p>

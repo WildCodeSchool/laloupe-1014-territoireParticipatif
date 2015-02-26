@@ -1,4 +1,11 @@
 FactoryGirl.define do
+
+  factory :actualite do
+    titre "Atelier Tourisme"
+    contenu "Du contenu"
+    animateur
+  end
+
   sequence :email do |n|
     "contributeur#{n}@wcs.fr"
   end
@@ -15,7 +22,7 @@ FactoryGirl.define do
     charte true
     type 'Contributeur'
 
-    factory :animateur do
+    factory :animateur, class: Animateur do
       type 'Animateur'
     end
   end

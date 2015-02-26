@@ -11,6 +11,11 @@ class ActualiteTest < ActiveSupport::TestCase
     assert_not @actu.valid?
   end
 
+  test "une actualité sans auteur est invalide" do
+    @actu.animateur_id = nil
+    assert_not @actu.valid?
+  end
+
   test "une actualité valide" do
     assert @actu.valid?
   end

@@ -1,2 +1,5 @@
 - provide( :title, sanitize("Centre d'Animation") )
 %h1= yield :title
+
+= link_to 'Ecrire une nouvelle actualité', new_actualite_path, class: 'btn btn-primary'
+= link_to "#{Actualite.count} actualités en ligne", actualites_path

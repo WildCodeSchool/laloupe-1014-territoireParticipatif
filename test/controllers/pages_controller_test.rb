@@ -37,7 +37,7 @@ class PagesControllerTest < ActionController::TestCase
   test "un contributeur ne peux pas accéder à la page animation" do
     sign_in create(:contributeur)
     get :animation
-    assert_redirected_to root_path
+    assert_response 403
   end
 
   test "un animateur peut accéder à la page animation" do

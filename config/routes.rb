@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'projets/:id/like' => 'projets#like', as: :like_projet
-  get 'projets/:id/unlike' => 'projets#unlike', as: :unlike_projet
-  post 'newsletter/inscription' => 'newsletter#inscription'
-  devise_for :contributeurs
   root 'projets#index'
+  devise_for :contributeurs
+
   get 'animation' => 'pages#animation'
+
   get 'mentions' => 'pages#mentions'
   get 'charte' => 'pages#charte'
   get 'comment-ca-marche' => 'pages#howto'
+  post 'newsletter/inscription' => 'newsletter#inscription'
+
+  resources :actualites
+  get 'projets/:id/like' => 'projets#like', as: :like_projet
+  get 'projets/:id/unlike' => 'projets#unlike', as: :unlike_projet
   resources :projets do
     resources :commentaires
   end
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

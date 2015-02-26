@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_animateur!
     authenticate_contributeur!
-    redirect_to root_path unless current_animateur
+    render_403 unless current_animateur
   end
 
   def configure_permitted_parameters

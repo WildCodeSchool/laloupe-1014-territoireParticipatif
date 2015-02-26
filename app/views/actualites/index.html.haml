@@ -1,0 +1,8 @@
+%h1 Actualités
+.actualites
+  - @actualites.each do |actu|
+    .actu
+      %h3= link_to actu.titre, actualite_path(actu)
+      %p
+        = actu.contenu.first(42)
+        \...

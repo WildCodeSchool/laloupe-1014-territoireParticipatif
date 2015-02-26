@@ -1,0 +1,12 @@
+= form_for @actualite do |f|
+  .field
+    = f.label :titre
+    %br
+    = f.text_field :titre
+  .field
+    = f.label :contenu
+    %br
+    = f.text_area :contenu
+  .field
+    = f.submit 'Enregistrer', class: 'btn btn-primary'
+

@@ -128,12 +128,17 @@ footer {
   }
 }
 
+.fond-navigation{
+  background-color: $rouge;
+  border: 5px solid $rouge;
+}
+
 .navigation{
   @include make-row(12); 
-  background-color: $rouge;
   .bouton{
     @include make-sm-column(3);
-    width: 100%;
+    border: 5px solid $rouge;
+    margin: 0px;
     background-color: lighten($rouge,30%);
     color: #FFF;
     &:hover{

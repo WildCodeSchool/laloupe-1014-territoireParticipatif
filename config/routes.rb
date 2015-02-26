@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'projets#index'
+  root 'pages#intro'
   devise_for :contributeurs
-
   get 'animation' => 'pages#animation'
 
   get 'mentions' => 'pages#mentions'

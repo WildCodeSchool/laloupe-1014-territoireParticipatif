@@ -1,10 +1,16 @@
-= form_for @projet do |form|
-  = form.label :titre
-  = form.text_field :titre
-  = form.label :objectif
-  = form.text_field :objectif
-  = form.label :description
-  = form.text_area :description
-  = form.select :categorie_id, options_for_select(@categories)
-  = form.submit
+.row
+  = form_for @projet do |form|
+    .col-sm-8
+      = form.label :titre
+      %p= form.text_field :titre
+    .col-sm-8
+      = form.label :objectif
+      %p= form.text_field :objectif
+    .col-sm-12
+      = form.label :catégorie
+      %p= form.select :categorie_id, options_for_select(@categories)
+    .col-sm-12
+      = form.label :description
+      %p= form.text_area :description
+      = form.submit "Créer projet", class: 'btn btn-primary btn-lg'
 

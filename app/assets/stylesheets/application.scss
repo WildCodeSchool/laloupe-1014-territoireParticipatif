@@ -61,6 +61,8 @@ html {
   border-radius: 0px;
 }
 
+
+
 footer {
   @include make-row(12);
   margin-top: 2rem;
@@ -127,3 +129,25 @@ footer {
   }
 }
 
+.fond-navigation{
+  background-color: $rouge;
+  border: 5px solid $rouge;
+}
+
+.navigation{
+  @include make-row(12); 
+  .bouton{
+    @include make-sm-column(3);
+    border: 5px solid $rouge;
+    margin: 0px;
+    background-color: lighten($rouge,30%);
+    color: #FFF;
+    &:hover{
+      background-color: $rouge;
+    }
+  }
+}
+
+.mapaccueil{
+  width: 100%;
+}

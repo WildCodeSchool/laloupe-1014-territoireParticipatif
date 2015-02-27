@@ -8,14 +8,17 @@
     = csrf_meta_tags
   %body
     = render 'layouts/navbar'
-
-    .container
+    .notices
       -if alert
         .alert.alert-danger{:role => "alert"}
           %p(class="alert")= alert
       -if notice
         .alert.alert-success{:role => "alert"}
           %p(class="notice")= notice
+    - if controller.action_name == 'intro'
       = yield
+    - else
+      .container
+        = yield
     = render 'layouts/footer'
 

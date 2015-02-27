@@ -7,6 +7,7 @@
 
 .liste-projets {
   @include make-row();
+  margin-top: 2rem;
   .projet {
     @include make-sm-column(4);
     @include make-md-column(3);

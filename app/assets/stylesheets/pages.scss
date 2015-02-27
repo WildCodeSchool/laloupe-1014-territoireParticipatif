@@ -1,3 +1,44 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navigation{
+  @include container-fixed();
+  background-color: $rouge;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .bouton{
+    @include make-sm-column(3);
+    color: #FFF;
+    a {
+      background-color: lighten($rouge,25%);
+      display: block;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      width: 100%;
+      text-decoration: none;
+      &:hover{
+        background-color: $rouge;
+        background-color: lighten($rouge,15%);
+      }
+      .icon {
+        display: block;
+        img {
+          display: block;
+          margin: auto;
+        }
+      }
+      .action {
+        height: 2.9em;
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        display: block;
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.mapaccueil{
+  width: 100%;
+}

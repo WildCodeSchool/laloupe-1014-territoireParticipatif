@@ -1,18 +1,22 @@
 =image_tag "1024x300.gif", class: 'mapaccueil'
-.fond-navigation 
-  .navigation
-    .bouton.text-center
-      = link_to( image_tag("home.png"), new_projet_path)
-      %p= link_to "Je dépose un projet"
-    .bouton.text-center
-      = link_to( image_tag("home.png"), root_path)
-      %p Je participe à un sondage
-    .bouton.text-center
-      = link_to( image_tag("home.png"), actualites_path)
-      %p L'actualité des projets
-    .bouton.text-center
-      = link_to( image_tag("home.png"), comment_ca_marche_path)
-      %p Comment ça marche
-.liste-projets
-  = render partial: 'projets/projet', collection: @projets
-= link_to 'Voir tous les projets', projets_path, class: 'center-block btn btn-lg btn-default'
+.navigation
+  .bouton
+    %a{href: new_projet_path}
+      %span.icon= image_tag("home.png")
+      %span.action Je dépose un projet
+  .bouton
+    %a{href: root_path}
+      %span.icon= image_tag("home.png")
+      %span.action Je participe à un sondage
+  .bouton
+    %a{href: actualites_path}
+      %span.icon= image_tag("home.png")
+      %span.action L'actualité des projets
+  .bouton
+    %a{href: comment_ca_marche_path}
+      %span.icon= image_tag("home.png")
+      %span.action Comment ça marche
+.container
+  .liste-projets
+    = render partial: 'projets/projet', collection: @projets
+  = link_to 'Voir tous les projets', projets_path, class: 'center-block btn btn-lg btn-default'

@@ -59,9 +59,12 @@ html {
 
 .navbar {
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
-
+.notices {
+  @include container-fixed();
+}
 
 footer {
   @include make-row(12);
@@ -129,25 +132,3 @@ footer {
   }
 }
 
-.fond-navigation{
-  background-color: $rouge;
-  border: 5px solid $rouge;
-}
-
-.navigation{
-  @include make-row(12); 
-  .bouton{
-    @include make-sm-column(3);
-    border: 5px solid $rouge;
-    margin: 0px;
-    background-color: lighten($rouge,30%);
-    color: #FFF;
-    &:hover{
-      background-color: $rouge;
-    }
-  }
-}
-
-.mapaccueil{
-  width: 100%;
-}

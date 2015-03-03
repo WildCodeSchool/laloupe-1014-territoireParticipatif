@@ -16,6 +16,7 @@
 $rouge: #F20603;
 $vert-du-perche: #55A603;
 $brand-primary: $rouge;
+$bleu-du-perche: #40ABD4;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -60,6 +61,7 @@ html {
 .navbar {
   border-radius: 0px;
   margin-bottom: 0px;
+  border: 0px;
 }
 
 .notices {

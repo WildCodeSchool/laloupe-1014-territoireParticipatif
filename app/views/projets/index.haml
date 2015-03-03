@@ -1,10 +1,22 @@
-- provide(:title, "Intro des projets")
-%h1= yield :title
-= "#{@projets.size} projets en base"
-.action-new-projet
-  = link_to 'Je dépose un projet', new_projet_path, class: 'btn btn-primary btn-lg'
-
-%hr
+%br
+.row
+  .col-sm-5.text-center
+    =image_tag "http://placehold.it/450x300", class: 'img-responsive'
+  .col-sm-7
+    %h2 J'ai un projet pour le Perche! 
+    Le Pays Perche d'Eure-et-Loir prépare un dossier de candidature pour permettre au Perche de bénéficier à nouveau du fond européen LEADER. Il nous semble aujourd'hui crucial de saisir l'opportunité numérique au vol et de nous emparer de ce thème.
+    %br
+    Nous avons besoin de vous!
+    %br
+    Vous avez envie que le territoire change, vous avez des projets numériques (ou non), vous avez des idées pour vous, votre entreprise ou le territoire ?
+    %br
+    Faites nous part de ces idées pour que demain peut-être nous puissions vous aider à les financer.
+    %br
+    %br
+    = link_to 'Je dépose un projet', new_projet_path, class: 'btn btn-primary btn-lg pull-right'
+%h3 Actuellement #{@projets.size} projets déposés
+%p Donnez nous vos idées, votre avis sur les projets déjà déposés.
+%p Commentez, aimez, partagez
 
 .liste-projets
   = render partial: 'projets/projet', collection: @projets

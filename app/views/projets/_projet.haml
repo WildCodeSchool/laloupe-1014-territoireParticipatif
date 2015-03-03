@@ -1,8 +1,45 @@
-.projet
-  .contenu
-    = link_to '', projet_path(projet), class: 'clic-fiche'
-    %h2= projet.titre
-    %h4= projet.objectif
-    %p= projet.description.try(:truncate, 120)
-  .bandeau
-    %p= projet.contributeur.try(:pseudo)
+/ .projet
+/   .contenu
+/     = link_to '', projet_path(projet), class: 'clic-fiche'
+/     %h2= projet.titre
+/     %h4= projet.objectif
+/     %p= projet.description.try(:truncate, 120)
+/   .bandeau
+/     %p= projet.contributeur.try(:pseudo)
+
+
+.col-sm-6.col-md-4
+  .panel
+    .panel-heading 
+      =image_tag '60x60.gif', class: 'pull-right'
+      %h5= projet.created_at.strftime("%d/%m/%Y")
+      %h5= projet.titre
+
+      / =projet.titre
+      / =projet.objectif
+    .panel-body
+      =projet.description.try(:truncate, 120)
+      %br
+      %br
+      .row
+        .col-xs-6.text-center
+          =image_tag 'plus-32.png'
+          %br
+          %br
+          = link_to 'En savoir plus', projet_path(projet)
+        .col-xs-6.text-center
+          =image_tag 'pin-32.png'
+          %br
+          %br
+          La Loupe
+    .panel-footer
+      .row
+        .col-xs-6.text-center
+          =image_tag 'chat-16.png'
+          %br
+          20 commentaires
+
+        .col-xs-6.text-center
+          =image_tag 'heart-16.png'
+          %br
+          34 Personnes

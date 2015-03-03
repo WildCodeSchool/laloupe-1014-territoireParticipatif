@@ -80,3 +80,11 @@
   width: 100%;
 }
 
+
+
+.panel{
+  border-color: $bleu-du-perche;
+  .panel-heading, .panel-footer{
+  background-color: $bleu-du-perche;
+  }
+}

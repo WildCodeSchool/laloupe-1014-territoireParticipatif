@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_animateur!, only: [:animation]
 
   def intro
-    @projets = Projet.last(4).reverse
+    @projets = Projet.last(3).reverse
   end
 
   def charte

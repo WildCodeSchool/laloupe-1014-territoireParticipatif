@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'pages#intro'
   devise_for :contributeurs
   get 'animation' => 'pages#animation'
+  resources :sondages
 
   get 'mentions' => 'pages#mentions'
+  get 'merci' => 'pages#merci'
   get 'charte' => 'pages#charte'
   get 'comment-ca-marche' => 'pages#howto'
   post 'newsletter/inscription' => 'newsletter#inscription'

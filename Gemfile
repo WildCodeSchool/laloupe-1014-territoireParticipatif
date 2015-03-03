@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'shareable'
 gem 'rails-i18n'
+gem 'simple_form'
 # backend
 gem 'puma'
 gem 'devise'

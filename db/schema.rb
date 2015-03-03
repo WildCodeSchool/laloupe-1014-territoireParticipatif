@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226073906) do
+ActiveRecord::Schema.define(version: 20150303164234) do
 
   create_table "actualites", force: :cascade do |t|
     t.string   "titre"
@@ -49,9 +49,10 @@ ActiveRecord::Schema.define(version: 20150226073906) do
     t.string   "pseudo"
     t.string   "nom"
     t.string   "prenom"
-    t.integer  "annee_naissance"
-    t.string   "commune"
+    t.integer  "age"
+    t.integer  "cp"
     t.string   "status"
+    t.string   "résident"
     t.boolean  "charte",                 default: false
     t.string   "type"
   end
@@ -81,5 +82,23 @@ ActiveRecord::Schema.define(version: 20150226073906) do
 
   add_index "projets", ["categorie_id"], name: "index_projets_on_categorie_id"
   add_index "projets", ["contributeur_id"], name: "index_projets_on_contributeur_id"
+
+  create_table "sondages", force: :cascade do |t|
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "profession"
+    t.string   "equipement"
+    t.string   "usage_fixe"
+    t.string   "usage_portable"
+    t.string   "usage_tablette"
+    t.string   "usage_smartphone"
+    t.string   "service"
+    t.text     "commentaire_service"
+    t.string   "competences"
+    t.string   "formation"
+    t.string   "prestataire"
+    t.text     "commentaire_prestataire"
+    t.integer  "contributeur_id"
+  end
 
 end

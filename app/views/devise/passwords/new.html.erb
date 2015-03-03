@@ -1,16 +1,18 @@
-<h2>Vous avez égaré votre mot de passe?</h2>
+<div class="text-center">  
+  <h2>Vous avez égaré votre mot de passe?</h2>
+  <br>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'input-lg' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Recevoir les instructions pour réinitialiser mon mot de passe" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="actions">
+      <%= f.submit "Réinitialiser mon mot de passe",class: 'center-block btn btn-md btn-primary' %>
+    </div>
+  <% end %>
+  <br>
+  <%= render "devise/shared/links" %>
+</div>

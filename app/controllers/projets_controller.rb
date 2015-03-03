@@ -3,7 +3,6 @@ class ProjetsController < ApplicationController
 
   def index
     @projets = Projet.order(updated_at: :desc)
-    render 'pages/intro'
   end
 
   def show

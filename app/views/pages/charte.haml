@@ -1,2 +1,27 @@
 - provide(:title, sanitize("Charte d'utilisation"))
-%h1= yield(:title)
+%h1.text-center= yield(:title)
+
+.well
+  Une charte utilisateur est un document dont le but est de fixer les grands principes d’usage des matériels informatiques et services numériques mis à disposition par l’établissement ou l’école. Contrairement au guide utilisateur, elle ne couvre pas le détail des conditions d’utilisation. Sa rédaction est essentiellement consacrée aux bonnes pratiques et n’entre pas dans les détails fonctionnels. Ceci lui assure une bonne stabilité dans le temps et permet de l’annexer sans problème au règlement intérieur, voté une fois par an. Chaque utilisateur doit prendre connaissance de cette charte avant tout emploi des matériels informatiques et services numériques mis à disposition.
+  La présence d’une charte d’usage d’Internet et des TIC est indispensable au sein d’un établissement. Elle doit être annexée au règlement intérieur de l’école, du collège ou du lycée à l’issue d’une validation par les instances compétentes.
+  %br
+  %br
+  La charte d’usage n’a pas pour objet la description exhaustive des ressources matérielles et services numériques disponibles, ni de constituer leur mode d’emploi. Elle définit les grandes règles qui régissent la mise à disposition des matériels et services numériques, et leur usage par la communauté éducative.
+  %br
+  %br
+  Elle comporte un rappel de la loi, mettant en valeur les droits dont disposent les utilisateurs. La protection des libertés fondamentales, de la vie privée et des données à caractère personnel sont, à ce titre, des éléments importants de la charte.
+  %br
+  %br
+  Ce rappel permet également d’étayer les obligations qui incombent à chacun, ainsi que les éventuelles restrictions d’usage qui en découlent. Outre le simple respect de la Loi, les valeurs fondamentales de l’éducation nationale, en particulier les principes de neutralité religieuse, politique et commerciale, ou encore la protection des mineurs sont des éléments importants de la charte. 
+  %br
+  %br
+  La charte n’a pas pour fonction de rappeler les sanctions/avertissements encourus, en se substituant au règlement intérieur. Elle peut néanmoins rappeler utilement que le non-respect des principes énoncés peut, selon le cas, exposer à des sanctions disciplinaires prévues au règlement intérieur, voire aux sanctions pénales prévues par les lois en vigueur.
+  %br
+  %br
+  La rédaction de la charte doit faire l’objet d’une large concertation de l’ensemble des parties prenantes, en particulier des élèves. 
+
+
+
+
+.pull-left=link_to "Retour à la page d'inscription", new_contributeur_registration_path, class: 'btn btn-primary btn-md'
+.pull-right=link_to "Retour à la page d'accueil", root_path, class: 'btn btn-primary btn-md'

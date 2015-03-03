@@ -18,7 +18,7 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_equal 11, assigns(:projets).count
     assert assigns(:projets).first.updated_at > assigns(:projets).last.updated_at,
       "les projets ne sont pas classés par date de mise à jour décroissante"
-    assert_template 'pages/intro'
+    assert_template :index
   end
 
   test "afficher un projet" do

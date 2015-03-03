@@ -49,9 +49,10 @@ ActiveRecord::Schema.define(version: 20150226073906) do
     t.string   "pseudo"
     t.string   "nom"
     t.string   "prenom"
-    t.integer  "annee_naissance"
-    t.string   "commune"
+    t.integer  "age"
+    t.integer  "cp"
     t.string   "status"
+    t.string   "résident"
     t.boolean  "charte",                 default: false
     t.string   "type"
   end

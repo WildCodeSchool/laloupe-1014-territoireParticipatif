@@ -34,6 +34,7 @@ class ActualitesController < ApplicationController
 
   def show
     @actualite = Actualite.find(params[:id])
+    @filactu = Actualite.all
   end
 
   private

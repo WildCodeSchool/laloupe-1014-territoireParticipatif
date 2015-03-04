@@ -1,3 +1,71 @@
 // Place all the styles related to the actualites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$orange: #E16D35;
+
+h1.titreactu {
+  border-bottom: 2px solid $orange;
+}
+
+h4 {
+  border-bottom: 2px dotted black;
+  color: white;
+}
+
+.actualites {
+  h3 {
+    a {
+      color: $orange;
+    }
+  }
+  p.date {
+      border-top: 1px dotted $orange;
+  }
+}
+
+.col-sm-6 {
+  padding-top: 50px;
+}
+
+.cartouche1{
+  background-color: $orange;
+  text-align: center;
+}
+
+.actbar {
+  background-color: $orange;
+  text-align: center;
+  background-repeat: -y;
+}
+
+.degraf {
+    margin-top: 50px;
+}
+
+.date {
+  text-align: left;
+  font-weight: bold;
+}
+
+h4::first-letter {
+  font-weight: bold;
+}
+
+.actu {
+  text-align: left;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  .case {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+}
+
+.placeimg {
+  margin-top: 10px;
+}

@@ -5,7 +5,6 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    'actualites', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
@@ -17,7 +16,7 @@
       -if notice
         .alert.alert-success{:role => "alert"}
           %p(class="notice")= notice
-    - if controller.action_name == 'intro'
+    - if controller.action_name == 'intro' || controller.controller_name == "actualites"
       = yield
     - else
       .container

@@ -1,11 +1,13 @@
-%h1.titreactu Actualités
-.actualites
-  - @actualites.each do |actu|
-    .col-sm-6.actu
-      .col-sm-6.case
-        =image_tag "http://placehold.it/200x150", class: "img-responsive center-block"
-      .col-sm-6.case
-        %h3= link_to actu.titre, actualite_path(actu)
-        %p
-          = actu.contenu.first(42)
-        %p.date= actu.created_at.strftime('%D')
+.container
+  %h1.titreactu Actualités
+  .actualites
+    - @actualites.each do |actu|
+      .col-sm-6.actu
+        .col-sm-6.case
+          = link_to image_tag("http://placehold.it/200x150", class: "img-responsive center-block"), actualite_path(actu)
+
+        .col-sm-6.case
+          %h3= link_to actu.titre, actualite_path(actu)
+          %p
+            = actu.contenu.first(42)
+          %p.date= actu.created_at.strftime('%D')

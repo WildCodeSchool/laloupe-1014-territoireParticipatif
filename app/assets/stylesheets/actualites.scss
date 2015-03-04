@@ -1,7 +1,7 @@
 // Place all the styles related to the actualites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$orange: #E16D35;
+@import "variables";
 
 h1.titreactu {
   border-bottom: 2px solid $orange;

@@ -1,6 +1,6 @@
 .navbar.navbar-default
   .container
-    = link_to "PERCHE", root_path, class: 'navbar-brand'
+    = link_to image_tag("perche-28-logo.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand'
     %p.navbar-text naturellement innovants
     %ul.nav.navbar-nav.navbar-right
       - if contributeur_signed_in?

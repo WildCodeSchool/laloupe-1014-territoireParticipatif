@@ -1,5 +1,3 @@
-.splash-intro
-  =image_tag "1024x300.gif"
 .navigation
   .container
     .bouton.nouveau-projet
@@ -26,6 +24,8 @@
           %svg.icon-question{:role => "img"}
             %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
         %span.action Comment ça marche
+.splash-intro
+  =image_tag "perche-participatif.png"
 .derniers-projets
   .liste-projets
     = render partial: 'projets/projet', collection: @projets

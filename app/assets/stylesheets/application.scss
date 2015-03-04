@@ -13,7 +13,7 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$rouge: #F20603;
+$rouge: #E41518;
 $vert-du-perche: #55A603;
 $vert-fonce: #255804;
 $bleu: #40A8D4;
@@ -62,10 +62,14 @@ html {
   font-family: 'GrooveNext', 'GravityBold', 'Helvetica';
   font-weight: 800;
   font-size: 2rem;
+  padding: 0;
+  img {
+    height: 4rem;
+  }
 }
 
 .navbar {
-  border-radius: 0px;
+  border: none;
   margin-bottom: 0px;
 }
 

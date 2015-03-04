@@ -1,5 +1,5 @@
 .col-sm-6
-  %h1= @actualite.titre
+  %h1.titreactu= @actualite.titre
   %em
     = "Le #{I18n.localize(@actualite.created_at.to_date, format: :short)} #{@actualite.created_at.year}"
   .contenu
@@ -21,6 +21,6 @@
 .col-sm-12.actbar
   -@filactu.last(4).each do |actu|
     .col-sm-3
-      =image_tag "http://placehold.it/200x150", class: "img-responsive center-block"
+      =image_tag "http://placehold.it/200x150", class: "img-responsive center-block placeimg"
       %h4= actu.titre
       %p.date= actu.created_at.strftime('%D')

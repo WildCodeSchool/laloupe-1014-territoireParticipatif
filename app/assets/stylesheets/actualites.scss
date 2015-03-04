@@ -3,13 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $orange: #E16D35;
 
-h1 {
-  border-bottom: 2px solid red;
+h1.titreactu {
+  border-bottom: 2px solid $orange;
 }
 
 h4 {
   border-bottom: 2px dotted black;
   color: white;
+}
+
+.actualites {
+  h3 {
+    a {
+      color: $orange;
+    }
+  }
+  p.date {
+      border-top: 1px dotted $orange;
+  }
 }
 
 .col-sm-6 {
@@ -38,4 +49,23 @@ h4 {
 
 h4::first-letter {
   font-weight: bold;
+}
+
+.actu {
+  text-align: left;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  .case {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+}
+
+.placeimg {
+  margin-top: 10px;
 }

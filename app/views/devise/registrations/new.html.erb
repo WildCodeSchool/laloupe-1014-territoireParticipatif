@@ -1,74 +1,106 @@
-<h2>Inscription</h2>
-
+<h1 class="text-center">Inscription</h1>
+<p class="text-center">
+  Votre inscription est soumise à l'acceptation de 
+  <%= link_to "la charte d'utilisation", charte_path %>
+</p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
+<div class="split-gauche">
+
+    <div class="field">
+      <%= f.label :pseudo, "Nom d'utilisateur" %>
+      <em>(Public)</em>
+      <%= f.text_field :pseudo, autofocus: true, class: 'form-control input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "Mot de passe"%>
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> caractères minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "off", class: 'input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input-lg' %>
+    </div>
+
+</div>
+<div class="split-droit">
+
+    <div class="field">
+      <%= f.label :nom %>
+      <%= f.text_field :nom, class: 'input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prenom, "Prénom" %>
+      <%= f.text_field :prenom, class: 'input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :commune, "Commune" %>
+      <%= f.text_field :commune, class: 'input-lg' %>
+    </div>
+
+<div class="col-sm-6">
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :telephone, "Numéro de téléphone" %>
+    <%= f.text_field :telephone, class: 'input-sm', type: 'tel' %>
   </div>
+</div>
 
+<div class="col-sm-6">
+    <div class="field">
+      <%= f.label :status, "Lien avec le territoire" %>
+      <%= f.select :status, [ ["Résident-e", 'resident'],
+                              ["Travaille", 'work'],
+                              ["En transit", 'transit'],
+                              ["Résidence secondaire", 'resident2nd'],
+                              ["Autre", 'other'] ] %>
+    </div>
+</div>
+
+<div class="col-sm-6">
   <div class="field">
-    <%= f.label :password, "Mot de passe"%>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> caractères minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :sexe, "Civilité" %>
+    <%= f.select :sexe, [ ["Féminin", 'F'],
+                          ["Masculin", 'M']] %>
   </div>
+</div>
 
+<div class="col-sm-6">
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pseudo, "Nom d'utilisateur" %>
-    <em>(Public)</em><br/>
-    <%= f.text_field :pseudo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :nom %><br/>
-    <%= f.text_field :nom %>
-  </div>
-
-  <div class="field">
-    <%= f.label :prenom, "Prénom" %><br/>
-    <%= f.text_field :prenom %>
-  </div>
-
-  <div class="field">
-    <%= f.label :annee_naissance, "Année de naissance" %><br/>
+    <%= f.label :annee_naissance, "Année de naissance" %>
     <%= f.date_select :annee_naissance, discard_day: true, discard_month: true, start_year: Date.today.year - 7, end_year: Date.today.year - 115 %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :commune, "Commune de résidence" %><br/>
-    <%= f.text_field :commune %>
-  </div>
 
-  <div class="field">
-    <%= f.label :status, "Lien avec le territoire" %><br/>
-    <%= f.select :status, [ ["Résident-e", 'resident'],
-                            ["Travaille", 'work'],
-                            ["En transit", 'transit'],
-                            ["Résidence secondaire", 'resident2nd'],
-                            ["Autre", 'other'] ] %>
-    <em>sur le territoire du Pays Perche</em>
-  </div>
+</div>
 
-  <div class="field">
-    <%= f.check_box :charte %>
-    <%= f.label :charte, "J'ai lu et j'accepte la charte d'utilisation" %><br />
-    <%= link_to "Lire la charte d'utilisation", charte_path %>
-  </div>
+<div class="split-centre">
 
-  <div class="actions">
-    <%= f.submit "S'inscrire" %>
-  </div>
-<% end %>
 
-<p>
-  J'ai déjà un compte :
-  <%= render "devise/shared/links" %>
-</p>
+    <div class="field checkbox">
+      <%= f.check_box :charte %>
+      <%= f.label :charte, "J'ai lu et j'accepte la charte d'utilisation" %><br />
+    </div>
+
+    <div class="actions">
+      <%= f.submit "S'inscrire", class: 'center-block btn btn-lg btn-primary' %>
+    </div>
+  <% end %>
+<br>
+  <p>
+    J'ai déjà un compte :
+    <%= render "devise/shared/links" %>
+  </p>
+</div>

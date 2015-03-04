@@ -7,8 +7,13 @@
   }
 }
 
+.mapaccueil{
+  width: 100%;
+}
+
 .navigation{
   background-color: $rouge;
+  @include make-row(12);
   padding-top: 1rem;
   padding-bottom: 1rem;
   .bouton{
@@ -19,6 +24,7 @@
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
       width: 100%;
+      margin: 0px;
       text-decoration: none;
       &:hover, &:focus {
         background-color: darken($rouge,15%);
@@ -66,4 +72,20 @@
 .derniers-projets {
   //!\\ CONTAINER
   @extend .container;
+}
+.contenu-page {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+  @extend .well;
+}
+
+.nav-bas {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+  .back-inscription {
+    @extend .pull-left;
+  }
+  .back-home {
+    @extend .pull-right;
+  }
 }

@@ -1,5 +1,60 @@
 form.new_contributeur {
+  @expand .form-control;
   .field {
     margin-bottom: 1rem;
   }
+  input[type="checkbox"] {
+    margin-left: 5px;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+  }
+  .checkbox {
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    label {
+      margin-left: .7rem;
+      font-weight: 700;
+    }
+  }
 }
+
+.split-gauche {
+  @include make-sm-column(4);
+  @include make-sm-column-offset(2);
+  margin-bottom: 2rem;
+}
+
+.split-droit {
+  @include make-sm-column(4);
+  @include make-sm-column-offset(1);
+  border: solid lightgrey 1px;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.split-centre {
+  @include make-sm-column(4);
+  @include make-sm-column-offset(4);
+  margin-bottom: 2rem;
+}
+
+#error_explanation {
+  @include make-row();
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  ul {
+    @include make-sm-column(6);
+    @include make-sm-column-offset(3);
+    text-align: left;
+    border-radius: 3px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: lighten($brand-warning, 30%);
+  }
+}
+
+

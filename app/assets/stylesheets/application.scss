@@ -13,16 +13,12 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$rouge: #E41518;
+$rouge: #F20603;
 $vert-du-perche: #55A603;
-$vert-fonce: #255804;
+$brand-primary: $rouge;
 $bleu: #40A8D4;
 $ocre: #F29E04;
 $orange: #F37405;
-
-$brand-primary: $rouge;
-
-$arrondi: 3px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -74,7 +70,7 @@ html {
 }
 
 .notices {
-  @include container-fixed();
+  @extend .container;
 }
 
 footer {
@@ -143,3 +139,27 @@ footer {
   }
 }
 
+.fond-navigation{
+  background-color: $rouge;
+  border: 5px solid $rouge;
+}
+
+form {
+  @extend .form-group;
+}
+input, textarea, {
+  @extend .form-control;
+  @extend .input-lg;
+}
+
+select {
+  @extend .form-control;
+}
+
+label {
+  @extend .control-label;
+}
+
+.field_with_errors {
+  @extend .has-error;
+}

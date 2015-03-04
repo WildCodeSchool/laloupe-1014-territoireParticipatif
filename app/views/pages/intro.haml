@@ -1,22 +1,32 @@
-=image_tag "1024x300.gif", class: 'mapaccueil'
+.splash-intro
+  =image_tag "1024x300.gif"
 .navigation
-  .bouton
-    %a{href: new_projet_path}
-      %span.icon= image_tag("home.png")
-      %span.action Je dépose un projet
-  .bouton
-    %a{href: root_path}
-      %span.icon= image_tag("home.png")
-      %span.action Je participe à un sondage
-  .bouton
-    %a{href: actualites_path}
-      %span.icon= image_tag("home.png")
-      %span.action L'actualité des projets
-  .bouton
-    %a{href: comment_ca_marche_path}
-      %span.icon= image_tag("home.png")
-      %span.action Comment ça marche
-.container
+  .container
+    .bouton.nouveau-projet
+      %a{href: new_projet_path}
+        %span.icon
+          %svg.icon-light-bulb{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-light-bulb"}
+        %span.action Je dépose un projet
+    .bouton.sondage
+      %a{href: root_path}
+        %span.icon
+          %svg.icon-bubble{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}
+        %span.action Je participe à un sondage
+    .bouton.actualites
+      %a{href: actualites_path}
+        %span.icon
+          %svg.icon-calendar{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
+        %span.action L'actualité des projets
+    .bouton.howto
+      %a{href: comment_ca_marche_path}
+        %span.icon
+          %svg.icon-question{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
+        %span.action Comment ça marche
+.derniers-projets
   .liste-projets
     = render partial: 'projets/projet', collection: @projets
   = link_to 'Voir tous les projets', projets_path, class: 'center-block btn btn-lg btn-default'

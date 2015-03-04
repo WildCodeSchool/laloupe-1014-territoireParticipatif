@@ -1,8 +1,13 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.splash-intro {
+  img {
+    width: 100%;
+  }
+}
+
 .navigation{
-  @include container-fixed();
   background-color: $rouge;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -10,21 +15,20 @@
     @include make-sm-column(3);
     color: #FFF;
     a {
-      background-color: lighten($rouge,25%);
       display: block;
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
       width: 100%;
       text-decoration: none;
-      &:hover{
-        background-color: $rouge;
-        background-color: lighten($rouge,15%);
+      &:hover, &:focus {
+        background-color: darken($rouge,15%);
       }
       .icon {
         display: block;
-        img {
-          display: block;
-          margin: auto;
+        svg {
+          width: 100%;
+          height: 5rem;
+          fill: #FFF;
         }
       }
       .action {
@@ -37,8 +41,29 @@
       }
     }
   }
+  .nouveau-projet {
+    a {
+      background-color: $bleu;
+    }
+  }
+  .sondage {
+    a {
+      background-color: $ocre;
+    }
+  }
+  .actualites {
+    a {
+      background-color: $orange;
+    }
+  }
+  .howto {
+    a {
+      background-color: $vert-du-perche;
+    }
+  }
 }
 
-.mapaccueil{
-  width: 100%;
+.derniers-projets {
+  //!\\ CONTAINER
+  @extend .container;
 }

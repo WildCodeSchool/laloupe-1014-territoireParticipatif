@@ -1,14 +1,30 @@
-= simple_form_for @sondage do |f|
-  = f.input :profession, label: "Votre profession?", collection: ["Scolaire", "Etudiant", "Agriculteur", "Artisan", "Commerçant","Autre chef d'entreprise PME/Industrie" , "Ouvrier", "Employé", "Enseignant", "Cadre et profession supérieure", "Profession libérale", "Retraité", "Sans emploi"]
-  = f.input :equipement, label: "De quel équipement disposez-vous ?", collection: [ "Un ordinateur fixe", "Un ordinateur portable", "Une tablette tactile", "Un smartphone"], as: :check_boxes
-  = f.input :usage_fixe, label: "Quel est votre usage de votre ordinateur fixe ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
-  = f.input :usage_portable, label: "Quel est votre usage de votre ordinateur portable ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
-  = f.input :usage_tablette, label: "Quel est votre usage de votre tablette ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
-  = f.input :usage_smartphone, label: "Quel est votre usage de votre smartphone (usage internet) ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
-  = f.input :service, label: "Selon vous, quels sont les services à développer dans le Perche grâce au numérique ?(liste à titre d'exemple et non exhaustive)", collection: ["Boutique de produits locaux en ligne", "E-commerce", "Carte fidélité commerciale", "Service public communal ou intercommunal en ligne", "Objets connectés facilitant la vie des personnes âgées", "Pass numérique de loisir pour les jeunes", "Paiement de prestations publiques en ligne (cantine, crèche...eau)", "Consultation de spécialiste santé à distance (assisté par un professionnel)", "Autre"], as: :check_boxes
-  = f.input :commentaire_service, label: "Si autre répondre si dessous"
-  = f.input :competences, label: "Diriez-vous que vous savez : ", collection: ["Parfaitement vous servir d'internet et de ses applications quotidiennes", "Vous servir d'internet et de ses applications quotidiennes de façon satisfaisante", "Vous servir d'internet et de ses applications quotidiennes de façon peu satisfaisante", "Peu vous servir d'internet et de ses applications quotidiennes"], as: :check_boxes
-  = f.input :prestataire, label: "Savez-vous si des organismes délivrent ce type de prestation dans le Perche ? ", collection: ["Oui", "Non", "Je ne sais pas"], as: :check_boxes
-  = f.input :commentaire_prestataire, label: "Si oui laquelle?"
-  = f.input :formation, label: "Souhaiteriez-vous bénéficier d'une formation à l'utilisation d'internet et de ses applications ?", collection: ["Proposée par une entreprise ?", "Par une association ?", "En ligne ?", "En groupe ?"], as: :check_boxes
-  = f.button :submit, value: "Validez les réponses à ce sondage"
+.col-md-12.all
+  .col-md-12.sondage
+    .col-sm-6.col-sm-offset-3
+      = simple_form_for @sondage do |f|
+        .block
+          = f.input :profession, label: "Votre profession?", collection: ["Scolaire", "Etudiant", "Agriculteur", "Artisan", "Commerçant","Autre chef d'entreprise PME/Industrie" , "Ouvrier", "Employé", "Enseignant", "Cadre et profession supérieure", "Profession libérale", "Retraité", "Sans emploi"]
+        .block
+          = f.input :equipement, label: "De quel équipement disposez-vous ?", collection: [ "Un ordinateur fixe", "Un ordinateur portable", "Une tablette tactile", "Un smartphone"], as: :check_boxes
+        .block
+          = f.input :usage_fixe, label: "Quel est votre usage de votre ordinateur fixe ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
+        .block
+          = f.input :usage_portable, label: "Quel est votre usage de votre ordinateur portable ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
+        .block
+          = f.input :usage_tablette, label: "Quel est votre usage de votre tablette ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
+        .block
+          = f.input :usage_smartphone, label: "Quel est votre usage de votre smartphone (usage internet) ?", collection: ["Surf sur internet", "Bureautique (traitement de texte, feuille de calcul, présentation)", "Pour votre travail", "E mail", "Moteur de recherche", "Actualité", "Vidéo sur internet", "Réseaux sociaux", "Consultation d'application", "Infos pratiques", "Recettes de cuisine", "Bricolage...", "Jeux" ], as: :check_boxes
+        .block
+          = f.input :service, label: "Selon vous, quels sont les services à développer dans le Perche grâce au numérique ?(liste à titre d'exemple et non exhaustive)", collection: ["Boutique de produits locaux en ligne", "E-commerce", "Carte fidélité commerciale", "Service public communal ou intercommunal en ligne", "Objets connectés facilitant la vie des personnes âgées", "Pass numérique de loisir pour les jeunes", "Paiement de prestations publiques en ligne (cantine, crèche...eau)", "Consultation de spécialiste santé à distance (assisté par un professionnel)", "Autre"], as: :check_boxes
+        .block
+          = f.input :commentaire_service, label: "Si autre répondre si dessous"
+        .block
+          = f.input :competences, label: "Diriez-vous que vous savez : ", collection: ["Parfaitement vous servir d'internet et de ses applications quotidiennes", "Vous servir d'internet et de ses applications quotidiennes de façon satisfaisante", "Vous servir d'internet et de ses applications quotidiennes de façon peu satisfaisante", "Peu vous servir d'internet et de ses applications quotidiennes"], as: :check_boxes
+        .block
+          = f.input :prestataire, label: "Savez-vous si des organismes délivrent ce type de prestation dans le Perche ? ", collection: ["Oui", "Non", "Je ne sais pas"], as: :check_boxes
+        .block
+          = f.input :commentaire_prestataire, label: "Si oui laquelle?"
+        .block
+          = f.input :formation, label: "Souhaiteriez-vous bénéficier d'une formation à l'utilisation d'internet et de ses applications ?", collection: ["Proposée par une entreprise ?", "Par une association ?", "En ligne ?", "En groupe ?"], as: :check_boxes
+          = f.button :submit, value: "Validez les réponses à ce sondage"
+

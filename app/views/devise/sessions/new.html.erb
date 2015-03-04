@@ -1,32 +1,30 @@
-<div class="text-center">
-  <div class="col-sm-5 col-sm-offset-1">
-    <h2>Connexion</h2>
+<div class="split-gauche">
+  <h2>Connexion</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'input-lg' %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'input-lg' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "Mot de passe" %><br />
+      <%= f.password_field :password, autocomplete: "off", class: 'input-lg' %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="checkbox">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "Se souvenir de moi" %>
       </div>
+    <% end -%>
 
-      <div class="field">
-        <%= f.label :password, "Mot de passe" %><br />
-        <%= f.password_field :password, autocomplete: "off", class: 'input-lg' %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, "Se souvenir de moi" %>
-        </div>
-      <% end -%>
-
-      <div class="actions">
-        <%= f.submit "Se connecter", class: 'center-block btn btn-lg btn-primary' %>
-      </div>
-    <% end %>
-  </div>
-  <div class="col-sm-5">
-    <h2>Inscription</h2>
-      <%= render "devise/shared/links" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Se connecter", class: 'center-block btn btn-lg btn-primary' %>
+    </div>
+  <% end %>
+</div>
+<div class="split-droit">
+  <h2>Première Visite ?</h2>
+  <%= render "devise/shared/links" %>
 </div>

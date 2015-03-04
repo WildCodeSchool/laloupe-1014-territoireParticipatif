@@ -1,6 +1,6 @@
-<div class="text-center">  
-  <h2>Vous avez égaré votre mot de passe?</h2>
-  <br>
+<h2 class="text-center">Vous avez égaré votre mot de passe?</h2>
+<br>
+<div class="split-centre">
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -10,9 +10,8 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Réinitialiser mon mot de passe",class: 'center-block btn btn-md btn-primary' %>
+      <%= f.submit "Réinitialiser mon mot de passe",class: 'center-block btn btn-lg btn-primary' %>
     </div>
   <% end %>
-  <br>
   <%= render "devise/shared/links" %>
 </div>

@@ -1,3 +1,19 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contenu-page {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+  @extend .well;
+}
+
+.nav-bas {
+  @include make-sm-column(8);
+  @include make-sm-column-offset(2);
+  .back-inscription {
+    @extend .pull-left;
+  }
+  .back-home {
+    @extend .pull-right;
+  }
+}

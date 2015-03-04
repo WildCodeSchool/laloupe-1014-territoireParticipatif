@@ -135,7 +135,7 @@ footer {
 }
 
 .navigation{
-  @include make-row(12); 
+  @include make-row(12);
   .bouton{
     @include make-sm-column(3);
     border: 5px solid $rouge;
@@ -152,6 +152,22 @@ footer {
   width: 100%;
 }
 
-input, textarea, .well{
-  background-color: lighten(#A2FC46,20%);
+form {
+  @extend .form-group;
+}
+input, textarea, {
+  @extend .form-control;
+  @extend .input-lg;
+}
+
+select {
+  @extend .form-control;
+}
+
+label {
+  @extend .control-label;
+}
+
+.field_with_errors {
+  @extend .has-error;
 }

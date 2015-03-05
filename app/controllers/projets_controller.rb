@@ -74,6 +74,7 @@ class ProjetsController < ApplicationController
   end
 
   def checked_statuts
+    return {} unless params[:statut]
     string_of_values = params.require(:statut).map{ |key, val| key if val == "1" }.compact.join(";")
     {statut: string_of_values}
   end

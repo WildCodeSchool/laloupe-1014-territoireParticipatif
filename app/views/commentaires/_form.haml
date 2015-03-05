@@ -1,0 +1,4 @@
+= form_for @commentaire, url: yield(:url) do |f|
+  = f.text_field :message
+  = f.submit
+

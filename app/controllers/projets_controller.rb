@@ -1,5 +1,6 @@
 class ProjetsController < ApplicationController
   before_action :authenticate_contributeur!, only: [:new, :edit, :create, :update, :like]
+  before_action :authenticate_animateur!, only: [:destroy]
 
   def index
     @projets = Projet.order(updated_at: :desc)
@@ -17,13 +18,16 @@ class ProjetsController < ApplicationController
 
   def edit
     @projet = Projet.find(params[:id])
-    render_403 if current_contributeur != @projet.contributeur
-    @categories = list_categories
+    if @projet.contributeur == current_contributeur || current_animateur
+      @categories = list_categories
+    else
+      render_403
+    end
   end
 
   def update
     @projet = Projet.find(params[:id])
-    if current_contributeur == @projet.contributeur
+    if current_contributeur == @projet.contributeur || current_animateur
       if @projet.update(projet_params)
         redirect_to @projet
       else
@@ -63,6 +67,12 @@ class ProjetsController < ApplicationController
     else
       redirect_to @projet
     end
+  end
+
+  def destroy
+    @projet = Projet.find(params[:id])
+    @projet.destroy
+    redirect_to animation_path
   end
 
   private

@@ -4,6 +4,7 @@ class ProjetsControllerTest < ActionController::TestCase
 
   def setup
     @contributeur = create(:contributeur)
+    @animateur = create(:animateur)
     @categorie = create(:categorie)
     @projet = create(:projet,
                      contributeur: @contributeur,
@@ -78,6 +79,13 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_response 403
   end
 
+  test "un animateur peut éditer un projet dont il n'est pas l'auteur" do
+    sign_in @animateur
+    get :edit, id: @projet.id
+    assert_response :success
+    assert_equal @projet, assigns(:projet)
+  end
+
   test "editer un projet" do
     sign_in @contributeur
     get :edit, id: @projet.id
@@ -96,6 +104,15 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_response 403
   end
 
+  test "un animateur peut mettre à jour un projet dont il n'est pas l'auteur" do
+    sign_in @animateur
+    patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
+    assert_equal @projet, assigns(:projet)
+    assert_equal 'YourString', assigns(:projet).titre
+    assert_redirected_to projet_path assigns(:projet)
+  end
+
+
   test "mettre à jour un projet" do
     sign_in @contributeur
     patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
@@ -110,6 +127,29 @@ class ProjetsControllerTest < ActionController::TestCase
     projet_params[:titre] = ''
     patch :update, id: @projet.id, projet: projet_params
     assert_template :edit
+  end
+
+  test "un visiteur ne peut pas supprimer un projet" do
+    count = Projet.count
+    delete :destroy, id: @projet.id
+    assert_equal count, Projet.count
+    assert_redirected_to new_contributeur_session_path
+  end
+
+  test "un contributeur ne peut pas supprimer un projet" do
+    count = Projet.count
+    sign_in @contributeur
+    delete :destroy, id: @projet.id
+    assert_equal count, Projet.count
+  end
+
+  test "un animateur peut supprimer un projet" do
+    count = Projet.count
+    sign_in @animateur
+    delete :destroy, id: @projet.id
+    assert_not_nil assigns(:projet)
+    assert_redirected_to animation_path
+    assert_equal count - 1, Projet.count
   end
 
 end

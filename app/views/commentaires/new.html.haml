@@ -1,2 +1,3 @@
-%h1 Commentaires#new
-= render partial: 'commentaire'
+- provide(:url, projet_commentaires_path)
+%h1 Nouveau commentaire
+= render 'form'

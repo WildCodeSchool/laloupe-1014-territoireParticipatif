@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   end
 
   def animation
+    @actualites = Actualite.order(created_at: :desc)
+    @projets = Projet.order(id: :desc)
+    @commentaires = Commentaire.order(created_at: :desc)
   end
 
 end

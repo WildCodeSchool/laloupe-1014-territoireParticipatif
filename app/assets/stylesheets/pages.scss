@@ -89,3 +89,13 @@
     @extend .pull-right;
   }
 }
+
+// PAGE ANIMATION
+.anim-projets, .anim-commentaires, .anim-actus {
+  @extend .table-responsive;
+  table {
+    @extend .table;
+    @extend .table-hover;
+  }
+}
+

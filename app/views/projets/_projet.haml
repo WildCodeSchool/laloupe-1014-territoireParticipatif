@@ -13,7 +13,7 @@
     .panel-heading 
       =image_tag '60x60.gif', class: 'pull-right'
       %h5= projet.created_at.strftime("%d/%m/%Y")
-      %h5= projet.titre
+      %h5= projet.titre.try(:truncate, 30)
 
       / =projet.titre
       / =projet.objectif

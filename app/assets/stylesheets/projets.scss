@@ -88,3 +88,20 @@
   background-color: $bleu-du-perche;
   }
 }
+.blocgaucheprojet{
+  background-color: $bleu-du-perche;
+  border-radius: 3px;
+  margin: 15px;
+  padding: 5px;
+}
+
+.panelcommentaire{
+  .panel-heading{
+  padding-top: 10px;
+  padding-bottom: 0px;
+  }
+}
+h1.text-center.well{
+  border: 1px solid #40ABD4;
+}
+

@@ -45,7 +45,7 @@ class PagesControllerTest < ActionController::TestCase
     get :animation
     assert_response :success
     assert_select 'title', /Animation/
-    assert_not_nil assigns(:actualites_count)
+    assert_not_nil assigns(:actualites)
     assert_not_nil assigns(:projets)
     assert_not_nil assigns(:commentaires)
   end

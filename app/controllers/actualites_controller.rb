@@ -37,6 +37,12 @@ class ActualitesController < ApplicationController
     @filactu = Actualite.all
   end
 
+  def destroy
+    @actualite = Actualite.find(params[:id])
+    @actualite.destroy
+    redirect_to animation_path
+  end
+
   private
 
   def actualite_params

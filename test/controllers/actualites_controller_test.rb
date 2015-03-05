@@ -18,7 +18,7 @@ class ActualitesControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal @actu.id, assigns(:actualite).id
   end
-  
+
   ### new
   #
   test "rediriger vers le login si un visiteur demande new" do
@@ -94,6 +94,21 @@ class ActualitesControllerTest < ActionController::TestCase
     assert_equal titre, assigns(:actualite).titre
     assert_equal contenu, assigns(:actualite).contenu
     assert_redirected_to actualite_path @actu
+  end
+
+  test "contributeur ne peut pas supprimer une actu" do
+    sign_in create(:contributeur)
+    delete :destroy, id: @actu.id
+    assert_response 403
+  end
+
+  test "animateur peut supprimer une actu" do
+    count = Actualite.count
+    sign_in @animateur
+    delete :destroy, id: @actu.id
+    assert_equal @actu, assigns(:actualite)
+    assert_equal count - 1, Actualite.count
+    assert_redirected_to animation_path
   end
 
 end

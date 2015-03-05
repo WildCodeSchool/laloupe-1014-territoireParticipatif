@@ -68,7 +68,14 @@ class ProjetsController < ApplicationController
   private
 
   def projet_params
-    params.require(:projet).permit(:titre, :objectif, :description, :categorie_id, :status, :besoin, :localisation, :demarrage)
+    params.require(:projet)
+      .merge(checked_statuts)
+      .permit(:titre, :objectif, :description, :categorie_id, :statut, :besoin, :localisation, :demarrage)
+  end
+
+  def checked_statuts
+    string_of_values = params.require(:statut).map{ |key, val| key if val == "1" }.compact.join(";")
+    {statut: string_of_values}
   end
 
   def list_categories

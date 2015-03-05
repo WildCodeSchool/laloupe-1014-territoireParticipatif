@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 20150305103722) do
     t.string   "status"
     t.boolean  "charte",                 default: false
     t.string   "type"
-    t.string   "sexe"
-    t.string   "telephone"
   end
 
   add_index "contributeurs", ["email"], name: "index_contributeurs_on_email", unique: true
@@ -79,8 +77,8 @@ ActiveRecord::Schema.define(version: 20150305103722) do
     t.datetime "updated_at",      null: false
     t.integer  "contributeur_id"
     t.integer  "categorie_id"
-    t.string   "status"
-    t.string   "besoin"
+    t.string   "statut"
+    t.text     "besoin"
     t.string   "localisation"
     t.date     "demarrage"
   end

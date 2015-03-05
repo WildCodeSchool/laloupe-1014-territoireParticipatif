@@ -1,8 +1,5 @@
 %h1.text-center.well
-  "
   = @projet.titre
-  "
-
 
 .row
   .col-sm-3.col-sm-offset-1.blocgaucheprojet.text-center
@@ -32,7 +29,7 @@
   %p Partagez ce projet sur vos réseaux sociaux
   = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
   = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
-  - if @projet.liked_by? current_contributeur
+  - if @projet.liked_by?(current_contributeur)
     =link_to "Je n'aime plus ce projet", unlike_projet_path(@projet.id)
   - else
     =link_to "J'aime ce projet", like_projet_path(@projet.id)
@@ -55,7 +52,7 @@
             =commentaire.created_at.strftime("%d/%m/%Y")
           %p
             &nbsp;par 
-            = commentaire.contributeur.email
+            = commentaire.contributeur.pseudo
         .panel-body  
           %p= commentaire.message
-  =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet) , controller: "commentaires", action: "new", class: 'btn btn-primary btn-lg'
+  =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'

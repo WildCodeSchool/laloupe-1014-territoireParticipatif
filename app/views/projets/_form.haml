@@ -1,16 +1,35 @@
 .row
   = form_for @projet do |form|
     .col-sm-8
-      = form.label :titre
+      = form.label :titre, "Quel est le titre de votre projet"
       %p= form.text_field :titre
     .col-sm-8
-      = form.label :objectif
+      = form.label :objectif, "Quel est l'objectif de votre projet ?"
       %p= form.text_field :objectif
     .col-sm-12
-      = form.label :catégorie
+      = form.label :categorie, "Quel est la thèmatique dominante de votre projet ?"
       %p= form.select :categorie_id, options_for_select(@categories)
+    .col-sm-8
+      = form.label :demarrage, "Date de démarrage du projet (passé ou futur)"
+      %p= form.date_select :demarrage
+    .col-sm-8
+      = form.label :localisation, "Quel est le territoire concerné par votre projet ?"
+      %br
+      %em Soyez le plus précis possible
+      %p= form.text_field :localisation
+    .col-sm-8
+      = form.label :statut, "État d'avancement : quelles étapes ont été réalisées ?"
+      = fields_for :statut do |statut_fields|
+        - ["réflexion", "définition", "analyse du marché", "recherche de partenaire", "montage financier", "mise en oeuvre"].each do |etape|
+          %p
+            = statut_fields.check_box etape.to_sym
+            = statut_fields.label etape
     .col-sm-12
-      = form.label :description
+      = form.label :description, "Merci de décrire brièvement votre projet"
       %p= form.text_area :description
-      = form.submit "Créer projet", class: 'btn btn-primary btn-lg'
+    .col-sm-12
+      = form.label :besoin, "Quels sont vos besoins ?"
+      %p= form.text_area :besoin
+
+      = form.submit "Enregistrer mon projet", class: 'btn btn-primary btn-lg'
 

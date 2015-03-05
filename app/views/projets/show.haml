@@ -1,25 +1,58 @@
-.blocprojet
-  .carreprojet
-    %h1= @projet.titre
-    - if @projet.contributeur == current_contributeur
-      = link_to 'Modifier', edit_projet_path(@projet), class: 'btn btn-md btn-primary pull-right'
-    %h3 Objectif du projet
+%h1.text-center.well
+  = @projet.titre
+
+.row
+  .col-sm-3.col-sm-offset-1.blocgaucheprojet.text-center
+    =image_tag '60x60.gif',class: 'categorieprojetshow'
+    %h4 Objectif du projet:
     %p= @projet.objectif
+    %h4 Catégorie du projet:
+    %p= @projet.try(:categorie).try(:nom)
+    %h4 Localisation du projet:
+    %p= @projet.try(:localisation)
+    %h4 Projet déposé le:
+    %p= @projet.created_at.strftime("%d/%m/%Y")
+    / ATTENTION CA PIKE
+    / Date demarrage Seed invalide
+    -if @projet.demarrage != nil
+      %h4 Date de démarrage du projet:
+      %p= @projet.demarrage.strftime("%d/%m/%Y")
+    %h4 Créateur du projet:
+    %p= @projet.contributeur.try(:pseudo)
+  .col-sm-6.col-sm-offset-1
     %h3 Description du projet
     %p= @projet.description
-    %h3 Catégorie du projet
-    %p= @projet.try(:categorie).try(:nom)
-    %p
-      = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
-      = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
-      - if @projet.liked_by? current_contributeur
-        =link_to "Je n'aime plus ce projet", unlike_projet_path(@projet.id)
-      - else
-        =link_to "J'aime ce projet", like_projet_path(@projet.id)
-    %p= @projet.likes.count
-  .carrecommentaires
-    %h3 Commentaires
-    - @commentaires.each do |commentaire|
-      %p= commentaire.contributeur.email
-      %p= commentaire.message
-    =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet) , controller: "commentaires", action: "new"
+    - if @projet.contributeur == current_contributeur
+      = link_to 'Modifier votre projet', edit_projet_path(@projet), class: 'btn btn-primary pull-right'
+%br
+.row.text-center
+  %p Partagez ce projet sur vos réseaux sociaux
+  = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+  = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
+  - if @projet.liked_by?(current_contributeur)
+    =link_to "Je n'aime plus ce projet", unlike_projet_path(@projet.id)
+  - else
+    =link_to "J'aime ce projet", like_projet_path(@projet.id)
+  = @projet.likes.count
+  Personnes aiment ce projet
+%br
+.row.col-sm-10.col-xs-12.col-sm-offset-1.col-xs-offset-0
+  %p
+    %strong
+      Commentaires
+    %span.badge
+      = @commentaires.count
+
+  - @commentaires.reverse.each do |commentaire|
+    .panelcommentaire
+      .panel.panel-default
+        .panel-heading
+          %p.pull-left
+            déposé le
+            =commentaire.created_at.strftime("%d/%m/%Y")
+          %p
+            &nbsp;par 
+            = commentaire.contributeur.pseudo
+        .panel-body  
+          %p= commentaire.message
+  =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'

@@ -1,0 +1,5 @@
+.row
+= form_for @commentaire, url: projet_commentaires_path do |f|
+  .col-sm-8.col-sm-offset-2
+    %p= f.text_area :message , class: 'input-lg'
+    %p= f.submit "Envoyez votre commentaire"

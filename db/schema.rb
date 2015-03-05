@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303100851) do
+ActiveRecord::Schema.define(version: 20150305103722) do
 
   create_table "actualites", force: :cascade do |t|
     t.string   "titre"
@@ -79,6 +79,10 @@ ActiveRecord::Schema.define(version: 20150303100851) do
     t.datetime "updated_at",      null: false
     t.integer  "contributeur_id"
     t.integer  "categorie_id"
+    t.string   "statut"
+    t.text     "besoin"
+    t.string   "localisation"
+    t.date     "demarrage"
   end
 
   add_index "projets", ["categorie_id"], name: "index_projets_on_categorie_id"

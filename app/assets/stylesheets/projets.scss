@@ -67,17 +67,39 @@
       border-top: solid 1px #000;
   }
 }
-#projet_description{
+#projet_description, #projet_besoin {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  height: 15em;
   min-height: 15em;
 }
-#projet_titre{
-  width: 100%;
-}
-#projet_objectif{
+#projet_objectif, #projet-titre {
   width: 100%;
 }
 
+.panel{
+  border-color: $bleu-du-perche;
+  .panel-heading, .panel-footer{
+  background-color: $bleu-du-perche;
+  }
+}
+.blocgaucheprojet{
+  background-color: $bleu-du-perche;
+  border-radius: 3px;
+  margin: 15px;
+  padding: 5px;
+}
+
+.panelcommentaire{
+  .panel-heading{
+  padding-top: 10px;
+  padding-bottom: 0px;
+  }
+}
+h1.text-center.well{
+  border: 1px solid #40ABD4;
+}
+
+.categorieprojetshow{
+  padding: 5px;
+}

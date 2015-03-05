@@ -6,7 +6,7 @@ class Projet < ActiveRecord::Base
   validates_presence_of :titre, :objectif, :description, :contributeur
 
   def liked_by?(contributeur)
-    if likes.empty?
+    if !contributeur || likes.empty?
       return false
     else
       likes.collect { |like| like.contributeur_id }.include? contributeur.id

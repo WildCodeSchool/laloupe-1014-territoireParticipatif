@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require wysihtml-toolbar
+//= require parser_rules/simple
 //= require_tree .

@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'shareable'
 gem 'rails-i18n'
+gem 'wysihtml-rails'
 # backend
 gem 'puma'
 gem 'devise'

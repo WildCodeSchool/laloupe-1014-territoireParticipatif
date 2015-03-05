@@ -68,7 +68,7 @@ class ProjetsController < ApplicationController
   private
 
   def projet_params
-    params.require(:projet).permit(:titre, :objectif, :description, :categorie_id)
+    params.require(:projet).permit(:titre, :objectif, :description, :categorie_id, :status, :besoin, :localisation, :demarrage)
   end
 
   def list_categories

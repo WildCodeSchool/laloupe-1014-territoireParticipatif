@@ -13,11 +13,6 @@
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-$rouge: #F20603;
-$vert-du-perche: #55A603;
-$brand-primary: $rouge;
-$bleu-du-perche: #40ABD4;
-
 @import "variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -78,8 +73,8 @@ footer {
   margin-top: 2rem;
   padding: 2rem;
   color: #FFF;
-  background-color:$vert-du-perche;
-  border-top: solid .5rem darken($vert-du-perche, 15%);
+  background-color:$vert;
+  border-top: solid .5rem $vert-fonce;
   h3 {
     font-size: 1.1rem;
   }
@@ -110,7 +105,7 @@ footer {
 
     }
     input[type="email"] {
-      background-color: lighten($vert-du-perche,30%);
+      background-color: lighten($vert,30%);
       border: 0px none;
       border-radius: 6px 0px 0px 6px;
 

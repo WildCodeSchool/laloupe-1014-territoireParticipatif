@@ -17,4 +17,7 @@ class PagesController < ApplicationController
   def animation
   end
 
+  def merci
+  end
+
 end

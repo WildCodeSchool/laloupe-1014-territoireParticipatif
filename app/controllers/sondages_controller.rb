@@ -15,8 +15,18 @@ before_action :redirect_home, only: [:new, :create]
 
   private
 
+  def params_to_string
+    params.require(:sondage).transform_values do |valeur|
+      if valeur.class == Array
+        valeur.join(';')
+      else
+        valeur
+      end
+    end
+  end
+
   def sondage_params
-    params.require(:sondage).permit(:created_at, :updated_at, :profession, :equipement, :usage_fixe, :usage_portable, :usage_tablette, :usage_smartphone, :service, :commentaire_service, :competences, :formation, :prestataire, :commentaire_prestataire, :contributeur_id)
+    params_to_string.permit(:created_at, :updated_at, :profession, :equipement, :usage_fixe, :usage_portable, :usage_tablette, :usage_smartphone, :service, :commentaire_service, :competences, :formation, :prestataire, :commentaire_prestataire, :contributeur_id)
   end
 
   def redirect_home

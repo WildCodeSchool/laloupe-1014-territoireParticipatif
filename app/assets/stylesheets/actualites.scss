@@ -3,6 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+.form-actu {
+  @include make-sm-column(10);
+  @include make-sm-column-offset(1);
+  h1 {
+    @extend .text-center;
+  }
+  .field {
+    margin-top: 2rem;
+    #wysihtml-toolbar {
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        fill: grey;
+      }
+      .wysihtml5-command-active {
+        svg {
+          fill: #000;
+        }
+      }
+    }
+  }
+  textarea, .wysihtml5-sandbox {
+    min-height: 30rem;
+  }
+}
 h1.titreactu {
   border-bottom: 2px solid $orange;
 }

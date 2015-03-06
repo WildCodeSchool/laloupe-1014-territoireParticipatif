@@ -1,12 +1,31 @@
 = form_for @actualite do |f|
   .field
     = f.label :titre
-    %br
     = f.text_field :titre
   .field
-    = f.label :contenu
-    %br
-    = f.text_area :contenu
+    #wysihtml-toolbar{:style => "display: none;"}
+      %a{"data-wysihtml5-command" => "bold"}
+        %svg.icon-bold{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bold"}
+      %a{"data-wysihtml5-command" => "italic"}
+        %svg.icon-italic{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-italic"}
+      %a{"data-wysihtml5-command" => "createLink"}
+        %svg.icon-link{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-link"}
+      %div{"data-wysihtml5-dialog" => "createLink", :style => "display: none;"}
+        %label
+          Lien:
+          %input.text.input-md{"data-wysihtml5-dialog-field" => "href", :value => "http://"}/
+        %a{"data-wysihtml5-dialog-action" => "save", class: 'btn btn-md btn-default'} OK
+        %a{"data-wysihtml5-dialog-action" => "cancel"} Annuler
+    = f.text_area :contenu, id: "wysihtml-textarea"
   .field
-    = f.submit 'Enregistrer', class: 'btn btn-primary'
+    = f.submit 'Enregistrer et publier', class: 'btn btn-primary'
+
+:javascript
+  var editor = new wysihtml5.Editor("wysihtml-textarea", { // id of textarea element
+    toolbar:      "wysihtml-toolbar", // id of toolbar element
+    parserRules:  wysihtml5ParserRules // defined in parser rules set 
+  });
 

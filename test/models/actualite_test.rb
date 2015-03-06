@@ -16,6 +16,11 @@ class ActualiteTest < ActiveSupport::TestCase
     assert_not @actu.valid?
   end
 
+  test "une actualité sans image est invalide" do
+    @actu.image = nil
+    assert_not @actu.valid?
+  end
+
   test "une actualité valide" do
     assert @actu.valid?
   end

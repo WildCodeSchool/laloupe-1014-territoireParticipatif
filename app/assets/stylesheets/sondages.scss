@@ -21,3 +21,14 @@ $sondage: #E4973B;
       }
     }
 }
+
+.merci {
+  margin: 150px auto 150px auto;
+    .rezsondage {
+      color: $sondage;
+      text-align: center;
+    }
+    .btnaccueil {
+      text-align: center;
+    }
+}

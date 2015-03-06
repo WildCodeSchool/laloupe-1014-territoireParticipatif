@@ -4,10 +4,10 @@
     - @actualites.each do |actu|
       .col-sm-6.actu
         .col-sm-6.case
-          = link_to image_tag("http://placehold.it/200x150", class: "img-responsive center-block"), actualite_path(actu)
+          = link_to image_tag(actu.image, class: "img-responsive center-block"), actualite_path(actu)
 
         .col-sm-6.case
           %h3= link_to actu.titre, actualite_path(actu)
           %p
-            = actu.contenu.first(42)
-          %p.date= actu.created_at.strftime('%D')
+            = actu.contenu.first(50).html_safe
+          %p.date= actu.created_at.strftime('%d/%m/%y')

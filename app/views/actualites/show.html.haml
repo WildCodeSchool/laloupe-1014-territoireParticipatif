@@ -10,7 +10,7 @@
     %em
       = "Posté par #{@actualite.animateur.pseudo}"
   .col-sm-6
-    =image_tag "http://placehold.it/800x600", class: "img-responsive"
+    =image_tag @actualite.try(:image), class: "img-responsive"
     .col-sm-6.cartouche1
       %p= @actualite.try(:ville)
     .col-sm-6.cartouche1
@@ -21,8 +21,8 @@
   %h3 Dernières actualités
 
 .col-sm-12.actbar
-  -@filactu.last(4).each do |actu|
+  -@filactu.each do |actu|
     .col-sm-3
-      =image_tag "http://placehold.it/200x150", class: "img-responsive center-block placeimg"
+      =image_tag actu.try(:image), class: "img-responsive center-block placeimg"
       %h4= actu.titre
-      %p.date= actu.created_at.strftime('%D')
+      %p.date= actu.created_at.strftime('%d/%m/%y')

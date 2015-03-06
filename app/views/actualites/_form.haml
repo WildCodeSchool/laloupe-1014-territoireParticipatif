@@ -1,7 +1,12 @@
 = form_for @actualite do |f|
   .field
     = f.label :titre
+    = @actualite.errors[:titre].join(', ')
     = f.text_field :titre
+  .field
+    = f.label :image, "Lien vers votre image", placeholder: "http://"
+    = @actualite.errors[:titre].join(', ')
+    = f.text_field :image
   .field
     #wysihtml-toolbar{:style => "display: none;"}
       %a{"data-wysihtml5-command" => "bold"}

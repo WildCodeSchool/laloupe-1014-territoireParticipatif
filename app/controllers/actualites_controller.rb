@@ -34,7 +34,7 @@ class ActualitesController < ApplicationController
 
   def show
     @actualite = Actualite.find(params[:id])
-    @filactu = Actualite.all
+    @filactu = Actualite.last(4).reverse
   end
 
   def destroy
@@ -46,6 +46,6 @@ class ActualitesController < ApplicationController
   private
 
   def actualite_params
-    params.require(:actualite).permit(:titre, :contenu, :animateur_id)
+    params.require(:actualite).permit(:titre, :contenu, :animateur_id, :image)
   end
 end

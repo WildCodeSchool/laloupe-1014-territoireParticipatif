@@ -3,6 +3,7 @@ FactoryGirl.define do
   factory :actualite do
     titre "Atelier Tourisme"
     contenu "Du contenu"
+    image "http:monimage.com"
     animateur
   end
 

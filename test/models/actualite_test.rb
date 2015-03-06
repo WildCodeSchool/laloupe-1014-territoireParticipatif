@@ -19,4 +19,10 @@ class ActualiteTest < ActiveSupport::TestCase
   test "une actualité valide" do
     assert @actu.valid?
   end
+
+  test "une actualité dont l'image ne commence pas par http n'est pas valide" do
+    @actu.image = "monimage.png"
+    assert_not @actu.valid?
+  end
+
 end

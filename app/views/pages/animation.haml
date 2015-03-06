@@ -17,7 +17,7 @@
           %td= projet.id
           %td= projet.contributeur.pseudo
           %td= link_to projet.titre, projet_path(projet)
-          %td= projet.contributeur.commune
+          %td= projet.contributeur.try(:commune)
           %td= projet.created_at.to_date
           %td
             = link_to 'Editer', edit_projet_path(projet)

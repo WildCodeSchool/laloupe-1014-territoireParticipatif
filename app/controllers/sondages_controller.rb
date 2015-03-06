@@ -31,7 +31,7 @@ before_action :redirect_home, only: [:new, :create]
 
   def redirect_home
     if current_contributeur.sondage
-      redirect_to root_path
+      redirect_to root_path, notice: "Vous avez déjà répondu à ce sondage, nous vous tiendrons informés des résultats"
     end
   end
 

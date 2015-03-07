@@ -1,13 +1,34 @@
-.navbar.navbar-default
-  .container
-    = link_to image_tag("perche-28-logo.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand'
-    %p.navbar-text naturellement innovants
-    %ul.nav.navbar-nav.navbar-right
-      - if contributeur_signed_in?
-        %li.navbar-text= "Bonjour #{current_contributeur.pseudo}"
-        - if current_contributeur.type == 'Animateur'
-          %li= link_to "Animation", animation_path
-        %li= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete, class: 'btn btn-default'
-      - else
-        %li= link_to "Connexion", new_contributeur_session_path, class: 'btn btn-default'
-  .ligne-rouge
+.navbar-all
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to image_tag("perche-28-logo-mobile.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand visible-xs visible-sm'
+        = link_to image_tag("perche-28-logo-desktop.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand visible-md visible-lg'
+
+      #navbar.navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li.active
+            %a.text-center{href: new_projet_path} Je dépose un projet
+          %li
+            %a.text-center{:href => "#sondage"} Je participe à un sondage
+          %li
+            %a.text-center{href: actualites_path} L'actualité des projets
+          %li
+            %a.text-center{href: comment_ca_marche_path} Comment ça marche ?
+        %ul.nav.navbar-nav.navbar-right
+          - if contributeur_signed_in?
+            %li.navbar-text= "Bonjour #{current_contributeur.pseudo}"
+            - if current_contributeur.type == 'Animateur'
+              %li= link_to "Animation", animation_path
+            %p= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete, class: 'btn btn-primary'
+          - else
+            %li= link_to "Connexion", new_contributeur_session_path, class: 'btn btn-primary'
+.espacement
+
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
+%script{:src => "http://getbootstrap.com/dist/js/bootstrap.min.js"}

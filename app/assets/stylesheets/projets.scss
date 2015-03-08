@@ -6,7 +6,6 @@
 }
 
 .liste-projets {
-  padding-top: 30px; /* peut-etre à modifier DÉCALE LES PROJETS DES BOUTONS */
   @include make-row();
   margin-top: 2rem;
   .projet {

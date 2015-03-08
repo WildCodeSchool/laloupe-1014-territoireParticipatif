@@ -1,3 +1,6 @@
+.splash-intro
+  =image_tag "perche-participatif.png"
+
 .navigation
   .container
     .bouton.nouveau-projet
@@ -25,10 +28,8 @@
             %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
         %span.action Comment ça marche
 
-.splash-intro
-  =image_tag "perche-participatif.png"
-
 .derniers-projets
   .liste-projets
+    %h2 Les derniers projets
     = render partial: 'projets/projet', collection: @projets
-  .split-centre= link_to 'Voir tous les projets', projets_path, class: 'center-block btn btn-lg btn-primary'
+  .split-centre= link_to 'Voir plus de projets', projets_path, class: 'center-block btn btn-lg btn-primary'

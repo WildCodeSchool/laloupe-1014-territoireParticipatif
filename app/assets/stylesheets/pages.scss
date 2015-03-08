@@ -68,6 +68,9 @@
 .derniers-projets {
   //!\\ CONTAINER
   @extend .container;
+  h2 {
+    @extend .text-center;
+  }
 }
 .contenu-page {
   @include make-sm-column(8);

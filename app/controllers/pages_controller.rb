@@ -20,4 +20,7 @@ class PagesController < ApplicationController
     @commentaires = Commentaire.order(created_at: :desc)
   end
 
+  def merci
+  end
+
 end

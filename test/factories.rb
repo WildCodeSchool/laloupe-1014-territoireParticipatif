@@ -1,10 +1,15 @@
 FactoryGirl.define do
 
+
   factory :actualite do
     titre "Atelier Tourisme"
     contenu "Du contenu"
     image "http://mesimages.com/cat.png"
     animateur
+  end
+
+  factory :sondage do
+    contributeur
   end
 
   sequence :email do |n|

@@ -1,0 +1,32 @@
+// Place all the styles related to the sondages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$sondage: #E4973B;
+
+.sondage {
+  @include make-sm-column(6);
+  @include make-sm-column-offset(3);
+  padding-top: 20px;
+  margin: 0;
+  .block {
+    border: 1px solid $sondage;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin: 20px auto 20px auto;
+    padding: .8rem 1.2rem 0;
+    .control-label {
+      border-bottom: 1px solid $sondage;
+    }
+    input {
+      //margin-bottom: 10px;
+    }
+  }
+}
+
+.merci {
+  margin: 170px auto 170px auto;
+  text-align: center;
+  h1 {
+    color: $sondage;
+  }
+}

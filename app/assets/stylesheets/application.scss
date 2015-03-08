@@ -145,9 +145,15 @@ label {
 }
 
 .navbar-all{
-  .btn{
-    margin-top: -10px;
-    float: right;
+  .navbar-header {
+    button {
+      background-color: $vert;
+      border-color: #fff;
+      &:hover {
+        background-color: $vert;
+        border-color: #fff;
+      }
+    }
   }
   .navbar-text{
     @extend .text-center;

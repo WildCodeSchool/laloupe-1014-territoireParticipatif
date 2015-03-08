@@ -23,12 +23,9 @@ $sondage: #E4973B;
 }
 
 .merci {
-  margin: 150px auto 150px auto;
-    .rezsondage {
-      color: $sondage;
-      text-align: center;
-    }
-    .btnaccueil {
-      text-align: center;
-    }
+  margin: 170px auto 170px auto;
+  text-align: center;
+  h1 {
+    color: $sondage;
+  }
 }

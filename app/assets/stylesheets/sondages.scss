@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.sondage {
+.form-sondage {
   @include make-sm-column(6);
   @include make-sm-column-offset(3);
   padding-top: 20px;

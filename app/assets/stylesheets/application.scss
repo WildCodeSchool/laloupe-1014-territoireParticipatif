@@ -258,4 +258,9 @@ label {
     border: none;
     margin-bottom: 0px;
   }
+  .navbar-collapse {
+    a {
+      @extend .text-center;
+    }
+  }
 }

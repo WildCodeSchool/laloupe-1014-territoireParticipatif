@@ -32,7 +32,6 @@ class SondagesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:sondage)
     assert_equal @contributeur.id, assigns(:sondage).contributeur_id
     assert_redirected_to merci_path
-    assert_template "pages/merci"
   end
 
 end

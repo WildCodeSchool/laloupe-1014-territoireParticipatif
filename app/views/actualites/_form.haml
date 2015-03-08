@@ -4,9 +4,9 @@
     = @actualite.errors[:titre].join(', ')
     = f.text_field :titre
   .field
-    = f.label :image, "Lien vers votre image", placeholder: "http://"
+    = f.label :image, "Lien vers votre image"
     = @actualite.errors[:titre].join(', ')
-    = f.text_field :image
+    = f.text_field :image, placeholder: "http://"
   .field
     #wysihtml-toolbar{:style => "display: none;"}
       %a{"data-wysihtml5-command" => "bold"}

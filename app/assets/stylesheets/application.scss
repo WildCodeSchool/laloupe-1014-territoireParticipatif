@@ -46,24 +46,14 @@ html {
   }
 }
 
-.ligne-rouge {
-  height: .5rem;
-  background-color: $rouge;
+/* gère l'espacement du body et de la navbar */
+.espacement{
+  height: 50px;
 }
-
-.navbar-brand {
-  font-family: 'GrooveNext', 'GravityBold', 'Helvetica';
-  font-weight: 800;
-  font-size: 2rem;
-  padding: 0;
-  img {
-    height: 4rem;
+@media (min-width: $screen-md-min){
+  .espacement{
+    height: 85px;
   }
-}
-
-.navbar {
-  border: none;
-  margin-bottom: 0px;
 }
 
 .notices {
@@ -104,17 +94,15 @@ footer {
     }
     .input-lg, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn{
       height: 47px;
-
+      width: 80px;
     }
     input[type="email"] {
       background-color: lighten($vert,30%);
       border: 0px none;
       border-radius: 6px 0px 0px 6px;
-
       width: 100%;
     }
     input[type="submit"] {
-
       background-color: $gray-lighter;
     }
     // hack pour changer la couleur du placeholder dans tous les navigateurs
@@ -154,4 +142,112 @@ label {
 
 .field_with_errors {
   @extend .has-error;
+}
+
+.navbar-all{
+  .btn{
+    margin-top: -10px;
+    float: right;
+  }
+  .navbar-text{
+    @extend .text-center;
+    margin-top: 7px;
+    color: #FFF;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .navbar-default{
+    background-color: $vert;
+  }
+  .navbar-brand{
+    margin-top: 0px;
+    color: #FFF;
+      img{
+        margin-top: -12px;
+      }
+  }
+  .navbar-default .navbar-nav > .active > a{
+    background-color: lighten($vert, 20%);
+    color: #000;
+    font-weight: bold;
+  }
+  .navbar-default .navbar-nav a{
+    color: #FFF;
+    &:hover{
+      background-color: lighten($vert, 20%);
+      color: #000;
+      font-weight: bold;
+    }
+  }
+  .btn-primary a{
+    color: #FFF;
+    background-color: $rouge;
+    &:hover{
+      color: #FFF;
+      background-color: $rouge;
+    }
+  }
+  .navbar-collapse{
+    border-top: 0px none;
+  }
+  .navbar-toggle{
+    background-color: #DDD;
+    &:hover{
+      background-color: darken(#DDD, 20%);
+      border-color: darken(#DDD, 20%);
+      color: #FFF;
+    }
+    .icon-bar{
+      background-color: #FFF;
+    }
+  }
+}
+
+
+@media (min-width: $screen-md-min){
+  .navbar-all{
+    .navbar-fixed-top{
+      height: 85px;
+      background-color: $vert;
+    }
+    .navbar-default .navbar-nav > li > a {
+      margin: 13px;
+      margin-top: 14px;
+      width: 120px;
+      background-color: $rouge;
+      color: $ocre;
+      font-weight: bold;
+      &:hover{
+        background-color: lighten($rouge, 20%);
+        color: #FFF;
+      }
+    }
+    .navbar-brand{
+      margin-top: 7px;
+          img{
+           height: 4rem;
+          }
+    }
+  }
+
+ }
+
+.navbar-intro{
+  .ligne-rouge{
+    height: .5rem;
+    background-color: $rouge;
+  }
+  .navbar-brand{
+    font-family: 'GrooveNext', 'GravityBold', 'Helvetica';
+    font-weight: 800;
+    font-size: 2rem;
+    padding: 0;
+    img{
+      height: 4rem;
+    }
+  }
+  .navbar {
+    border: none;
+    margin-bottom: 0px;
+  }
 }

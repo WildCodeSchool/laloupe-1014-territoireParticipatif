@@ -8,6 +8,7 @@ FactoryGirl.define do
   end
 
   factory :sondage do
+    contributeur
   end
 
   sequence :email do |n|

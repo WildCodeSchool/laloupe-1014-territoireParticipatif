@@ -3,23 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $sondage: #E4973B;
 
-.all {
+.sondage {
+  @include make-sm-column(6);
+  @include make-sm-column-offset(3);
   padding-top: 20px;
-    .sondage {
+  margin: 0;
+  .block {
+    border: 1px solid $sondage;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin: 20px auto 20px auto;
+    padding: .8rem 1.2rem 0;
+    .control-label {
+      border-bottom: 1px solid $sondage;
     }
-    .block {
-      border: 1px solid $sondage;
-      border-radius: 5px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding: 5px 5px 0px 5px;
-      .control-label {
-        border-bottom: 1px solid $sondage;
-      }
-      input {
-        margin-bottom: 10px;
-      }
+    input {
+      //margin-bottom: 10px;
     }
+  }
 }
 
 .merci {

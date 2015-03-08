@@ -195,6 +195,9 @@ label {
   }
   .navbar-collapse{
     border-top: 0px none;
+    a {
+      @extend .text-center;
+    }
   }
   .navbar-toggle{
     background-color: #DDD;

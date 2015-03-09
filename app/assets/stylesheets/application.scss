@@ -307,3 +307,50 @@ label {
     }
   }
 }
+
+.facebook {
+    display: inline-block;
+      a {
+        color: white;
+        margin-right: 5px;
+        background-color: $facebook;
+        @extend .btn;
+        @extend .btn-default;
+          &:hover {
+          color: $facebook;
+          background-color: white;
+          }
+      }
+  }
+  .twitter {
+    display: inline-block;
+      a {
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: $twitter;
+        @extend .btn;
+        @extend .btn-default;
+        color: white;
+          &:hover {
+          color: $twitter;
+          background-color: white;
+          }
+      }
+  }
+  .coeur {
+    display: inline-block;
+      a {
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: $rouge;
+        @extend .btn;
+        @extend .btn-default;
+          &:hover {
+            background-color: white;
+          }
+      }
+  }
+  .comptecoeur {
+    display: inline-block;
+    margin-left: 5px;
+  }

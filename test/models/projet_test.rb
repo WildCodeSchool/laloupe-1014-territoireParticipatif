@@ -41,4 +41,18 @@ class ProjetTest < ActiveSupport::TestCase
     assert @projet.liked_by?(@contributeur)
   end
 
+  test "un projet sans commentaire a son auteur comme abonné" do
+    @projet.save
+    assert_equal [@contributeur], @projet.abonnes
+  end
+
+  test "un projet avec 1 commentaire a 2 contributeurs comme abonnés" do
+    @projet.save
+    contrib = create(:contributeur)
+    commentaire = create(:commentaire, projet: @projet, contributeur: contrib)
+    assert_equal 2, @projet.abonnes.count
+    assert @projet.abonnes.include? contrib
+    assert @projet.abonnes.include? @contributeur
+  end
+
 end

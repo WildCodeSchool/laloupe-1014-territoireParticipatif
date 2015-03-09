@@ -1,5 +1,6 @@
-<p>Welcome <%= @email %>!</p>
+<p>Bonjour <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Bienvenue sur la plateforme Perche Participatif</p>
+<p>Il vous faut encore confirmer votre email simplement en cliquant sur le lien qui suit:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirmer mon compte', confirmation_url(@resource, confirmation_token: @token) %></p>

@@ -13,30 +13,38 @@
 
       #navbar.navbar-collapse.collapse
         %ul.nav.navbar-nav
-          %li.active
+          - ifactive = controller.controller_name == 'projets' ? "active" : ""
+          %li{class: ifactive}
             %a{href: new_projet_path}
               %span.icon
                 %svg.icon-light-bulb{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-light-bulb"}
               %span.action Je dépose un projet
-          %li
+
+          - ifactive = controller.controller_name == 'sondages' ? "active" : ""
+          %li{class: ifactive}
             %a{:href => new_sondage_path }
               %span.icon
                 %svg.icon-bubble{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}
               %span.action Je participe à un sondage
-          %li
+
+          - ifactive = controller.controller_name == 'actualites' ? "active" : ""
+          %li{class: ifactive}
             %a{href: last_actu_path}
               %span.icon
                 %svg.icon-calendar{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
-              %span.action Les Actualités
-          %li
+              %span.action &nbsp;Les&nbsp; Actualités
+
+          - ifactive = controller.controller_name == 'pages' && controller.action_name == 'howto' ? "active" : ""
+          %li{class: ifactive}
             %a{href: comment_ca_marche_path}
               %span.icon
                 %svg.icon-question{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
               %span.action Comment ça marche ?
+
         %ul.nav.navbar-nav.navbar-right
           - if contributeur_signed_in?
             - if current_contributeur.type == 'Animateur'
@@ -44,5 +52,3 @@
             %li= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete, class: 'btn btn-primary'
           - else
             %li= link_to "Connexion", new_contributeur_session_path, class: 'btn btn-primary'
-.espacement
-

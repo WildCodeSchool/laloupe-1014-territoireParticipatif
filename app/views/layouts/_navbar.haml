@@ -1,5 +1,6 @@
 .navbar-all
-  %nav.navbar.navbar-default.navbar-fixed-top
+
+  %nav.navbar.navbar-default
     .container
       .navbar-header
         %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
@@ -13,13 +14,29 @@
       #navbar.navbar-collapse.collapse
         %ul.nav.navbar-nav
           %li.active
-            %a{href: new_projet_path} Je dépose un projet
+            %a{href: new_projet_path}
+              %span.icon
+                %svg.icon-light-bulb{:role => "img"}
+                  %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-light-bulb"}
+              %span.action Je dépose un projet
           %li
-            %a{:href => new_sondage_path } Je participe à un sondage
+            %a{:href => new_sondage_path }
+              %span.icon
+                %svg.icon-bubble{:role => "img"}
+                  %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}
+              %span.action Je participe à un sondage
           %li
-            %a{href: last_actu_path} Les Actualités
+            %a{href: last_actu_path}
+              %span.icon
+                %svg.icon-calendar{:role => "img"}
+                  %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
+              %span.action Les Actualités
           %li
-            %a{href: comment_ca_marche_path} Comment ça marche ?
+            %a{href: comment_ca_marche_path}
+              %span.icon
+                %svg.icon-question{:role => "img"}
+                  %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
+              %span.action Comment ça marche ?
         %ul.nav.navbar-nav.navbar-right
           - if contributeur_signed_in?
             - if current_contributeur.type == 'Animateur'

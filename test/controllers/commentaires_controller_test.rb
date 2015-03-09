@@ -29,7 +29,7 @@ class CommentairesControllerTest < ActionController::TestCase
   test "redirection à la création d'un commentaire invalide" do
     sign_in @contributeur
     post :create, projet_id: @projet.id, commentaire: {message: ''}
-    assert_template :new
+    assert_redirected_to projet_path @projet
   end
 
   test "créer un commentaire valide" do

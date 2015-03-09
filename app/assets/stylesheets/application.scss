@@ -46,14 +46,8 @@ html {
   }
 }
 
-/* gère l'espacement du body et de la navbar */
-.espacement{
-  height: 50px;
-}
 @media (min-width: $screen-md-min){
-  .espacement{
-    height: 85px;
-  }
+
 }
 
 .notices {
@@ -167,6 +161,11 @@ label {
 }
 
 .navbar-all{
+  svg{
+    width: 25px;
+    height: 25px;
+    fill: #FFF;
+  }
   .navbar-header {
     button {
       background-color: $vert;
@@ -186,12 +185,13 @@ label {
   }
   .navbar-default{
     background-color: $vert;
+      border: 0px solid transparent;
   }
   .navbar-brand{
     margin-top: 0px;
     color: #FFF;
       img{
-        margin-top: -12px;
+        margin-top: -13px;
       }
   }
   .navbar-default .navbar-nav > .active > a{
@@ -237,14 +237,16 @@ label {
 
 @media (min-width: $screen-md-min){
   .navbar-all{
-    .navbar-fixed-top{
-      height: 85px;
+    .navbar{
+      height: 107px;
       background-color: $vert;
+      border: 0px solid transparent;
+      border-radius: 0px;
     }
-    .navbar-default .navbar-nav > li > a {
-      margin: 13px;
-      margin-top: 14px;
-      width: 120px;
+    .navbar-nav  a {
+      margin-right: 20px; /*Safari FIX*/
+      margin-top: 0px;
+      width: 125px; /*Safari FIX*/
       background-color: $rouge;
       color: $ocre;
       font-weight: bold;
@@ -252,9 +254,21 @@ label {
         background-color: lighten($rouge, 20%);
         color: #FFF;
       }
+      svg{
+        margin-top: -10px;
+        width: 90px;
+        height: 40px;
+        fill: #FFF;
+      }
+    }
+    .navbar-right {
+      a {
+        margin-top: 25px;
+      }
+
     }
     .navbar-brand{
-      margin-top: 7px;
+      margin-top: 15px;
       img{
        height: 4rem;
       }

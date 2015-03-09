@@ -21,6 +21,7 @@ gem 'puma'
 gem 'devise'
 gem 'gibbon'
 gem 'dotenv-rails'
+gem 'mailgun_rails'
 
 group :development, :test do
   gem 'sqlite3'

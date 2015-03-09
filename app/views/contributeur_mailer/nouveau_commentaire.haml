@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1= "Bonjour #{@destinataire.pseudo}"
+    %p
+      = "Le projet \"#{@commentaire.projet.titre}\""
+      a reçu un nouveau commentaire.
+    %br/
+    %em
+      #{@commentaire.contributeur.pseudo}:
+    %blockquote
+      #{@commentaire.message}
+    %p
+      %a{href: @projet_url} Lire toute la conversation
+      sur la plateforme Perche Participatif.

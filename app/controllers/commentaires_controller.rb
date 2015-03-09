@@ -12,6 +12,7 @@ class CommentairesController < ApplicationController
     @commentaire = @projet.commentaires.new(commentaire_params)
     @commentaire.contributeur_id = current_contributeur.id
     if @commentaire.save
+      ContributeurMailer.nouveau_commentaire(@projet.contributeur, @commentaire).deliver_now
       redirect_to projet_path @projet
     else
       render :new

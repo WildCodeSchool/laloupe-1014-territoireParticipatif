@@ -12,4 +12,9 @@ class Projet < ActiveRecord::Base
       likes.collect { |like| like.contributeur_id }.include? contributeur.id
     end
   end
+
+  def abonnes
+    abonnes = commentaires.map{ |commentaire| commentaire.contributeur }
+    abonnes << contributeur
+  end
 end

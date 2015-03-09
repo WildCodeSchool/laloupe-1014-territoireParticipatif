@@ -20,4 +20,4 @@
 # Ignore Spring files.
 /spring/*.pid
 
-.env
+/.env

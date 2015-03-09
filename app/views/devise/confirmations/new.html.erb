@@ -1,16 +1,17 @@
-<h2>Renvoyer les instructions de confirmation</h2>
+<h2 class="text-center">Renvoyer les instructions de confirmation</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="split-centre">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Renvoyer les instructions de confirmation" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Renvoyer les instructions de confirmation", class: 'center-block btn btn-lg btn-primary' %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+</div>

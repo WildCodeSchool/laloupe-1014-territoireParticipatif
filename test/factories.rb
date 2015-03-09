@@ -26,6 +26,7 @@ FactoryGirl.define do
     password '12345678'
     password_confirmation '12345678'
     charte true
+    confirmed_at Time.now
     type 'Contributeur'
 
     factory :animateur, class: Animateur do

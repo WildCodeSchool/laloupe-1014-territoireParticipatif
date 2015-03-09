@@ -32,11 +32,6 @@ h1.titreactu {
   border-bottom: 2px solid $orange;
 }
 
-h4 {
-  border-bottom: 2px dotted black;
-  color: white;
-}
-
 .actualites {
   h3 {
     a {
@@ -61,6 +56,20 @@ h4 {
   background-color: $orange;
   text-align: center;
   background-repeat: -y;
+  h4::first-letter {
+    font-weight: bold;
+  }
+  h4 {
+    border-bottom: 2px dotted black;
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        color: $rouge;
+      }
+    }
+  }
 }
 
 .degraf {
@@ -69,10 +78,6 @@ h4 {
 
 .date {
   text-align: left;
-  font-weight: bold;
-}
-
-h4::first-letter {
   font-weight: bold;
 }
 

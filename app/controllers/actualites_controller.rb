@@ -34,7 +34,7 @@ class ActualitesController < ApplicationController
 
   def show
     @actualite = Actualite.find(params[:id])
-    @filactu = Actualite.last(4).reverse
+    @filactu = (Actualite.last(4).reverse - [@actualite])
   end
 
   def destroy

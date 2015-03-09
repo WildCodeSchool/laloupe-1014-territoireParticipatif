@@ -159,6 +159,105 @@ label {
 .field_with_errors {
   @extend .has-error;
 }
+/* NAVBAR 4 COLORS MOBILE */
+.projets{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($bleu, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($bleu, 20%);
+    }
+    .navbar-default{
+      background-color: $bleu;
+    }
+    .navbar-header {
+      button {
+        background-color: $bleu;
+      &:hover {
+        background-color: $bleu;
+      }
+      }
+    }
+  }
+}
+.actualites{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($orange, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($orange, 20%);
+    }
+    .navbar-default{
+      background-color: $orange;
+    }
+    .navbar-header {
+      button {
+        background-color: $orange;
+      &:hover {
+        background-color: $orange;
+      }
+      }
+    }
+  }
+}
+.sondages{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($ocre, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($ocre, 20%);
+    }
+    .navbar-default{
+      background-color: $ocre;
+    }
+    .navbar-header {
+      button {
+        background-color: $ocre;
+      &:hover {
+        background-color: $ocre;
+      }
+      }
+    }
+  }
+}
+.pages, .registrations{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($vert, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($vert, 20%);
+    }
+    .navbar-default{
+      background-color: $vert;
+    }
+    .navbar-header {
+      button {
+        background-color: $vert;
+      &:hover {
+        background-color: $vert;
+      }
+      }
+    }
+  }
+}
+
+/* END NAVBAR 4 COLORS MOBILE */
 
 .navbar-all{
   svg{
@@ -168,10 +267,8 @@ label {
   }
   .navbar-header {
     button {
-      background-color: $vert;
       border-color: #fff;
       &:hover {
-        background-color: $vert;
         border-color: #fff;
       }
     }
@@ -184,7 +281,6 @@ label {
     font-style: italic;
   }
   .navbar-default{
-    background-color: $vert;
       border: 0px solid transparent;
   }
   .navbar-brand{
@@ -195,14 +291,12 @@ label {
       }
   }
   .navbar-default .navbar-nav > .active > a{
-    background-color: lighten($vert, 20%);
     color: #000;
     font-weight: bold;
   }
   .navbar-default .navbar-nav a{
     color: #FFF;
     &:hover{
-      background-color: lighten($vert, 20%);
       color: #000;
       font-weight: bold;
     }
@@ -236,10 +330,114 @@ label {
 
 
 @media (min-width: $screen-md-min){
+
+/* NAVBAR 4 COLORS DESKTOP */
+
+.projets{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($bleu, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($bleu, 20%);
+    }
+    .navbar-default{
+      background-color: $bleu;
+    }
+    .navbar-header {
+      button {
+        background-color: $bleu;
+      &:hover {
+        background-color: $bleu;
+      }
+      }
+    }
+  }
+}
+
+.actualites{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($orange, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($orange, 20%);
+    }
+    .navbar-default{
+      background-color: $orange;
+    }
+    .navbar-header {
+      button {
+        background-color: $orange;
+      &:hover {
+        background-color: $orange;
+      }
+      }
+    }
+  }
+}
+
+.sondages{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($ocre, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($ocre, 20%);
+    }
+    .navbar-default{
+      background-color: $ocre;
+    }
+    .navbar-header {
+      button {
+        background-color: $ocre;
+      &:hover {
+        background-color: $ocre;
+      }
+      }
+    }
+  }
+}
+
+.pages, .registrations{
+  .navbar-all{
+    .navbar-default .navbar-nav a{
+      color: #FFF;
+      &:hover{
+      background-color: lighten($vert, 20%);
+      }
+    }
+    .navbar-default .navbar-nav > .active > a{
+     background-color: lighten($vert, 20%);
+    }
+    .navbar-default{
+      background-color: $vert;
+    }
+    .navbar-header {
+      button {
+        background-color: $vert;
+      &:hover {
+        background-color: $vert;
+      }
+      }
+    }
+  }
+}
+
+/* END NAVBAR 4 COLORS DESKTOP */
+  
   .navbar-all{
     .navbar{
       height: 107px;
-      background-color: $vert;
       border: 0px solid transparent;
       border-radius: 0px;
     }
@@ -247,11 +445,8 @@ label {
       margin-right: 20px; /*Safari FIX*/
       margin-top: 0px;
       width: 125px; /*Safari FIX*/
-      background-color: $rouge;
-      color: $ocre;
       font-weight: bold;
       &:hover{
-        background-color: lighten($rouge, 20%);
         color: #FFF;
       }
       svg{

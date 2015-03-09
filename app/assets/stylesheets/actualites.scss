@@ -47,16 +47,17 @@ h1.titreactu {
   background-color: $orange;
   text-align: center;
   padding: 10px 0px 10px 0px;
+  border-radius: 0px 0px 5px 5px;
   .facebook {
     display: inline-block;
       a {
         color: white;
         margin-right: 10px;
-        background-color: #405E9B;
+        background-color: $facebook;
         @extend .btn;
         @extend .btn-default;
           &:hover {
-          color: #405E9B;
+          color: $facebook;
           background-color: white;
           }
       }
@@ -65,12 +66,12 @@ h1.titreactu {
     display: inline-block;
       a {
         margin-left: 10px;
-        background-color: #5EA9DD;
+        background-color: $twitter;
         @extend .btn;
         @extend .btn-default;
         color: white;
           &:hover {
-          color: #5EA9DD;
+          color: $twitter;
           background-color: white;
           }
       }
@@ -119,6 +120,10 @@ h1.titreactu {
     padding-left: 0px;
     padding-right: 5px;
   }
+}
+
+.imgactu {
+  padding: 0px 0px 0px 0px;
 }
 
 .placeimg {

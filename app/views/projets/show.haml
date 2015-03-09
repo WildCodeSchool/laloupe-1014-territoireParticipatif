@@ -27,13 +27,13 @@
 %br
 .row.text-center
   %p Partagez ce projet sur vos réseaux sociaux
-  = facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
-  = twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
+  .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+  .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
   - if @projet.liked_by?(current_contributeur)
-    =link_to "Je n'aime plus ce projet", unlike_projet_path(@projet.id)
+    .coeur=link_to image_tag('dislike.png'), unlike_projet_path(@projet.id)
   - else
-    =link_to "J'aime ce projet", like_projet_path(@projet.id)
-  = @projet.likes.count
+    .coeur=link_to image_tag('heart-16.png'), like_projet_path(@projet.id)
+  .comptecoeur= @projet.likes.count
   Personnes aiment ce projet
 %br
 .row.col-sm-10.col-xs-12.col-sm-offset-1.col-xs-offset-0

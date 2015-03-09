@@ -19,6 +19,11 @@ class ActualitesControllerTest < ActionController::TestCase
     assert_equal @actu.id, assigns(:actualite).id
   end
 
+  test "should get last actualite" do
+    get :last_actu
+    assert_redirected_to actualite_path @actu
+  end
+
   ### new
   #
   test "rediriger vers le login si un visiteur demande new" do

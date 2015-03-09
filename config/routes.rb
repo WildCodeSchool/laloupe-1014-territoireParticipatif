@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'merci' => 'pages#merci'
   get 'charte' => 'pages#charte'
   get 'comment-ca-marche' => 'pages#howto'
-  get 'lastactu' => 'actualites#lastactu'
+  get 'derniere-actualite' => 'actualites#last_actu', as: :last_actu
   post 'newsletter/inscription' => 'newsletter#inscription'
 
   resources :actualites

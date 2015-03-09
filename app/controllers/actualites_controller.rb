@@ -1,5 +1,5 @@
 class ActualitesController < ApplicationController
-  before_action :authenticate_animateur!, except: [:index, :show]
+  before_action :authenticate_animateur!, except: [:index, :show, :last_actu]
 
   def index
     @actualites = Actualite.all.reverse
@@ -19,7 +19,7 @@ class ActualitesController < ApplicationController
     end
   end
 
-  def lastactu
+  def last_actu
     @actualite = Actualite.last.id
     redirect_to actualite_path(@actualite)
   end

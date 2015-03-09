@@ -25,15 +25,15 @@
 
 @font-face {
   font-family: 'GravityBold';
-  src:url('Gravity-Bold.ttf') format('truetype');
+  src:font-url('Gravity-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'GravityBook';
-  src:url('Gravity-Book.ttf') format('truetype');
+  src:font-url('Gravity-Book.ttf') format('truetype');
 }
 @font-face {
   font-family: 'GrooveNext';
-  src:url('GrooveNext.ttf') format('truetype');
+  src:font-url('GrooveNext.ttf') format('truetype');
 }
 
 html {

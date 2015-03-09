@@ -12,8 +12,12 @@ class CommentairesController < ApplicationController
     @commentaire = @projet.commentaires.new(commentaire_params)
     @commentaire.contributeur_id = current_contributeur.id
     if @commentaire.save
-      # envoyer un email à la liste des abonnés
-      ContributeurMailer.nouveau_commentaire(@projet.contributeur, @commentaire).deliver_now
+      ### envoyer un email à la liste des abonnés
+      notifies = @projet.abonnes - [current_contributeur]
+      notifies.each do |destinataire|
+        ContributeurMailer.nouveau_commentaire(destinataire, @commentaire).deliver_now
+      end
+      ###
       redirect_to projet_path @projet
     else
       render :new

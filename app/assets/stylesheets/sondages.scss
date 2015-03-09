@@ -8,6 +8,13 @@
   padding-top: 20px;
   margin: 0;
 
+  input[type="checkbox"]{
+    margin-top: -10px;
+    margin-left: -25px;
+    width: 1rem;
+  }
+
+
   .block {
     border: 1px solid $ocre;
     font-size: 1.3rem;

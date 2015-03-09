@@ -20,7 +20,7 @@ class CommentairesController < ApplicationController
       ###
       redirect_to projet_path @projet
     else
-      render :new
+      redirect_to projet_path @projet
     end
   end
 

@@ -1,4 +1,7 @@
-= form_for @commentaire, url: yield(:url) do |f|
-  = f.text_field :message
-  = f.submit
+.row
+  .col-xs-12
+    = form_for @commentaire, url: yield(:url) do |f|
+      = f.text_area :message, placeholder: "Écrivez votre commentaire"
+      %br
+      = f.submit "Envoyez votre commentaire", class: 'btn btn-primary btn-lg'
 

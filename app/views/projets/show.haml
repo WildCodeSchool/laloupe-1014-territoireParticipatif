@@ -55,4 +55,9 @@
             = commentaire.contributeur.pseudo
         .panel-body  
           %p= commentaire.message
-  =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'
+.row.col-sm-10.col-sm-offset-1
+  - if current_contributeur
+    - provide(:url, projet_commentaires_path(@projet.id))
+    = render 'commentaires/form'
+  - else
+    =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'

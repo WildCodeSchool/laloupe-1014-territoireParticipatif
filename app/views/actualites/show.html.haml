@@ -3,18 +3,31 @@
     %h1.titreactu= @actualite.titre
     %em
       = "Le #{I18n.localize(@actualite.created_at.to_date, format: :short)} #{@actualite.created_at.year}"
+    %p
+      -if @actualite.date != ""
+        %em
+          = "Cette actualité commence le #{@actualite.try(:date)}"
+    %p
+      -if @actualite.lieu != ""
+        %em
+          = "Cette événement aura lieu à #{@actualite.try(:lieu)}"
     .contenu
       = simple_format @actualite.contenu
+    %p
+      - if @actualite.siteweb != ""
+        %em
+          = "Vous pouvez plus de renseignement sur le site : #{@actualite.try(:siteweb)}"
     - if current_contributeur && current_contributeur.type == 'Animateur'
       = link_to 'Editer', edit_actualite_path(@actualite), class: 'btn btn-default'
+    %p
     %em
       = "Posté par #{@actualite.animateur.pseudo}"
-  .col-sm-6
+  .col-sm-6.imgactu
     =image_tag @actualite.try(:image), class: "img-responsive"
-    .col-sm-6.cartouche1
-      %p= @actualite.try(:ville)
-    .col-sm-6.cartouche1
-      %p= @actualite.try(:partage)
+  .col-sm-6.col-sm-offset-6.cartouche.social.block-center
+    %p Partagez cette actualité sur vos réseaux sociaux : 
+    .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+    .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
 
 
   .col-sm-12.degraf
@@ -23,6 +36,6 @@
 .col-sm-12.actbar
   -@filactu.each do |actu|
     .col-sm-3
-      =image_tag actu.try(:image), class: "img-responsive center-block placeimg"
-      %h4= actu.titre
+      = link_to image_tag(actu.try(:image), class: "img-responsive center-block placeimg"), actualite_path(actu)
+      %h4= link_to actu.titre, actualite_path(actu)
       %p.date= actu.created_at.strftime('%d/%m/%y')

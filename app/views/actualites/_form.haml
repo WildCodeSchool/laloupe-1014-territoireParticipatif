@@ -5,8 +5,17 @@
     = f.text_field :titre
   .field
     = f.label :image, "Lien vers votre image"
-    = @actualite.errors[:titre].join(', ')
+    = @actualite.errors[:image].join(', ')
     = f.text_field :image, placeholder: "http://"
+    .field
+    = f.label :date, "Date de l'actualité"
+    = f.text_field :date
+    .field
+    = f.label :lieu, "Lieu de l'actualité"
+    = f.text_field :lieu
+    .field
+    = f.label :siteweb, "Site web de l'actualité"
+    = f.text_field :siteweb
   .field
     #wysihtml-toolbar{:style => "display: none;"}
       %a{"data-wysihtml5-command" => "bold"}

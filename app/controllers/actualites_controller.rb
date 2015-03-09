@@ -19,6 +19,11 @@ class ActualitesController < ApplicationController
     end
   end
 
+  def lastactu
+    @actualite = Actualite.last.id
+    redirect_to actualite_path(@actualite)
+  end
+
   def edit
     @actualite = Actualite.find(params[:id])
   end

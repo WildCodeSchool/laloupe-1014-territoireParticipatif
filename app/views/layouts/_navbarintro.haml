@@ -7,12 +7,12 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        = link_to image_tag("perche-28-logo.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand'
+        = link_to image_tag("perche-28.png", alt: "Perche 2.8"), root_path, class: 'navbar-brand'
       #navbar.navbar-collapse.collapse
         %ul.nav.navbar-nav.navbar-right
           - if contributeur_signed_in?
             - if current_contributeur.type == 'Animateur'
-              %li= link_to "Animation", animation_path
+              %li= link_to "Modération", animation_path
             %li= link_to "Déconnexion", destroy_contributeur_session_path, method: :delete
           - else
             %li= link_to "Connexion", new_contributeur_session_path

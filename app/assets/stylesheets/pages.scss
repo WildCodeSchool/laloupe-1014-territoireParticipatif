@@ -23,7 +23,7 @@
       margin: 0px;
       text-decoration: none;
       &:hover, &:focus {
-        background-color: darken($rouge,15%);
+        //background-color: darken($rouge,15%);
       }
       .icon {
         display: block;
@@ -46,21 +46,33 @@
   .nouveau-projet {
     a {
       background-color: $bleu;
+      &:hover, &:focus {
+        background-color: lighten($bleu,10%);
+      }
     }
   }
   .sondage {
     a {
       background-color: $ocre;
+      &:hover, &:focus {
+        background-color: lighten($ocre,10%);
+      }
     }
   }
   .actualites {
     a {
       background-color: $orange;
+      &:hover, &:focus {
+        background-color: lighten($orange,10%);
+      }
     }
   }
   .howto {
     a {
       background-color: $vert;
+      &:hover, &:focus {
+        background-color: lighten($vert,10%);
+      }
     }
   }
 }

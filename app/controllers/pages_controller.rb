@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def intro
     @projets = Projet.last(3).reverse
+    @count = Projet.count
   end
 
   def charte

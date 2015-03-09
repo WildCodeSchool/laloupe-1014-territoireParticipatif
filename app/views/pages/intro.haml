@@ -30,6 +30,6 @@
 
 .derniers-projets
   .liste-projets
-    %h2 Les derniers projets
+    %h2= "#{@count} projets sont déjà en ligne"
     = render partial: 'projets/projet', collection: @projets
   .split-centre= link_to 'Voir plus de projets', projets_path, class: 'center-block btn btn-lg btn-primary'

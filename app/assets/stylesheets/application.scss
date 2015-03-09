@@ -263,6 +263,9 @@ label {
 }
 
 .navbar-intro{
+  .navbar-default {
+    background-color: #fff;
+  }
   .ligne-rouge{
     height: .5rem;
     background-color: $rouge;
@@ -271,18 +274,36 @@ label {
     font-family: 'GrooveNext', 'GravityBold', 'Helvetica';
     font-weight: 800;
     font-size: 2rem;
+    height: 6.18rem;
     padding: 0;
     img{
-      height: 3.78rem;
+      height: 7rem;
+    }
+  }
+  .navbar-right {
+    a {
+      @extend .btn;
+      @extend .btn-default;
+      margin: 3px;
+      margin-top: 51px;
     }
   }
   .navbar {
     border: none;
     margin-bottom: 0px;
   }
-  .navbar-collapse {
+  .navbar-collapse.in { //style du menu mobile déroulant page intro
+    .navbar-nav {
+      margin: 0;
+    }
     a {
       @extend .text-center;
+      @extend .btn-lg;
+      margin: 0;
+      width: 100%;
+      border: 0;
+      border-bottom: solid 1px #ccc;
+      border-radius: 0;
     }
   }
 }

@@ -102,3 +102,11 @@ h1.text-center.well{
 .categorieprojetshow{
   padding: 5px;
 }
+
+textarea#commentaire_message{
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 4em;
+  min-height: 4em;
+}

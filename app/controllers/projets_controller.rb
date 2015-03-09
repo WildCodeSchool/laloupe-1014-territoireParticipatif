@@ -9,6 +9,7 @@ class ProjetsController < ApplicationController
   def show
     @projet = Projet.find(params[:id])
     @commentaires = @projet.commentaires
+    @commentaire = Commentaire.new
   end
 
   def new

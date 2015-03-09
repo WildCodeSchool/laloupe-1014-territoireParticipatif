@@ -14,7 +14,8 @@ class CommentairesController < ApplicationController
     if @commentaire.save
       redirect_to projet_path @projet
     else
-      render :new
+      # render :new
+      redirect_to projet_path @projet
     end
   end
 

@@ -17,4 +17,8 @@ class Projet < ActiveRecord::Base
     abonnes = commentaires.map{ |commentaire| commentaire.contributeur }
     abonnes << contributeur
   end
+
+  def self.echantillon(taille, exclus)
+    (self.all - [exclus]).shuffle.last(taille)
+  end
 end

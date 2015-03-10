@@ -92,12 +92,28 @@
     text-align: right;
     .label {
       font-size: 100%;
+      color: #fff;
+      background-color: $ocre;
+    }
+    h4 {
+      color: $bleu;
     }
     margin-top: 12px;
     padding: 5px;
   }
   .barre-sociale {
     margin: 30px auto;
+  }
+  .liens-projets {
+    @include make-sm-column(3);
+    margin-top: 20px;
+    h4 {
+      color: $bleu;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
   }
 }
 

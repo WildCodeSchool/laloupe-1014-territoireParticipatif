@@ -2,9 +2,6 @@
   .metadonnees-projet
     %h4.label.label-default= @projet.try(:categorie).try(:nom)
     =image_tag '60x60.gif',class: 'categorieprojetshow'
-    - if @projet.localisation && !@projet.localisation.empty?
-      %h4 Localisation:
-      %p= @projet.localisation
     %p
       Créé il y a
       = time_ago_in_words(@projet.created_at)
@@ -13,6 +10,9 @@
         %strong
           = @projet.contributeur.pseudo
 
+    - if @projet.localisation && !@projet.localisation.empty?
+      %h4 Localisation:
+      %p= @projet.localisation
     -if @projet.demarrage != nil
       %h4 Date de lancement
       %p= @projet.demarrage.strftime("%m/%Y")
@@ -74,4 +74,11 @@
                 = time_ago_in_words(commentaire.created_at)
             .panel-body  
               %p= commentaire.message
+  .liens-projets
+    %h4 Projets à proximité
+    %ul
+      - @projets.each do |projet|
+        %li= link_to "→ #{projet.titre}", projet_path(projet)
+      %br
+      %li= link_to 'Tous les projets', projets_path
 

@@ -2,6 +2,6 @@
   = form_for @commentaire, url: yield(:url) do |f|
     .col-xs-12
       = f.text_area :message, placeholder: "Rejoindre la discussion ..."
-    .col-sm-6
-      = f.submit "Envoyer", class: 'btn btn-primary'
+    .col-sm-6.col-sm-offset-6
+      .envoyer= f.submit "Envoyer", class: 'btn btn-primary'
 

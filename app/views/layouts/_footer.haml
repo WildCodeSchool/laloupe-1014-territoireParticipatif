@@ -23,9 +23,16 @@
           .span.input-group-btn
             = submit_tag "Valider", class: 'btn'
 
-    .financeurs
+    .financeurs.text-center
       %p avec le soutien financier de
-      = image_tag 'region-centre.png'
-      = image_tag 'leader.jpg'
-      = image_tag 'europe-centre.jpg'
-      = image_tag 'europe.jpg'
+      = image_tag 'region-centre-violet.png'
+      = image_tag 'leader.png'
+      = image_tag 'europe-centre.png'
+      = image_tag 'europe.png'
+  %br
+  .row.text-center.made-by
+    %p
+      Réalisé par
+      =link_to 'Wild Code School', 'http://www.wildcodeschool.fr', target: '_blank'
+      l'école numérique de La Loupe 
+      = image_tag 'wcs.png', class: 'wcsfooter'

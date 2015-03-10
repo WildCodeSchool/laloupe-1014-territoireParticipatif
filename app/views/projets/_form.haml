@@ -13,14 +13,14 @@
       = form.label :demarrage, "Date de démarrage du projet (passé ou futur)"
       %p= form.date_select :demarrage
     .col-sm-8
-      = form.label :localisation, "Quel est le territoire concerné par votre projet ?"
+      = form.label :localisation, "Localisation du projet"
       %br
       %em Soyez le plus précis possible
       %p= form.text_field :localisation
     .col-sm-8
       = form.label :statut, "État d'avancement : quelles étapes ont été réalisées ?"
       = fields_for :statut do |statut_fields|
-        - ["réflexion", "définition", "analyse du marché", "recherche de partenaire", "montage financier", "mise en oeuvre"].each do |etape|
+        - ["réflexion", "définition", "analyse du marché", "recherche de partenaires", "montage financier", "mise en oeuvre"].each do |etape|
           %p
             = statut_fields.check_box etape.to_sym
             = statut_fields.label etape

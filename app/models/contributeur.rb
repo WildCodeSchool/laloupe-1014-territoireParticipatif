@@ -7,7 +7,8 @@ class Contributeur < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projets
   has_many :likes
-  validates_presence_of :pseudo
+  validates_presence_of :pseudo, :nom, :prenom, :annee_naissance,
+                        :commune, :status, :sexe
   validates_uniqueness_of :pseudo
   validates :charte, acceptance: {accept: true}
 

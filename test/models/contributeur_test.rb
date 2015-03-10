@@ -17,6 +17,37 @@ class ContributeurTest < ActiveSupport::TestCase
     assert_not @contributeur.valid?
   end
 
+  test "ne doit pas créer un contributeur sans nom" do
+    @contributeur.nom = ''
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur sans prénom" do
+    @contributeur.prenom = ''
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur sans date de naissance" do
+    @contributeur.annee_naissance = nil
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur sans commune" do
+    @contributeur.commune = nil
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur sans status" do
+    @contributeur.status = nil
+    assert_not @contributeur.valid?
+  end
+
+  test "ne doit pas créer un contributeur sans sexe" do
+    @contributeur.sexe = nil
+    assert_not @contributeur.valid?
+  end
+
+
   test "ne doit pas créer un contributeur avec un email déjà utilisé" do
     @contributeur.save
     contributeur = build(:contributeur, email: @contributeur.email)

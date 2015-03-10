@@ -1,9 +1,15 @@
 !!! 5
 %html
   %head
-    %title= "#{yield :title} - #{Rails.application.class.parent_name}"
+    %title= "#{yield :title} - #{Rails.application.class.parent_name.titleize}"
     %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}/
+
+    - if yield(:description).empty?
+      %meta{description: "#{"Perche Participatif met en réseau les acteurs qui innovent sur le territoire du Pays Perche d'Eure et Loir".html_safe}"}/
+    - else
+      %meta{description: "#{yield :description}"}/
+      
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags

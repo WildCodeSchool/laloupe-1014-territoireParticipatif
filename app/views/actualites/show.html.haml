@@ -1,3 +1,5 @@
+- provide(:title, sanitize(@actualite.titre))
+- provide(:description, sanitize("[Actualité] #{@actualite.contenu.truncate(90)}"))
 .container
   .col-sm-6
     %h1.titreactu= @actualite.titre

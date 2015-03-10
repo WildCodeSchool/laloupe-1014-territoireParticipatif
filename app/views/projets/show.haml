@@ -1,3 +1,5 @@
+- provide(:title, sanitize(@projet.titre))
+- provide(:description, sanitize("[#{@projet.categorie.nom}] #{@projet.description.truncate(100)}"))
 .row
   .metadonnees-projet
     %h4.label.label-default= @projet.try(:categorie).try(:nom)

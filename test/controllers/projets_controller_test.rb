@@ -28,7 +28,7 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_equal @projet.commentaires, assigns(:commentaires)
     assert_response :success
     assert_select 'h1', @projet.titre
-    assert_select 'p', @projet.objectif
+    assert_select 'p', @projet.codepostal
     assert_select 'p', @projet.description
   end
 
@@ -46,7 +46,7 @@ class ProjetsControllerTest < ActionController::TestCase
   end
 
   test "ne pas créer un projet sans contributeur connecté" do
-    post :create, projet: {titre: 'MyString', objectif: 'MyString', description: 'MyText'}
+    post :create, projet: {titre: 'MyString', codepostal: 'MyString', description: 'MyText', categorie_id: 1}
     assert_redirected_to new_contributeur_session_path
   end
 
@@ -94,19 +94,19 @@ class ProjetsControllerTest < ActionController::TestCase
   end
 
   test "ne peut pas mettre à jour un projet sans contributeur connecté" do
-    patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
+    patch :update, id: @projet.id, projet: {titre: 'YourString', codepostal: 'MyString', description: 'MyString', categorie_id: 1}
     assert_redirected_to new_contributeur_session_path
   end
 
   test "ne peux pas mettre à jour un projet dont je ne suis pas l'auteur" do
     sign_in create(:contributeur)
-    patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
+    patch :update, id: @projet.id, projet: {titre: 'YourString', codepostal: 'MyString', description: 'MyString', categorie_id: 1}
     assert_response 403
   end
 
   test "un animateur peut mettre à jour un projet dont il n'est pas l'auteur" do
     sign_in @animateur
-    patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
+    patch :update, id: @projet.id, projet: {titre: 'YourString', codepostal: 'MyString', description: 'MyString', categorie_id: 1}
     assert_equal @projet, assigns(:projet)
     assert_equal 'YourString', assigns(:projet).titre
     assert_redirected_to projet_path assigns(:projet)
@@ -115,7 +115,7 @@ class ProjetsControllerTest < ActionController::TestCase
 
   test "mettre à jour un projet" do
     sign_in @contributeur
-    patch :update, id: @projet.id, projet: {titre: 'YourString', objectif: 'MyString', description: 'MyString'}
+    patch :update, id: @projet.id, projet: {titre: 'YourString', codepostal: 'MyString', description: 'MyString', categorie_id: 1}
     assert_equal @projet, assigns(:projet)
     assert_equal 'YourString', assigns(:projet).titre
     assert_redirected_to projet_path assigns(:projet)

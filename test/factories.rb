@@ -42,7 +42,7 @@ FactoryGirl.define do
 
   factory :projet do
     titre "Des cours de code en primaire"
-    objectif "Initier les jeunes"
+    codepostal "28240"
     description "Le code comme outil créatif"
     contributeur
     categorie

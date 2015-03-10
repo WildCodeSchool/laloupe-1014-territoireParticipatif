@@ -12,8 +12,8 @@ class ProjetTest < ActiveSupport::TestCase
     assert_not @projet.valid?
   end
 
-  test "ne peux pas créer un projet sans objectif" do
-    @projet.objectif = nil
+  test "ne peux pas créer un projet sans code postal" do
+    @projet.codepostal = nil
     assert_not @projet.valid?
   end
 

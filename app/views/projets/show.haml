@@ -34,10 +34,13 @@
 
   .contenu-projet
     %h1= @projet.titre
-    %h2 Objectif
-    %p= @projet.objectif
     %h2 Description
     %p= @projet.description
+    -if @projet.urlsite != "" && @projet.urlsite != nil
+      %em=link_to @projet.urlsite
+    -if @projet.besoin != "" && @projet.besoin != nil
+      %h2 Besoins
+      %p= @projet.besoin
 
     .barre-sociale
       %h4 Partagez ce projet dans vos réseaux

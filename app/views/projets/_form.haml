@@ -4,8 +4,11 @@
       = form.label :titre, "Quel est le titre de votre projet"
       %p= form.text_field :titre
     .col-sm-8
-      = form.label :objectif, "Quel est l'objectif de votre projet ?"
-      %p= form.text_field :objectif
+      = form.label :codepostal, "Localisation du projet ?"
+      %p= form.text_field :codepostal, placeholder: "ex: 28240"
+    .col-sm-8
+      = form.label :urlsite, "Site de votre projet"
+      %p= form.text_field :urlsite, placeholder: "http://"
     .col-sm-12
       = form.label :categorie, "Quel est la thèmatique dominante de votre projet ?"
       %p= form.select :categorie_id, options_for_select(@categories)
@@ -26,10 +29,10 @@
             = statut_fields.label etape
     .col-sm-12
       = form.label :description, "Merci de décrire brièvement votre projet"
-      %p= form.text_area :description
+      %p= form.text_area :description, maxlength: 1500
     .col-sm-12
       = form.label :besoin, "Quels sont vos besoins ?"
-      %p= form.text_area :besoin
+      %p= form.text_area :besoin, maxlength: 500
 
       = form.submit "Enregistrer mon projet", class: 'btn btn-primary btn-lg'
 

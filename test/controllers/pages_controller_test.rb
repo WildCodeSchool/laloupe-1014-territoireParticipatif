@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
   def setup
-    @base_title = "Perchons"
+    @base_title = "Perche Participatif"
   end
 
   test "should get mentions" do
@@ -11,6 +11,13 @@ class PagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select 'title', "#{titre} - #{@base_title}"
     assert_select 'h1', titre
+  end
+
+  test "should get intro" do
+    titre = "Perche 2.8"
+    get :intro
+    assert_response :success
+    assert_select 'title', "#{titre} - #{@base_title}"
   end
 
   test "la page charte existe" do

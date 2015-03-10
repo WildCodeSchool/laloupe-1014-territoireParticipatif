@@ -76,6 +76,31 @@
   width: 100%;
 }
 
+.projets {
+  .contenu-projet {
+    @include make-sm-column(6);
+    h1, h2, h3, h4 {
+      color: $bleu;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .metadonnees-projet {
+    @include make-sm-column(2);
+    @include make-sm-column-offset(1);
+    text-align: right;
+    .label {
+      font-size: 100%;
+    }
+    margin-top: 12px;
+    padding: 5px;
+  }
+  .barre-sociale {
+    margin: 30px auto;
+  }
+}
+
 .panel{
   border-color: $bleu;
   .panel-heading, .panel-footer{
@@ -83,10 +108,7 @@
   }
 }
 .blocgaucheprojet{
-  background-color: $bleu;
-  border-radius: 3px;
   margin: 15px;
-  padding: 5px;
 }
 
 .panelcommentaire{

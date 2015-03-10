@@ -1,63 +1,77 @@
-%h1.text-center.well
-  = @projet.titre
-
 .row
-  .col-sm-3.col-sm-offset-1.blocgaucheprojet.text-center
+  .metadonnees-projet
+    %h4.label.label-default= @projet.try(:categorie).try(:nom)
     =image_tag '60x60.gif',class: 'categorieprojetshow'
-    %h4 Objectif du projet:
-    %p= @projet.objectif
-    %h4 Catégorie du projet:
-    %p= @projet.try(:categorie).try(:nom)
-    %h4 Localisation du projet:
-    %p= @projet.try(:localisation)
-    %h4 Projet déposé le:
-    %p= @projet.created_at.strftime("%d/%m/%Y")
-    / ATTENTION CA PIKE
-    / Date demarrage Seed invalide
-    -if @projet.demarrage != nil
-      %h4 Date de démarrage du projet:
-      %p= @projet.demarrage.strftime("%d/%m/%Y")
-    %h4 Créateur du projet:
-    %p= @projet.contributeur.try(:pseudo)
-  .col-sm-6.col-sm-offset-1
-    %h3 Description du projet
-    %p= @projet.description
-    - if @projet.contributeur == current_contributeur
-      = link_to 'Modifier votre projet', edit_projet_path(@projet), class: 'btn btn-primary pull-right'
-%br
-.row.text-center
-  %p Partagez ce projet sur vos réseaux sociaux
-  .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
-  .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
-  - if @projet.liked_by?(current_contributeur)
-    .coeur=link_to image_tag('dislike.png'), unlike_projet_path(@projet.id)
-  - else
-    .coeur=link_to image_tag('heart-16.png'), like_projet_path(@projet.id)
-  .comptecoeur= @projet.likes.count
-  Personnes aiment ce projet
-%br
-.row.col-sm-10.col-xs-12.col-sm-offset-1.col-xs-offset-0
-  %p
-    %strong
-      Commentaires
-    %span.badge
-      = @commentaires.count
+    - if @projet.localisation && !@projet.localisation.empty?
+      %h4 Localisation:
+      %p= @projet.localisation
+    %p
+      Créé il y a
+      = time_ago_in_words(@projet.created_at)
+      %br
+        par
+        %strong
+          = @projet.contributeur.pseudo
 
-  - @commentaires.reverse.each do |commentaire|
-    .panelcommentaire
-      .panel.panel-default
-        .panel-heading
-          %p.pull-left
-            déposé le
-            =commentaire.created_at.strftime("%d/%m/%Y")
-          %p
-            &nbsp;par 
-            = commentaire.contributeur.pseudo
-        .panel-body  
-          %p= commentaire.message
-.row.col-sm-10.col-sm-offset-1
-  - if current_contributeur
-    - provide(:url, projet_commentaires_path(@projet.id))
-    = render 'commentaires/form'
-  - else
-    =link_to "Postez votre commentaire", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'
+    -if @projet.demarrage != nil
+      %h4 Date de lancement
+      %p= @projet.demarrage.strftime("%m/%Y")
+
+    - if @projet.contributeur == current_contributeur
+      %hr
+      = link_to 'Modifier votre projet', edit_projet_path(@projet), class: 'btn btn-primary pull-right'
+
+    - if current_contributeur && current_contributeur.type == 'Animateur'
+      %hr
+      %p
+        =@projet.contributeur.email
+        =@projet.contributeur.try(:nom)
+        =@projet.contributeur.try(:prenom)
+        =@projet.contributeur.try(:commune)
+        =@projet.contributeur.try(:telephone)
+      %hr
+      = link_to 'Modifier ce projet', edit_projet_path(@projet), class: 'btn btn-primary pull-right'
+
+  .contenu-projet
+    %h1= @projet.titre
+    %h2 Objectif
+    %p= @projet.objectif
+    %h2 Description
+    %p= @projet.description
+
+    .barre-sociale
+      %h4 Partagez ce projet dans vos réseaux
+      .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+      .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
+      - if @projet.liked_by?(current_contributeur)
+        .coeur=link_to image_tag('dislike.png'), unlike_projet_path(@projet.id)
+      - else
+        .coeur=link_to image_tag('heart-16.png'), like_projet_path(@projet.id)
+      .comptecoeur= @projet.likes.count
+      personnes aiment ce projet
+
+    .commentaires
+      %h4
+        %span.badge
+          = @commentaires.count
+        Commentaires
+
+      - if current_contributeur
+        - provide(:url, projet_commentaires_path(@projet.id))
+        = render 'commentaires/form'
+      - else
+        =link_to "Rejoindre la discussion", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'
+
+      - @commentaires.reverse.each do |commentaire|
+        .panelcommentaire
+          .panel.panel-default
+            .panel-heading
+              %p
+                %strong
+                  = commentaire.contributeur.pseudo
+                \-
+                il y a
+                = time_ago_in_words(commentaire.created_at)
+            .panel-body  
+              %p= commentaire.message
+

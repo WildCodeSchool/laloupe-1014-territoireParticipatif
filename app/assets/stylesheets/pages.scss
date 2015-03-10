@@ -2,8 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .splash-intro {
+  background-image: image-url("perche-participatif.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
   img {
     width: 100%;
+  }
+  h1 {
+    @include make-sm-column(4);
+    @include make-sm-column-offset(5);
+    color: grey;
+    font-family: 'GravityBold', 'Helvetica', sans-serif; 
+    margin: 0;
+    margin-top: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media (min-width: $screen-md-min) {
+  .splash-intro {
+    height: 355px;
   }
 }
 

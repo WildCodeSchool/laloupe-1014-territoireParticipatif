@@ -1,7 +1,7 @@
 class SondagesController < ApplicationController
 before_action :authenticate_contributeur!, only: [:new, :create]
 before_action :redirect_home, only: [:new, :create]
-
+  
   def new
     @sondage = Sondage.new
   end

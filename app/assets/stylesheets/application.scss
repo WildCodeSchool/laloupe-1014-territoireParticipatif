@@ -165,11 +165,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($bleu, 20%);
+      background-color: lighten($bleu, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($bleu, 20%);
+     background-color: lighten($bleu, 10%);
     }
     .navbar-default{
       background-color: $bleu;
@@ -189,11 +189,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($orange, 20%);
+      background-color: lighten($orange, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($orange, 20%);
+     background-color: lighten($orange, 10%);
     }
     .navbar-default{
       background-color: $orange;
@@ -213,11 +213,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($ocre, 20%);
+      background-color: lighten($ocre, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($ocre, 20%);
+     background-color: lighten($ocre, 10%);
     }
     .navbar-default{
       background-color: $ocre;
@@ -237,11 +237,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($vert, 20%);
+      background-color: lighten($vert, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($vert, 20%);
+     background-color: lighten($vert, 10%);
     }
     .navbar-default{
       background-color: $vert;
@@ -333,16 +333,16 @@ label {
 
 /* NAVBAR 4 COLORS DESKTOP */
 
-.projets{
-  .navbar-all{
-    .navbar-default .navbar-nav a{
+.projets {
+  .navbar-all {
+    .navbar-default .navbar-nav a {
       color: #FFF;
       &:hover{
-      background-color: lighten($bleu, 20%);
+        background-color: lighten($bleu, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($bleu, 20%);
+     background-color: lighten($bleu, 10%);
     }
     .navbar-default{
       background-color: $bleu;
@@ -350,9 +350,9 @@ label {
     .navbar-header {
       button {
         background-color: $bleu;
-      &:hover {
-        background-color: $bleu;
-      }
+        &:hover {
+          background-color: $bleu;
+        }
       }
     }
   }
@@ -363,11 +363,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($orange, 20%);
+      background-color: lighten($orange, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($orange, 20%);
+     background-color: lighten($orange, 10%);
     }
     .navbar-default{
       background-color: $orange;
@@ -388,11 +388,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($ocre, 20%);
+      background-color: lighten($ocre, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($ocre, 20%);
+     background-color: lighten($ocre, 10%);
     }
     .navbar-default{
       background-color: $ocre;
@@ -413,11 +413,11 @@ label {
     .navbar-default .navbar-nav a{
       color: #FFF;
       &:hover{
-      background-color: lighten($vert, 20%);
+      background-color: lighten($vert, 10%);
       }
     }
     .navbar-default .navbar-nav > .active > a{
-     background-color: lighten($vert, 20%);
+     background-color: lighten($vert, 10%);
     }
     .navbar-default{
       background-color: $vert;

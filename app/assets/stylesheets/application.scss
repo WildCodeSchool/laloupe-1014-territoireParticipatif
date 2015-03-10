@@ -140,9 +140,15 @@ footer {
   }
   .made-by p{
     display: inline;
-    a{
+    color: lighten($vert,20%);
+    a {
       display: inline;
       text-decoration: none;
+      color: lighten($vert,50%);
+      &:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
     }
   }
 }

@@ -138,6 +138,13 @@ footer {
       margin: 5px auto;
     }
   }
+  .made-by p{
+    display: inline;
+    a{
+      display: inline;
+      text-decoration: none;
+    }
+  }
 }
 
 form {

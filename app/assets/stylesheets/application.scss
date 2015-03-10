@@ -232,7 +232,7 @@ label {
     }
   }
 }
-.pages, .registrations{
+.pages, .registrations, .sessions, .passwords, .confirmations {
   .navbar-all{
     .navbar-default .navbar-nav a{
       color: #FFF;
@@ -301,12 +301,12 @@ label {
       font-weight: bold;
     }
   }
-  .btn-primary a{
+  .btn-primary {
     color: #FFF;
-    background-color: $rouge;
+    border-color: #FFF;
+    background-color: transparent;
     &:hover{
       color: #FFF;
-      background-color: $rouge;
     }
   }
   .navbar-collapse{
@@ -408,7 +408,7 @@ label {
   }
 }
 
-.pages, .registrations{
+.pages, .registrations, .sessions, .passwords, .confirmations {
   .navbar-all{
     .navbar-default .navbar-nav a{
       color: #FFF;

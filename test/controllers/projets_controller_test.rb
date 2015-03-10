@@ -28,8 +28,6 @@ class ProjetsControllerTest < ActionController::TestCase
     assert_equal @projet.commentaires, assigns(:commentaires)
     assert_response :success
     assert_select 'h1', @projet.titre
-    assert_select 'p', @projet.codepostal
-    assert_select 'p', @projet.description
   end
 
   test "ne peut pas accéder au formulaire d'un nouveau projet si pas connecté" do
@@ -53,7 +51,7 @@ class ProjetsControllerTest < ActionController::TestCase
   test "créer un projet" do
     count = Projet.count
     sign_in @contributeur
-    post :create, projet: attributes_for(:projet)
+    post :create, projet: attributes_for(:projet, categorie_id: @categorie.id)
     assert_equal @projet.titre, assigns(:projet).titre
     assert_equal count + 1, Projet.count
     assert_equal @contributeur.id, assigns(:projet).contributeur_id, "le projet n'est pas associé au bon contributeur"

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :contributeurs
   get 'animation' => 'pages#animation'
   resources :sondages
+  get 'sondage' => 'sondages#new'
 
   get 'mentions' => 'pages#mentions'
   get 'merci' => 'pages#merci'

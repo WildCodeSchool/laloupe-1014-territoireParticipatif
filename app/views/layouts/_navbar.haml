@@ -23,7 +23,7 @@
 
           - ifactive = controller.controller_name == 'sondages' ? "active" : ""
           %li{class: ifactive}
-            %a{:href => new_sondage_path }
+            %a{:href => sondages_path }
               %span.icon
                 %svg.icon-bubble{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}

@@ -1,0 +1,14 @@
+- provide(:title, "Je participe à un sondage")
+.row
+  .col-sm-5
+    = image_tag 'page-projet.jpg', class: 'img-responsive'
+  .col-sm-7
+    %h1= yield(:title)
+    %p Pour aider les entreprises, le développement des services à la personne, la valorisation et la préservation de l’environnement du Perche... je participe à de courts sondages.
+    %p Merci de prendre quelques minutes pour vous connecter et répondre aux questions du moment.
+.row
+  .col-sm-12
+    %h2 Les percherons et les usages numériques
+    %p Objectifs : Connaître les équipements numériques des percherons, leurs pratiques et leurs attentes en matière d’usages.
+    %p Proposé par : Pays du perche d’Eure-et-Loir
+    =link_to 'Je participe au sondage', 'sondages/new', class: 'btn btn-primary btn-lg'

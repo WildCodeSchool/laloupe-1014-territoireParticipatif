@@ -122,6 +122,17 @@
   border-color: $bleu;
   .panel-heading, .panel-footer{
   background-color: $bleu;
+    a {
+      color: black;
+    }
+  }
+  .panel-body {
+    height: 212px;
+    .pbody {
+      a {
+        color: black;
+      }
+    }
   }
 }
 .blocgaucheprojet{

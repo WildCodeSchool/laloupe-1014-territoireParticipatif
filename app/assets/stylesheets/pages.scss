@@ -110,3 +110,26 @@
   }
 }
 
+// PAGE HOWTO
+.comment-ca-marche{
+  .vert{
+    color: $vert;
+  }
+  h4 a{
+    color: $vert;
+    text-decoration: none;
+    font-weight:bold;
+  }
+  a{
+    color: $orange;
+    text-decoration: none;
+    font-weight:bold;
+    display: inline;  
+  }
+  p{
+    display: inline; 
+  }
+  svg{
+    fill: $vert;
+  }
+}

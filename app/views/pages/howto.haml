@@ -1,5 +1,54 @@
 - provide(:title, "Comment ça marche ?")
-%h1.text-center= yield(:title)
-
-.well
-  Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+.comment-ca-marche
+  .row
+    .col-sm-5.text-center
+      =image_tag "page-projet.jpg", class: 'img-responsive', title: "Crédits photo: David Commenchal/Pays Perche 'Eure et Loir'"
+    .col-sm-7
+      %h2 Pourquoi cette application participative ? 
+      %p Le Pays Perche est un syndicat mixte regroupant les 75 communes du Perche d'Eure-et-Loir pour travailler ensemble à l'aménagement et au développement du territoire. Les élus du Pays et les responsables de la société civile ont souhaité permettre la concertation avec les habitants du Percheet le partage d'informations, d'avis, sur les projets qui nous et vous concernent, que ceux-ci soient publics et/ou privés.
+      %p Réalisée à l'occasion de la candidature du Pays du Perche d'Eure-et-Loir au 
+      =link_to 'programme LEADER', 'http://www.vivre-dans-le-perche.fr/reussir/guide-du-porteur-de-projets/programme-europeen-leader/candidature-leader-pays-perche-eure-et-loir-2014-2020/', target: '_blank'
+      cette application vous permet notamment de proposer des projets innovants en lien avec l'économie numérique et bien sûr dans d'autres domaines.
+  .row
+    .col-xs-12
+      %h2.vert= yield(:title)
+  .row
+    .col-xs-12
+      =image_tag "bandeau-howto.png", class: 'img-responsive'
+  .row
+    .col-sm-4
+      %h4.text-center.vert 1) Je m'inscris
+      %p en renseignant quelques infos me permettant d'être contacté par le Pays si je dépose un projet, je note que ces éléments ne sont pas rendus publics ensuite sur ce site.
+    .col-sm-4
+      %h4.text-center.vert 2) Je participe
+      %p soit en mon nom propre si je veux que l'on me connaisse, soit en utilisant un pseudo.
+    .col-sm-4
+      %h4.text-center.vert 3) Mon projet est suivi
+      %p Régulièrement, le Conseil de développement du Pays (membres de la société civile) rendra compte des projets proposés et de leur suivi auprès des élus du Pays Perche.
+  .row
+    .col-xs-12
+      %h2.vert 4 bonnes raisons de participer
+  .row
+    .col-sm-1
+      %p ROU
+    .col-sm-5
+      %h4.vert Tout le monde peut déposer un projet
+      %p J’ai un projet et j’ai envie de savoir ce que les Percherons pensent de celui-ci, si quelqu’un veut m’aider à le réaliser (en donnant de son temps par exemple ou en apportant ses connaissances), si le Pays Perche ou un partenaire du Pays peut m’accompagner (méthode, financements…).
+    .col-sm-1
+      %p ROU
+    .col-sm-5
+      %h4.vert Je peux suivre la vie d'un projet
+      %p Régulièrement, dans l’onglet actualité, chaque porteur de projets pourra expliquer où il en est dans la réalisation de son projet.
+  .row
+    .col-sm-1
+      %p ROU
+    .col-sm-5
+      %h4.vert Tout le monde peut donner son avis
+      %p Je peux « liker » et partager un projet si je le trouve pertinent. Je peux aussi participer anonymement si je le souhaite, à de courts sondages pour permettre au Perche de mieux cerner les pratiques et les attentes des percherons.
+    .col-sm-1
+      %p ROU
+    .col-sm-5
+      %h4.vert Je peux être informé des actions entreprises dans le Pays du Perche
+      %p Du coup je suis au courant des actions mises en œuvre pour l’avenir de mon territoire !
+      %h4
+        =link_to 'Accédez à la charte de modération du site', charte_path

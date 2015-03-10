@@ -23,8 +23,9 @@
 
     - if current_contributeur && current_contributeur.type == 'Animateur'
       %hr
+      %p Ces informations ne sont visibles que par l'animateur
       %p
-        =@projet.contributeur.email
+        =mail_to @projet.contributeur.email
         =@projet.contributeur.try(:nom)
         =@projet.contributeur.try(:prenom)
         =@projet.contributeur.try(:commune)

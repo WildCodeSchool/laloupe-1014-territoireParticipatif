@@ -15,11 +15,13 @@
         %ul.nav.navbar-nav
           - ifactive = controller.controller_name == 'projets' ? "active" : ""
           %li{class: ifactive}
-            %a{href: new_projet_path}
+            %a{href: projets_path}
               %span.icon
                 %svg.icon-light-bulb{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-light-bulb"}
-              %span.action Je dépose un projet
+              %span.action
+                Je dépose
+                %br un Projet
 
           - ifactive = controller.controller_name == 'sondages' ? "active" : ""
           %li{class: ifactive}
@@ -27,7 +29,9 @@
               %span.icon
                 %svg.icon-bubble{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}
-              %span.action Je participe à un sondage
+              %span.action
+                Je participe
+                %br à un Sondage
 
           - ifactive = controller.controller_name == 'actualites' ? "active" : ""
           %li{class: ifactive}
@@ -35,7 +39,9 @@
               %span.icon
                 %svg.icon-calendar{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
-              %span.action &nbsp;Les&nbsp; Actualités
+              %span.action
+                Je suis
+                %br les Actualités
 
           - ifactive = controller.controller_name == 'pages' && controller.action_name == 'howto' ? "active" : ""
           %li{class: ifactive}
@@ -43,7 +49,7 @@
               %span.icon
                 %svg.icon-question{:role => "img"}
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
-              %span.action Comment ça marche ?
+              %span.action Pourquoi cette application ?
 
         %ul.nav.navbar-nav.navbar-right
           - if contributeur_signed_in?

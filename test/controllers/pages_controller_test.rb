@@ -22,7 +22,7 @@ class PagesControllerTest < ActionController::TestCase
   end
 
   test "la page 'comment ça marche?' existe" do
-    titre = "Comment ça marche ?"
+    titre = "Pourquoi cette application participative ?"
     get :howto
     assert_response :success
     assert_select 'title', "#{titre} - #{@base_title}"

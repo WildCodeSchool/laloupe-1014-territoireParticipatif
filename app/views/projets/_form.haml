@@ -30,10 +30,10 @@
               .checklabel= statut_fields.label etape
       .field
         = form.label :description, "Merci de décrire brièvement votre projet"
-        %p= form.text_area :description, maxlength: 1500
+        %p= form.text_area :description, maxlength: 1500, :placeholder => "Limite de 1500 caractères"
       .field
         = form.label :besoin, "Quels sont vos besoins ?"
-        %p= form.text_area :besoin, maxlength: 500
+        %p= form.text_area :besoin, maxlength: 500, :placeholder => "Limite de 500 caractères"
 
         = form.submit "Enregistrer mon projet", class: 'btn btn-primary btn-lg'
 

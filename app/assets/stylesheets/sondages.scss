@@ -48,3 +48,18 @@
     margin: -9px 0px 0px -25px;
   }
 }
+.last-sondages {
+  background-color: $orange;
+  padding: 15px;
+  p{
+    font-weight: bold;
+    color: #FFF;
+    display: inline;
+  }
+  a{
+    display: inline;
+  }
+  h3{
+    color: #FFF;
+  }
+}

@@ -24,14 +24,14 @@
       = "Posté par #{@actualite.animateur.pseudo}"
   .col-sm-6.imgactu
     =image_tag @actualite.try(:image), class: "img-responsive"
-  .col-sm-6.col-sm-offset-6.cartouche.social.block-center
-    %p Partagez cette actualité sur vos réseaux sociaux : 
-    .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
-    .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
+    .col-sm-12.cartouche.social.block-center
+      %p Partagez cette actualité sur vos réseaux sociaux 
+      .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
+      .twitter= twitter_button :twitter => {:button_caption => "Twitter", :static_link => true}
 
-
-  .col-sm-12.degraf
-  %h3 Dernières actualités
+.container
+  .row
+    %h3.deractu Dernières actualités
 
 .col-sm-12.actbar
   -@filactu.each do |actu|

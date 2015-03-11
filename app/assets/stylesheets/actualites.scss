@@ -32,17 +32,6 @@ h1.titreactu {
   border-bottom: 2px solid $orange;
 }
 
-.actualites {
-  h3 {
-    a {
-      color: $orange;
-    }
-  }
-  p.date {
-      border-top: 1px dotted $orange;
-  }
-}
-
 .cartouche{
   background-color: $orange;
   text-align: center;
@@ -128,4 +117,8 @@ h1.titreactu {
 
 .placeimg {
   padding-top: 10px;
+}
+
+.deractu {
+  padding-top: 150px;
 }

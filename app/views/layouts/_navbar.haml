@@ -21,7 +21,7 @@
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-light-bulb"}
               %span.action
                 Je dépose
-                %br.hidden-sm.hidden-xs un Projet
+                %br.hidden-sm.hidden-xs un projet
 
           - ifactive = controller.controller_name == 'sondages' ? "active" : ""
           %li{class: ifactive}
@@ -31,7 +31,7 @@
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-bubble"}
               %span.action
                 Je participe
-                %br.hidden-sm.hidden-xs à un Sondage
+                %br.hidden-sm.hidden-xs à un sondage
 
           - ifactive = controller.controller_name == 'actualites' ? "active" : ""
           %li{class: ifactive}
@@ -41,7 +41,7 @@
                   %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
               %span.action
                 Je suis
-                %br.hidden-sm.hidden-xs les Actualités
+                %br.hidden-sm.hidden-xs les actualités
 
           - ifactive = controller.controller_name == 'pages' && controller.action_name == 'howto' ? "active" : ""
           %li{class: ifactive}

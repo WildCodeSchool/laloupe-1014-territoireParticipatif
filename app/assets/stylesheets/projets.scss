@@ -131,6 +131,14 @@
   border-color: $bleu;
   .panel-heading, .panel-footer{
   background-color: $bleu;
+    h3 {
+      margin-top: 5px;
+      font-size: 18px;
+      min-height: 57px;
+    }
+    em {
+      font-size: 12px;
+    }
     a {
       color: black;
     }

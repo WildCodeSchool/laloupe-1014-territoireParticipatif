@@ -1,11 +1,10 @@
 .col-sm-6.col-md-4
   .panel
     .panel-heading 
-      =image_tag '60x60.gif', class: 'pull-right'
-      %h3=link_to projet.titre.try(:truncate, 30), projet_path(projet)
+      %h3=link_to projet.titre.truncate(85), projet_path(projet)
       %em= "Créé il y a #{time_ago_in_words(projet.created_at)}"
     .panel-body
-      %p.pbody=link_to projet.description.try(:truncate, 120), projet_path(projet)
+      %p.pbody=link_to projet.description.try(:truncate, 150), projet_path(projet)
       %br
       %br
       .row

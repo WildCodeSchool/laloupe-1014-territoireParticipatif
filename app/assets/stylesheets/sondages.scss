@@ -63,3 +63,12 @@
     color: #FFF;
   }
 }
+
+.download a {
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: $rouge;
+    text-decoration: none;
+  }
+}

@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20150311001606) do
     t.datetime "updated_at",      null: false
     t.integer  "contributeur_id"
     t.integer  "categorie_id"
-    t.string   "statut"
-    t.text     "besoin"
+    t.string   "status"
+    t.string   "besoin"
     t.string   "localisation"
     t.date     "demarrage"
     t.string   "urlsite"

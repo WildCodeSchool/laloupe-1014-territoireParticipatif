@@ -177,3 +177,26 @@ textarea#commentaire_message{
 .envoyer {
   margin: 10px 0px 10px 0px;
 }
+
+.formprojet {
+  border: 1px solid $bleu;
+  border-radius: 5px;
+}
+
+.formprojetcheck {
+  width: 1rem;
+  position: absolute;
+  display: inline-block;
+  margin-top: -15px;
+}
+
+.checklabel {
+  margin-left: 5px;
+  @extend .checkbox;
+}
+
+.renderformprojet {
+  input {
+    height: 40px;
+  }
+}

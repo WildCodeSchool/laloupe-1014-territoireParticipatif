@@ -451,9 +451,9 @@ select {
       border-radius: 0px;
     }
     .navbar-nav  a {
-      margin-right: 20px; /*Safari FIX*/
+      margin-right: 10px; /*Safari FIX*/
       margin-top: 0px;
-      width: 125px; /*Safari FIX*/
+      width: 134px; /*Safari FIX*/
       font-weight: bold;
       &:hover{
         color: #FFF;

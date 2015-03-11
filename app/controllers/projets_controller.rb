@@ -82,7 +82,7 @@ class ProjetsController < ApplicationController
   def projet_params
     params.require(:projet)
       .merge(checked_statuts)
-      .permit(:titre, :objectif, :description, :categorie_id, :statut, :besoin, :localisation, :demarrage)
+      .permit(:titre, :codepostal, :description, :categorie_id, :statut, :besoin, :localisation, :demarrage, :urlsite)
   end
 
   def checked_statuts

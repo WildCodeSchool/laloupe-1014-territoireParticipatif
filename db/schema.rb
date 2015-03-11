@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309143835) do
+ActiveRecord::Schema.define(version: 20150311001606) do
 
   create_table "actualites", force: :cascade do |t|
     t.string   "titre"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150309143835) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "newsletter",             default: false
   end
 
   add_index "contributeurs", ["confirmation_token"], name: "index_contributeurs_on_confirmation_token", unique: true
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(version: 20150309143835) do
 
   create_table "projets", force: :cascade do |t|
     t.string   "titre"
-    t.string   "objectif"
+    t.string   "codepostal"
     t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150309143835) do
     t.text     "besoin"
     t.string   "localisation"
     t.date     "demarrage"
+    t.string   "urlsite"
   end
 
   add_index "projets", ["categorie_id"], name: "index_projets_on_categorie_id"

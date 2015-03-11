@@ -165,10 +165,6 @@ select {
   @extend .form-control;
 }
 
-label {
-  @extend .control-label;
-}
-
 .field_with_errors {
   @extend .has-error;
 }

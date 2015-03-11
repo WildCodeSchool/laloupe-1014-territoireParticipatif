@@ -12,8 +12,8 @@ class ProjetTest < ActiveSupport::TestCase
     assert_not @projet.valid?
   end
 
-  test "ne peux pas créer un projet sans objectif" do
-    @projet.objectif = nil
+  test "ne peux pas créer un projet sans code postal" do
+    @projet.codepostal = nil
     assert_not @projet.valid?
   end
 
@@ -27,10 +27,16 @@ class ProjetTest < ActiveSupport::TestCase
     assert_not @projet.valid?
   end
 
+  test "ne peux pas créer un projet sans catégorie" do
+    @projet.categorie = nil
+    assert_not @projet.valid?
+  end
+
   test "créer un projet valide" do
     assert @projet.valid?
   end
 
+  # @projet.liked_by?
   test "liked_by? renvoie false si le projet n'a pas de like" do
     assert_not @projet.liked_by? @contributeur
   end
@@ -41,6 +47,7 @@ class ProjetTest < ActiveSupport::TestCase
     assert @projet.liked_by?(@contributeur)
   end
 
+  # @projet.abonnes
   test "un projet sans commentaire a son auteur comme abonné" do
     @projet.save
     assert_equal [@contributeur], @projet.abonnes

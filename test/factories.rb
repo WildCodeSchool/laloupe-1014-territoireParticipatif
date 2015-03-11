@@ -25,6 +25,12 @@ FactoryGirl.define do
     pseudo { generate :pseudo }
     password '12345678'
     password_confirmation '12345678'
+    nom "Dupré"
+    prenom "Camille"
+    commune "La Loupe"
+    sexe "F"
+    status "secondaire"
+    annee_naissance 1988
     charte true
     confirmed_at Time.now
     type 'Contributeur'
@@ -42,7 +48,7 @@ FactoryGirl.define do
 
   factory :projet do
     titre "Des cours de code en primaire"
-    objectif "Initier les jeunes"
+    codepostal "28240"
     description "Le code comme outil créatif"
     contributeur
     categorie

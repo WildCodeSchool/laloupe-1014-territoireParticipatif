@@ -3,7 +3,7 @@ class Projet < ActiveRecord::Base
   has_many :commentaires
   has_many :likes
   belongs_to :contributeur
-  validates_presence_of :titre, :objectif, :description, :contributeur
+  validates_presence_of :titre, :codepostal, :description, :contributeur, :categorie
 
   def liked_by?(contributeur)
     if !contributeur || likes.empty?

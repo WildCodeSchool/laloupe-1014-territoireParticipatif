@@ -34,3 +34,17 @@
     color: $ocre;
   }
 }
+
+#radio {
+  input[type="radio"]{
+    width: 1rem;
+    margin-left: -25px;
+  }
+}
+
+#presta {
+  input[type="radio"]{
+    width: 1rem;
+    margin: -9px 0px 0px -25px;
+  }
+}

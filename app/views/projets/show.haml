@@ -2,9 +2,10 @@
 - provide(:description, sanitize("[#{@projet.categorie.nom}] #{@projet.description.truncate(100)}"))
 .row
   .metadonnees-projet
-    %h4.label.label-default= @projet.try(:categorie).try(:nom)
+    %h4.label.label-default
     =image_tag '60x60.gif',class: 'categorieprojetshow'
-    %p
+    %p.label.label-default.categorie= @projet.try(:categorie).try(:nom)
+    %p.datecrea
       Créé il y a
       = time_ago_in_words(@projet.created_at)
       %br
@@ -25,8 +26,9 @@
 
     - if current_contributeur && current_contributeur.type == 'Animateur'
       %hr
+      %p Ces informations ne sont visibles que par l'animateur
       %p
-        =@projet.contributeur.email
+        =mail_to @projet.contributeur.email
         =@projet.contributeur.try(:nom)
         =@projet.contributeur.try(:prenom)
         =@projet.contributeur.try(:commune)
@@ -36,10 +38,13 @@
 
   .contenu-projet
     %h1= @projet.titre
-    %h2 Objectif
-    %p= @projet.objectif
     %h2 Description
     %p= @projet.description
+    -if @projet.urlsite != "" && @projet.urlsite != nil
+      %em=link_to @projet.urlsite
+    -if @projet.besoin != "" && @projet.besoin != nil
+      %h2 Besoins
+      %p= @projet.besoin
 
     .barre-sociale
       %h4 Partagez ce projet dans vos réseaux

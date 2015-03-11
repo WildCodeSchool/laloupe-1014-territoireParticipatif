@@ -12,10 +12,10 @@
       = f.input :service, label: "Selon vous, quels sont les services à développer dans le Perche grâce au numérique ?(liste à titre d'exemple et non exhaustive)", collection: ["Boutique de produits locaux en ligne", "E-commerce", "Carte fidélité commerciale", "Service public communal ou intercommunal en ligne", "Objets connectés facilitant la vie des personnes âgées", "Pass numérique de loisir pour les jeunes", "Paiement de prestations publiques en ligne (cantine, crèche...eau)", "Consultation de spécialiste santé à distance (assisté par un professionnel)", "Autre"], as: :check_boxes, :include_hidden => false
       = f.input :commentaire_service, label: "Si autre répondre ci-dessous"
     .block
-      = f.input :competences, label: "Diriez-vous que vous savez : ", collection: ["Parfaitement vous servir d'internet et de ses applications quotidiennes", "Vous servir d'internet et de ses applications quotidiennes de façon satisfaisante", "Vous servir d'internet et de ses applications quotidiennes de façon peu satisfaisante", "Peu vous servir d'internet et de ses applications quotidiennes"], as: :check_boxes, :include_hidden => false
+      #radio= f.input :competences, label: "Diriez-vous que vous savez : ", collection: ["Parfaitement vous servir d'internet et de ses applications quotidiennes", "Vous servir d'internet et de ses applications quotidiennes de façon satisfaisante", "Vous servir d'internet et de ses applications quotidiennes de façon peu satisfaisante", "Peu vous servir d'internet et de ses applications quotidiennes"], as: :radio_buttons, :include_hidden => false
     .block
       = f.input :formation, label: "Souhaiteriez-vous bénéficier d'une formation à l'utilisation d'internet et de ses applications ?", collection: ["Proposée par une entreprise ?", "Par une association ?", "En ligne ?", "En groupe ?"], as: :check_boxes, :include_hidden => false
-      = f.input :prestataire, label: "Savez-vous si des organismes délivrent ce type de prestation dans le Perche ? ", collection: ["Oui", "Non", "Je ne sais pas"], as: :radio_buttons, :include_hidden => false
+      #presta= f.input :prestataire, label: "Savez-vous si des organismes délivrent ce type de prestation dans le Perche ? ", collection: ["Oui", "Non", "Je ne sais pas"], as: :radio_buttons, :include_hidden => false
       = f.input :commentaire_prestataire, label: "Si oui laquelle?"
     = f.button :submit, value: "Enregistrer mes réponses", class: 'btn btn-primary btn-lg'
 

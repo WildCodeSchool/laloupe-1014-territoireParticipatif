@@ -8,6 +8,33 @@
 .liste-projets {
   @include make-row();
   margin-top: 2rem;
+
+  .panel{
+    border-color: $bleu;
+    .panel-heading, .panel-footer{
+    background-color: $bleu;
+      h3 {
+        margin-top: 5px;
+        font-size: 18px;
+        min-height: 57px;
+      }
+      em {
+        font-size: 12px;
+      }
+      a {
+        color: black;
+      }
+    }
+    .panel-body {
+      height: 212px;
+      .pbody {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+
   .projet {
     @include make-sm-column(4);
     @include make-md-column(3);
@@ -127,31 +154,6 @@
   }
 }
 
-.panel{
-  border-color: $bleu;
-  .panel-heading, .panel-footer{
-  background-color: $bleu;
-    h3 {
-      margin-top: 5px;
-      font-size: 18px;
-      min-height: 57px;
-    }
-    em {
-      font-size: 12px;
-    }
-    a {
-      color: black;
-    }
-  }
-  .panel-body {
-    height: 212px;
-    .pbody {
-      a {
-        color: black;
-      }
-    }
-  }
-}
 .blocgaucheprojet{
   margin: 15px;
 }

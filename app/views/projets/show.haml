@@ -39,12 +39,12 @@
   .contenu-projet
     %h1= @projet.titre
     %h2 Description
-    %p= @projet.description
+    = simple_format @projet.description
     -if @projet.urlsite != "" && @projet.urlsite != nil
       %em=link_to @projet.urlsite
     -if @projet.besoin != "" && @projet.besoin != nil
       %h2 Besoins
-      %p= @projet.besoin
+      = simple_format @projet.besoin
 
     .barre-sociale
       %h4 Partagez ce projet dans vos réseaux
@@ -80,7 +80,7 @@
                 il y a
                 = time_ago_in_words(commentaire.created_at)
             .panel-body
-              %p= commentaire.message
+              = simple_format commentaire.message
   .liens-projets
     %h4 Projets à proximité
     %ul

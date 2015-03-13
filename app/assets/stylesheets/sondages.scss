@@ -49,7 +49,7 @@
   }
 }
 .last-sondages {
-  background-color: $orange;
+  background-color: $ocre;
   padding: 15px;
   p{
     font-weight: bold;
@@ -77,4 +77,6 @@
   .label {
     margin-right: 1em;
   }
+  .panel{ border-color: $ocre; }
+  .panel-heading{ background-color: $ocre;}
 }

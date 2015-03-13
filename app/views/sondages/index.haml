@@ -1,17 +1,24 @@
 - provide(:title, "Je participe à un sondage")
 .row
   .col-sm-5
-    = image_tag 'page-projet.jpg', class: 'img-responsive'
+    = image_tag 'page-sondage.png', class: 'img-responsive'
   .col-sm-7
     %h1= yield(:title)
     %p Pour aider les entreprises, le développement des services à la personne, la valorisation et la préservation de l’environnement du Perche... je participe à de courts sondages.
     %p Merci de prendre quelques minutes pour vous connecter et répondre aux questions du moment.
+%br
 .row
-  .col-sm-12
-    %h2 Les percherons et les usages numériques
-    %p Objectifs : Connaître les équipements numériques des percherons, leurs pratiques et leurs attentes en matière d’usages.
-    %p Proposé par : Pays du perche d’Eure-et-Loir
-    =link_to 'Je participe au sondage', 'sondages/new', class: 'btn btn-primary btn-lg'
+  .col-sm-8
+    .panel.panel-default
+      .panel-heading
+        %strong Les Percherons et les usages numériques
+      .panel-body
+        %p Objectifs : Connaître les équipements numériques des Percherons, leurs pratiques et leurs attentes en matière d’usages.
+        %p Proposé par : Pays du Perche d’Eure-et-Loir
+        =link_to 'Je participe au sondage en cours', 'sondages/new', class: 'btn btn-primary btn-lg'
+  .col-sm-4
+    = image_tag 'sondage-percherons-usages-numeriques.jpg', class: 'img-responsive'
+
 .row
   .container
     %h2 Les résultats des derniers sondage
@@ -19,9 +26,10 @@
   .row
     .col-sm-2
       =image_tag '57.png', class: 'img-responsive'
-    .col-sm-6
-      %h3 57%
-      %p des Percherons utilisent leur smartphone ou leur tablette pour faire des achats en ligne.
+    .col-sm-1
+      %h3 60%      
+    .col-sm-5
+      %p des producteurs souhaitent commercialiser en circuit court collectif
     .col-sm-4
       %p.download
         =link_to 'Télécharger', 'Resultats-enquete-circuits-courts.pdf'
@@ -30,10 +38,29 @@
   .row
     .col-sm-2
       =image_tag '80.png', class: 'img-responsive'
-    .col-sm-6
+    .col-sm-1
       %h3 80% 
-      %p des Percherons veulent un drive fermier avec des produits locaux
+    .col-sm-5
+      %p des consommateurs apprécient la proximité avec les producteurs
     .col-sm-4
-      %p.download
-        =link_to 'Télécharger', 'Resultats-enquete-circuits-courts.pdf'
-        les résultats du sondage sur la vente en ligne de produits fermiers
+
+  %br
+  .row
+    .col-sm-2
+      =image_tag '57.png', class: 'img-responsive'
+    .col-sm-1
+      %h3 52% 
+    .col-sm-5
+      %p des acheteurs en circuits courts dépensent entre 20 et 50 €/semaine
+    .col-sm-4
+
+  %br
+  .row
+    .col-sm-2
+      =image_tag '57.png', class: 'img-responsive'
+    .col-sm-1
+      %h3 52% 
+    .col-sm-5
+      %p des consommateurs recherchent des produits labellisés AB
+    .col-sm-4
+

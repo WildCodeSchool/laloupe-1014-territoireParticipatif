@@ -68,7 +68,7 @@
         = render 'commentaires/form'
       - else
         =link_to "Rejoindre la discussion", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'
-
+    %br  
       - @commentaires.reverse.each do |commentaire|
         .panelcommentaire
           .panel.panel-default

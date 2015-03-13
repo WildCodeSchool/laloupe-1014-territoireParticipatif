@@ -572,3 +572,9 @@ select {
     display: inline-block;
     margin-left: 5px;
   }
+
+  .sondages{
+    .panel{ border-color: $orange; }
+    .panel-heading{ background-color: $orange;}
+    .panel-body{}
+  }

@@ -4,7 +4,7 @@ class CommentairesController < ApplicationController
 
   def new
     @projet = Projet.find(params[:projet_id])
-    @commentaire = Commentaire.new
+    redirect_to @projet
   end
 
   def create

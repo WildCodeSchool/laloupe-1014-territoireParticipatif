@@ -12,8 +12,8 @@ class CommentairesControllerTest < ActionController::TestCase
   test "should get new" do
     sign_in @contributeur
     get :new, projet_id: @projet.id
-    assert_response :success
-    assert_not_nil assigns(:commentaire)
+    assert_not_nil assigns(:projet)
+    assert_redirected_to @projet
   end
 
   test "ne pas accéder au formulaire de commentaires sans contributeur connecté" do

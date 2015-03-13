@@ -165,6 +165,10 @@ select {
   @extend .form-control;
 }
 
+.label {
+  padding: .4em .6em .2em;
+}
+
 .field_with_errors {
   @extend .has-error;
 }

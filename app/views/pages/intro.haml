@@ -4,6 +4,7 @@
   %h1.hidden-xs.hidden-sm
     Je participe et j’innove
     avec mon territoire !
+    = link_to 'Découvrir les projets déposés', projets_path, class: 'btn btn-primary btn-lg'
 
 .navigation
   .container
@@ -36,7 +37,7 @@
         %span.icon
           %svg.icon-question{:role => "img"}
             %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-question"}
-        %span.action Pourquoi cette application ?
+        %span.action Pourquoi cette application
 
 .derniers-projets
   .liste-projets
@@ -44,7 +45,7 @@
     = render partial: 'projets/projet', collection: @projets
   .split-centre= link_to 'Voir plus de projets', projets_path, class: 'center-block btn btn-lg btn-primary'
 .container
-  .col-sd-6
+  .col-sm-12.text-center
     = link_to image_tag("facebook.png"), "https://www.facebook.com/pays.perche"
     = link_to image_tag("twitter.png"), "https://twitter.com/paysperche28"
     = link_to image_tag("scoopit.png"), "http://www.scoop.it/t/l-actualite-economique-du-perche"

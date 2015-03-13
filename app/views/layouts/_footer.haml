@@ -3,7 +3,7 @@
     .pays-perche.text-center
       = image_tag 'logopaysperchefooterblanc.png'
     %address
-      %h3 PAYS PERCHE D'EURE ET LOIR
+      %h3 PAYS PERCHE D'EURE-ET-LOIR
       %p
         18 rue de la Gare
         \-
@@ -11,9 +11,9 @@
         %br
         = mail_to 'paysperche.siap@wanadoo.fr'
       %p
-        Tél: 02 37 29 09 29
+        Tél : 02 37 29 09 29
         %br
-        Fax: 02 37 29 09 30
+        Fax : 02 37 29 09 30
 
     .newsletter
       %h3 Inscrivez-vous à la lettre d’information
@@ -35,4 +35,4 @@
       Réalisé par
       =link_to 'Wild Code School', 'http://www.wildcodeschool.fr', target: '_blank'
       l'école numérique de La Loupe 
-      = image_tag 'wcs.png', class: 'wcsfooter'
+      = link_to image_tag("wcs.png"), "http://www.wildcodeschool.fr", target: '_blank' , class: 'wcsfooter'

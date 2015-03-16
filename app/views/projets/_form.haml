@@ -32,6 +32,9 @@
         = form.label :besoin, "Quels sont vos besoins ?"
         %p= form.text_area :besoin, maxlength: 500, :placeholder => "Limite de 500 caractères"
       .field
+        = form.label :image, "Une image qui illustre votre projet"
+        %p= form.file_field :image
+      .field
         = form.label :urlsite, "Un lien où il est possible d'en apprendre plus sur votre projet"
         %p= form.text_field :urlsite, placeholder: "http://monblog.com"
 

@@ -20,4 +20,8 @@
 # Ignore Spring files.
 /spring/*.pid
 
+# Ignore secret tokens
 /.env
+
+# Ignore uploded files
+/public/uploads/*

@@ -48,6 +48,11 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
@@ -268,6 +273,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  carrierwave
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails

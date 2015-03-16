@@ -5,6 +5,8 @@ class Projet < ActiveRecord::Base
   belongs_to :contributeur
   validates_presence_of :titre, :codepostal, :description, :contributeur, :categorie
 
+  mount_uploader :image, ImageUploader
+
   def liked_by?(contributeur)
     if !contributeur || likes.empty?
       return false

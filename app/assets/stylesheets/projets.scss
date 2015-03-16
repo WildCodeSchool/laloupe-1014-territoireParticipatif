@@ -113,6 +113,12 @@
       font-size: 1.5rem;
     }
   }
+  label {
+    margin-top: 1rem;
+  }
+  select#projet_demarrage_3i, select#projet_demarrage_2i, select#projet_demarrage_1i  {
+    @include make-xs-column(4);
+  }
   .metadonnees-projet {
     @include make-sm-column(2);
     @include make-sm-column-offset(1);
@@ -203,6 +209,9 @@ textarea#commentaire_message{
 .checklabel {
   margin-left: 5px;
   @extend .checkbox;
+  label {
+    margin-top: 0;
+  }
 }
 
 .renderformprojet {

@@ -2,22 +2,19 @@
   .col-sm-10.col-sm-offset-1
     = form_for @projet do |form|
       .field
-        = form.label :titre, "Quel est le titre de votre projet"
+        = form.label :titre, "Titre de votre projet"
         %p= form.text_field :titre
-      .field
-        = form.label :codepostal, "Localisation du projet ?"
-        %p= form.text_field :codepostal, placeholder: "ex: 28240"
-      .field
-        = form.label :urlsite, "Site de votre projet"
-        %p= form.text_field :urlsite, placeholder: "http://"
       .field
         = form.label :categorie, "Quel est la thèmatique dominante de votre projet ?"
         %p= form.select :categorie_id, options_for_select(@categories)
       .field
+        = form.label :codepostal, "Où est localisé votre projet ? (code postal)"
+        %p= form.text_field :codepostal, placeholder: "Code postal : ex. 28240"
+      .field
         = form.label :demarrage, "Date de démarrage du projet (passé ou futur)"
         %p= form.date_select :demarrage
       .field
-        = form.label :localisation, "Quel est le territoire concerné par votre projet ?"
+        = form.label :localisation, "Quel est le territoire impacté par votre projet ?"
         %br
         %em Soyez le plus précis possible
         %p= form.text_field :localisation
@@ -29,11 +26,14 @@
               .formprojetcheck= statut_fields.check_box etape.to_sym
               .checklabel= statut_fields.label etape
       .field
-        = form.label :description, "Merci de décrire brièvement votre projet"
+        = form.label :description, "Décrire brièvement votre projet"
         %p= form.text_area :description, maxlength: 1500, :placeholder => "Limite de 1500 caractères"
       .field
         = form.label :besoin, "Quels sont vos besoins ?"
         %p= form.text_area :besoin, maxlength: 500, :placeholder => "Limite de 500 caractères"
+      .field
+        = form.label :urlsite, "Un lien où il est possible d'en apprendre plus sur votre projet"
+        %p= form.text_field :urlsite, placeholder: "http://monblog.com"
 
         = form.submit "Enregistrer mon projet", class: 'btn btn-primary btn-lg'
 

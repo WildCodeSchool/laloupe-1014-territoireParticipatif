@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311001606) do
+ActiveRecord::Schema.define(version: 20150316095017) do
 
   create_table "actualites", force: :cascade do |t|
     t.string   "titre"
@@ -88,19 +88,20 @@ ActiveRecord::Schema.define(version: 20150311001606) do
     t.datetime "updated_at",      null: false
     t.integer  "contributeur_id"
     t.integer  "categorie_id"
-    t.string   "status"
-    t.string   "besoin"
+    t.string   "statut"
+    t.text     "besoin"
     t.string   "localisation"
     t.date     "demarrage"
     t.string   "urlsite"
+    t.string   "image"
   end
 
   add_index "projets", ["categorie_id"], name: "index_projets_on_categorie_id"
   add_index "projets", ["contributeur_id"], name: "index_projets_on_contributeur_id"
 
   create_table "sondages", force: :cascade do |t|
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "profession"
     t.string   "equipement"
     t.string   "usage_fixe"
@@ -112,8 +113,12 @@ ActiveRecord::Schema.define(version: 20150311001606) do
     t.string   "competences"
     t.string   "formation"
     t.string   "prestataire"
-    t.text     "commentaire_prestataire"
+    t.text     "commentaire_formation"
     t.integer  "contributeur_id"
+    t.string   "autre_usage_fixe"
+    t.string   "autre_usage_portable"
+    t.string   "autre_usage_tablette"
+    t.string   "autre_usage_smartphone"
   end
 
 end

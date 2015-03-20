@@ -2,7 +2,7 @@
 - provide(:description, sanitize("[#{@projet.categorie.nom}] #{@projet.description.truncate(100)}"))
 .row
   .metadonnees-projet
-    =image_tag "#{@projet.categorie.nom}.png",class: 'categorieprojetshow'
+    =image_tag "#{@projet.categorie.nom}.png"
     %p.label.label-default.categorie= @projet.try(:categorie).try(:nom)
     %p.datecrea
       Créé il y a
@@ -46,6 +46,7 @@
       %h2 Besoins
       = simple_format @projet.besoin
 
+    %hr
     .barre-sociale
       %h4 Partagez ce projet dans vos réseaux
       .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}
@@ -56,6 +57,7 @@
         .coeur=link_to image_tag('heart-16.png'), like_projet_path(@projet.id)
       .comptecoeur= @projet.likes.count
       personnes aiment ce projet
+    %hr
 
     .commentaires
       %h4
@@ -68,7 +70,7 @@
         = render 'commentaires/form'
       - else
         =link_to "Rejoindre la discussion", new_projet_commentaire_path(@projet), class: 'btn btn-primary btn-lg'
-    %br  
+    %br
       - @commentaires.reverse.each do |commentaire|
         .panelcommentaire
           .panel.panel-default

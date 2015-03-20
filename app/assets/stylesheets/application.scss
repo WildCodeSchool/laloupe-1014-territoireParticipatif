@@ -532,45 +532,53 @@ select {
 
 .facebook {
   display: inline-block;
-    a {
-      color: white;
-      margin-right: 5px;
-      background-color: $facebook;
-      @extend .btn;
-      @extend .btn-default;
-        &:hover {
-        color: $facebook;
-        background-color: white;
-        }
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    padding: 4px 9px;
+    color: white;
+    margin-right: 5px;
+    background-color: $facebook;
+    border-color: darken($facebook, 10%);
+    &:hover {
+      color: $facebook;
+      background-color: white;
+      border-color: $facebook;
     }
+  }
 }
 .twitter {
   display: inline-block;
-    a {
-      margin-left: 5px;
-      margin-right: 5px;
-      background-color: $twitter;
-      @extend .btn;
-      @extend .btn-default;
-      color: white;
-        &:hover {
-        color: $twitter;
-        background-color: white;
-        }
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    padding: 4px 9px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: $twitter;
+    border-color: darken($twitter, 10%);
+    color: white;
+    &:hover {
+      color: $twitter;
+      background-color: white;
+      border-color: $twitter;
     }
+  }
 }
 .coeur {
   display: inline-block;
-    a {
-      margin-left: 5px;
-      margin-right: 5px;
-      background-color: $rouge;
-      @extend .btn;
-      @extend .btn-default;
-        &:hover {
-          background-color: white;
-        }
+  a {
+    @extend .btn;
+    @extend .btn-default;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: $rouge;
+    border-color: darken($rouge, 10%);
+    &:hover {
+      background-color: white;
+      border-color: $rouge;
     }
+  }
 }
 .comptecoeur {
   display: inline-block;

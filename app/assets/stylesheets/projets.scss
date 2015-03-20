@@ -126,10 +126,17 @@
     @include make-sm-column(2);
     @include make-sm-column-offset(1);
     text-align: right;
+    img {
+      max-width: 54px;
+      padding: 5px;
+      background-color: $gris-icone;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
     .label {
       font-size: 100%;
       color: #fff;
-      background-color: $ocre;
+      background-color: $gris-icone;
       padding-top: 4px;
     }
     .datecrea {
@@ -173,9 +180,6 @@
   padding-top: 10px;
   padding-bottom: 0px;
   }
-}
-h1.text-center.well{
-  border: 1px solid #40ABD4;
 }
 
 .categorieprojetshow{

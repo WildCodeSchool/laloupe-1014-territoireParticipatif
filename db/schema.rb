@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150316095017) do
     t.string   "localisation"
     t.date     "demarrage"
     t.string   "urlsite"
-    t.string   "imageprojet"
+    t.string   "image"
   end
 
   add_index "projets", ["categorie_id"], name: "index_projets_on_categorie_id"

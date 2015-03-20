@@ -2,8 +2,7 @@
 - provide(:description, sanitize("[#{@projet.categorie.nom}] #{@projet.description.truncate(100)}"))
 .row
   .metadonnees-projet
-    %h4.label.label-default
-    =image_tag '60x60.gif',class: 'categorieprojetshow'
+    =image_tag "#{@projet.categorie.nom}.png",class: 'categorieprojetshow'
     %p.label.label-default.categorie= @projet.try(:categorie).try(:nom)
     %p.datecrea
       Créé il y a
@@ -41,7 +40,7 @@
     %h2 Description
     = simple_format @projet.description
     -if @projet.urlsite != "" && @projet.urlsite != nil
-      %em=link_to @projet.urlsite
+      %em=link_to @projet.urlsite, @projet.urlsite
     -if @projet.besoin != "" && @projet.besoin != nil
       %h2 Besoins
       = simple_format @projet.besoin

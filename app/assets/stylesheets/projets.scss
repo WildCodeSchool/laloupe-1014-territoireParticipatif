@@ -134,6 +134,7 @@
     }
     .categorie {
       padding-top: 6px;
+      display: block;
     }
     img {
       padding-bottom: 8px;
@@ -176,6 +177,9 @@ h1.text-center.well{
 
 .categorieprojetshow{
   padding: 5px;
+  background-color: $ocre;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 textarea#commentaire_message{

@@ -127,8 +127,8 @@
     @include make-sm-column-offset(1);
     text-align: right;
     img {
-      max-width: 54px;
-      padding: 5px;
+      width: 54px;
+      padding: 5px 6px;
       background-color: $gris-icone;
       border-radius: 5px;
       margin-bottom: 5px;
@@ -145,9 +145,6 @@
     .categorie {
       padding-top: 6px;
       display: block;
-    }
-    img {
-      padding-bottom: 8px;
     }
     h4 {
       color: $bleu;

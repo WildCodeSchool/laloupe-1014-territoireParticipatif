@@ -22,6 +22,8 @@ gem 'devise'
 gem 'gibbon'
 gem 'dotenv-rails'
 gem 'mailgun_rails'
+gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'sqlite3'

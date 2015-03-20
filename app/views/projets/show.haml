@@ -37,6 +37,7 @@
 
   .contenu-projet
     %h1= @projet.titre
+    = image_tag(@projet.image.url)
     %h2 Description
     = simple_format @projet.description
     -if @projet.urlsite != "" && @projet.urlsite != nil

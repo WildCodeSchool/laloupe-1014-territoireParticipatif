@@ -22,6 +22,10 @@
 
 # Ignore secret tokens
 /.env
+/.env.production
+
+# Ignore rvm gemset
+/.ruby-gemset
 
 # Ignore uploded files
 /public/uploads/*

@@ -23,7 +23,7 @@ gem 'gibbon'
 gem 'dotenv-rails'
 gem 'mailgun_rails'
 gem 'carrierwave'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
+gem 'fog'
 
 group :development, :test do
   gem 'sqlite3'

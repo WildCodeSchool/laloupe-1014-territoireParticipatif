@@ -9,31 +9,65 @@
   @include make-row();
   margin-top: 2rem;
 
-  .panel{
+.encart {
+  a {
     border-color: $bleu;
-    .panel-heading, .panel-footer{
+    display: block;
+    text-decoration: none;
+    color: $gris-svg;
+    &:hover {
+      text-decoration: none;
+      color: $gris-svg;
+    }
+  }
+  .panel {
+    border-color: $bleu;
     background-color: $bleu;
-      h3 {
-        margin-top: 5px;
-        font-size: 18px;
-        min-height: 57px;
+    display: block;
+    &:hover {
+      background-color: lighten($bleu, 10%);
+    }
+    .panel-heading {
+      display: block;
+      color: $gris-svg;
+      padding: 10px 15px 0px;
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $gris-svg;
+        position: relative;
+        top: 4px;
+      }
+      img {
+        width: 80%;
       }
       em {
         font-size: 12px;
       }
-      a {
-        color: black;
-      }
     }
     .panel-body {
+      display: block;
       height: 212px;
-      .pbody {
-        a {
-          color: black;
+      padding: 0;
+      h2 {
+        text-align: left;
+        margin-top: 0;
+        padding: 10px;
+        background-color: rgba(24, 24, 24, 0.71);
+        color: #fff;
+        &:hover {
+          text-decoration: none;
         }
       }
     }
+    .panel-footer {
+      display: block;
+      background-color: transparent;
+      border: 0;
+      padding: 0 15px;
+    }
   }
+}
 
   .projet {
     @include make-sm-column(4);

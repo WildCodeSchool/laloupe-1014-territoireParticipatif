@@ -1,33 +1,32 @@
-.col-sm-6.col-md-4
-  .panel
-    .panel-heading 
-      %h3=link_to projet.titre.truncate(85), projet_path(projet)
-      %em= "Créé il y a #{time_ago_in_words(projet.created_at)}"
-    .panel-body
-      %p.pbody=link_to projet.description.try(:truncate, 150), projet_path(projet)
-      %br
-      %br
-      .row
-        .col-xs-6.text-center
-          =link_to image_tag('plus-32.png'), projet_path(projet)
-          %br
-          %br
-          = link_to 'En savoir plus', projet_path(projet)
-        .col-xs-6.text-center
-          =image_tag 'pin-32.png'
-          %br
-          %br
-          = projet.codepostal
-    .panel-footer
-      .row
-        .col-xs-6.text-center
-          =image_tag 'chat-16.png'
-          %br
-          = projet.commentaires.count
-          commentaire(s)
+.col-sm-6.col-md-4.encart
+  %a{ href: projet_path(projet) }
 
-        .col-xs-6.text-center
-          =image_tag 'heart-16.png'
-          %br
-          = projet.likes.count
-          aime(nt) ce projet
+    %span.panel
+      %span.panel-heading 
+        %span.row
+          %span.col-xs-9
+            %p
+              %svg.icon-location{:role => "img"}
+                %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-location"} 
+              = projet.codepostal
+            %p
+              %svg.icon-clock{:role => "img"}
+                %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-clock"} 
+              %em= "Créé il y a #{time_ago_in_words(projet.created_at)}"
+          %span.col-xs-3
+            = image_tag "#{projet.categorie.nom}.png" 
+
+      %span.panel-body{ style: "background: url(#{projet.image}) center center no-repeat; background-size: cover;" }
+        %h2= projet.titre
+
+      %span.panel-footer
+        %span.row
+          %span.col-xs-6.text-center
+            = image_tag 'chat-16.png'
+            %br
+            = projet.commentaires.count
+            = 'commentaire'.pluralize(projet.commentaires.count, :fr)
+          %span.col-xs-6.text-center
+            =image_tag 'heart-16.png'
+            %br
+            = projet.likes.count

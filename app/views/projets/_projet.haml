@@ -18,6 +18,8 @@
 
       %span.panel-body{ style: "background: url(#{projet.image}) center center no-repeat; background-size: cover;" }
         %h2= projet.titre
+        -if projet.image.url.nil?
+          %p= projet.description.truncate(120)
 
       %span.panel-footer
         %span.row

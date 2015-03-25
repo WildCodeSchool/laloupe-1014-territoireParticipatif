@@ -10,19 +10,22 @@
       = simple_format @actualite.contenu
       - if @actualite.date || @actualite.lieu.length > 0 || @actualite.siteweb.length > 0
         %h3 Informations pratiques
-        %svg.icon-calendar{:role => "img"}
-          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
-        le
-        = I18n.localize(@actualite.date)
-        %br
-        %svg.icon-location{:role => "img"}
-          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-location"}
-        à
-        = @actualite.lieu
-        %br
-        %svg.icon-globe{:role => "img"}
-          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-globe"}
-        = link_to @actualite.try(:siteweb), @actualite.try(:siteweb)
+        - if @actualite.date
+          %svg.icon-calendar{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
+          le
+          = I18n.localize(@actualite.date)
+          %br
+        - if @actualite.lieu != ""
+          %svg.icon-location{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-location"}
+          à
+          = @actualite.lieu
+          %br
+        - if @actualite.siteweb != ""
+          %svg.icon-globe{:role => "img"}
+            %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-globe"}
+          = link_to @actualite.siteweb, @actualite.siteweb
     - if current_contributeur && current_contributeur.type == 'Animateur'
       = link_to 'Editer', edit_actualite_path(@actualite), class: 'btn btn-default'
     %p

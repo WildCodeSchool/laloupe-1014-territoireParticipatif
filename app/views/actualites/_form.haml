@@ -4,9 +4,14 @@
     = @actualite.errors[:titre].join(', ')
     = f.text_field :titre
   .field
-    = f.label :image, "Une image pour illustrer l'article"
-    = @actualite.errors[:image].join(', ')
-    = f.file_field :image
+    .row
+      .col-sm-6
+        = f.label :image, "Une image pour illustrer l'article"
+        = @actualite.errors[:image].join(', ')
+        = f.file_field :image
+      .col-sm-6
+        - unless @actualite.image.url.nil?
+          = image_tag @actualite.image
   .field
     #wysihtml-toolbar{:style => "display: none;"}
       %a{"data-wysihtml5-command" => "bold"}

@@ -10,6 +10,10 @@
     @extend .text-center;
   }
   .field {
+    img {
+      max-width: 100%;
+      max-height: 250px;
+    }
     margin-top: 2rem;
     #wysihtml-toolbar {
       svg {

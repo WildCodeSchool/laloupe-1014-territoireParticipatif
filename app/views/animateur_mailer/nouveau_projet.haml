@@ -1,0 +1,9 @@
+%h1= "Bonjour #{@destinataire.pseudo}"
+%p
+  = "Le projet \"#{@projet.titre}\""
+  viens d'être créé sur la plateforme Perche Participatif par
+  = @contributeur.nom
+  = @contributeur.prenom
+  \.
+%p
+  %a{ href: @projet_url} Lire les détails du projet.

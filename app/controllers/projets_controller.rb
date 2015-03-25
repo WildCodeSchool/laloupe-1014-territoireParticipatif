@@ -45,6 +45,9 @@ class ProjetsController < ApplicationController
     @projet = Projet.new(projet_params)
     @projet.contributeur_id = current_contributeur.id
     if @projet.save
+      Animateur.all.each do |animateur|
+        AnimateurMailer.nouveau_projet(animateur, @projet).deliver_now
+      end
       redirect_to @projet
     else
       @categories = list_categories

@@ -4,18 +4,9 @@
     = @actualite.errors[:titre].join(', ')
     = f.text_field :titre
   .field
-    = f.label :image, "Lien vers votre image"
+    = f.label :image, "Une image pour illustrer l'article"
     = @actualite.errors[:image].join(', ')
-    = f.text_field :image, placeholder: "http://"
-    .field
-    = f.label :date, "Date de l'actualité"
-    = f.text_field :date
-    .field
-    = f.label :lieu, "Lieu de l'actualité"
-    = f.text_field :lieu
-    .field
-    = f.label :siteweb, "Site web de l'actualité"
-    = f.text_field :siteweb
+    = f.file_field :image
   .field
     #wysihtml-toolbar{:style => "display: none;"}
       %a{"data-wysihtml5-command" => "bold"}
@@ -34,6 +25,17 @@
         %a{"data-wysihtml5-dialog-action" => "save", class: 'btn btn-md btn-default'} OK
         %a{"data-wysihtml5-dialog-action" => "cancel"} Annuler
     = f.text_area :contenu, id: "wysihtml-textarea"
+  %h3 Si il s'agit d'un événement à venir
+  .field
+    .date
+      = f.label :date, "Date de l'événement"
+      = f.date_select :date, include_blank: true
+  .field
+    = f.label :lieu, "Lieu de l'événement"
+    = f.text_field :lieu
+  .field
+    = f.label :siteweb, "Site web de l'événement"
+    = f.text_field :siteweb
   .field
     = f.submit 'Enregistrer et publier', class: 'btn btn-primary'
 

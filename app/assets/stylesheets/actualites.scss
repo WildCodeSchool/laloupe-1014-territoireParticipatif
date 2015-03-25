@@ -23,7 +23,16 @@
         }
       }
     }
+    .date {
+      label {
+        display: block;
+      }
+      select {
+        @include make-sm-column(4);
+      }
+    }
   }
+
   textarea, .wysihtml5-sandbox {
     min-height: 30rem;
   }
@@ -110,13 +119,23 @@ h1.titreactu {
     padding-right: 5px;
   }
 }
-
+.contenu {
+  svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px;
+  }
+}
 .imgactu {
   padding: 20px 0px 0px 0px;
 }
 
 .placeimg {
   padding-top: 10px;
+  &:hover {
+    opacity: .8;
+  }
 }
 
 .deractu {

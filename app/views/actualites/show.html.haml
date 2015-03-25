@@ -4,28 +4,31 @@
   .col-sm-6
     %h1.titreactu= @actualite.titre
     %em
-      = "Le #{I18n.localize(@actualite.created_at.to_date, format: :short)} #{@actualite.created_at.year}"
-    %p
-      -if @actualite.date != "" && @actualite.date != nil
-        %em
-          = "Cette actualité commence le #{@actualite.try(:date)}"
-    %p
-      -if @actualite.lieu != "" && @actualite.lieu != nil
-        %em
-          = "Cette événement aura lieu à #{@actualite.try(:lieu)}"
+      = "Le #{I18n.localize(@actualite.created_at.to_date, format: :short)} #{@actualite.created_at.year},"
+      = "par #{@actualite.animateur.pseudo}"
     .contenu
       = simple_format @actualite.contenu
-    %p
-      - if @actualite.siteweb != "" && @actualite.siteweb != nil
-        %em
-          = "Vous pouvez trouver plus de renseignement sur le site : #{@actualite.try(:siteweb)}"
+      - if @actualite.date || @actualite.lieu.length > 0 || @actualite.siteweb.length > 0
+        %h3 Informations pratiques
+        %svg.icon-calendar{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-calendar"}
+        le
+        = I18n.localize(@actualite.date)
+        %br
+        %svg.icon-location{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-location"}
+        à
+        = @actualite.lieu
+        %br
+        %svg.icon-globe{:role => "img"}
+          %use{"xlink:href" => "#{image_url("icons.svg")}\#icon-globe"}
+        = link_to @actualite.try(:siteweb), @actualite.try(:siteweb)
     - if current_contributeur && current_contributeur.type == 'Animateur'
       = link_to 'Editer', edit_actualite_path(@actualite), class: 'btn btn-default'
     %p
     %em
-      = "Posté par #{@actualite.animateur.pseudo}"
   .col-sm-6.imgactu
-    =image_tag @actualite.try(:image), class: "img-responsive"
+    = image_tag @actualite.try(:image), class: "img-responsive"
     .col-sm-12.cartouche.social.block-center
       %p Partagez cette actualité sur vos réseaux sociaux 
       .facebook= facebook_button :facebook => {:button_caption => "Facebook", :static_link => true}

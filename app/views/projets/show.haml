@@ -2,7 +2,7 @@
 - provide(:description, sanitize("[#{@projet.categorie.nom}] #{@projet.description.truncate(100)}"))
 .row
   .metadonnees-projet
-    =image_tag "#{@projet.categorie.nom}.png"
+    = image_tag "#{@projet.categorie.nom}.png"
     %p.label.label-default.categorie= @projet.try(:categorie).try(:nom)
     %p.datecrea
       Créé il y a
@@ -21,13 +21,22 @@
 
     - if current_contributeur && current_contributeur.type == 'Animateur'
       %hr
-      %p Ces informations ne sont visibles que par l'animateur
-      %p
-        =mail_to @projet.contributeur.email
-        =@projet.contributeur.try(:nom)
-        =@projet.contributeur.try(:prenom)
-        =@projet.contributeur.try(:commune)
-        =@projet.contributeur.try(:telephone)
+      .anim-only
+        %strong Les informations suivantes ne sont visibles que par l'animateur de la plateforme :
+        %p
+          = @projet.contributeur.try(:nom)
+          = @projet.contributeur.try(:prenom)
+          %br
+          = mail_to @projet.contributeur.email
+          = @projet.contributeur.try(:telephone)
+          %br
+          = @projet.contributeur.try(:commune)
+          %br
+          - if @projet.statut.length > 0
+            %ul
+              %strong Etapes validées
+            - @projet.statut.split(';').each do |step|
+              %li= step
       %hr
       = link_to 'Modifier ce projet', edit_projet_path(@projet), class: 'btn btn-primary pull-right'
 
@@ -41,7 +50,7 @@
     %h2 Description
     = simple_format @projet.description
     -if @projet.urlsite != "" && @projet.urlsite != nil
-      %em=link_to @projet.urlsite, @projet.urlsite
+      %em= link_to @projet.urlsite, @projet.urlsite
     -if @projet.besoin != "" && @projet.besoin != nil
       %h2 Besoins
       = simple_format @projet.besoin

@@ -164,6 +164,11 @@
     @include make-sm-column(2);
     @include make-sm-column-offset(1);
     text-align: right;
+    margin-top: 12px;
+    padding: 5px;
+    h4 {
+      color: $bleu;
+    }
     img {
       width: 54px;
       padding: 5px 6px;
@@ -184,11 +189,9 @@
       padding-top: 6px;
       display: block;
     }
-    h4 {
-      color: $bleu;
+    .anim-only {
+      text-align: left;
     }
-    margin-top: 12px;
-    padding: 5px;
   }
   .barre-sociale {
     margin: 30px auto;

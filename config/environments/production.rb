@@ -2,11 +2,6 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Default Mailer Host
   config.action_mailer.default_url_options = { host: 'www.percheparticipatif.fr' }
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['MAILGUN_API_KEY'],
-    domain: ENV['MAILGUN_DOMAIN']
-  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

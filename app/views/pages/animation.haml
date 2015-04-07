@@ -1,33 +1,9 @@
 - provide( :title, sanitize("Animation de la plateforme") )
 %h1.text-center= yield :title
 
-.anim-actus
-  %h2
-    Actualités
-    = link_to '+ Ajouter une actualité', new_actualite_path, class: 'btn btn-md btn-primary'
-  %table
-    %thead
-      %th #
-      %th Auteur
-      %th Titre
-      %th Publié le
-      %th Actions
-    %tbody
-      - @actualites.each do |actualite|
-        %tr
-          %td= actualite.id
-          %td= actualite.animateur.pseudo
-          %td= link_to actualite.titre, actualite_path(actualite)
-          %td= actualite.created_at.to_date
-          %td
-            = link_to 'Editer', edit_actualite_path(actualite)
-            |
-            = link_to 'Supprimer', actualite_path(actualite),
-                method: :delete,
-                data: {confirm: "Êtes-vous sur de vouloir supprimer cette actualité ?"}
-
-
-  = link_to "#{@actualites.count} actualités en ligne", actualites_path
+.anim-actions
+  = link_to 'Télécharger les réponses au sondage', export_sondages_path(format: 'csv'), class: 'btn btn-md btn-primary'
+  = link_to '+ Ajouter une actualité', new_actualite_path, class: 'btn btn-md btn-primary'
 
 .anim-projets
   %h2 Projets en lignes
@@ -81,4 +57,29 @@
                 projet_commentaire_path(commentaire.projet_id, commentaire.id),
                 method: :delete,
                 data: {confirm: "Êtes-vous sur de vouloir supprimer ce commentaire ?"}
+
+.anim-actus
+  %h2
+    Actualités
+  %table
+    %thead
+      %th #
+      %th Auteur
+      %th Titre
+      %th Publié le
+      %th Actions
+    %tbody
+      - @actualites.each do |actualite|
+        %tr
+          %td= actualite.id
+          %td= actualite.animateur.pseudo
+          %td= link_to actualite.titre, actualite_path(actualite)
+          %td= actualite.created_at.to_date
+          %td
+            = link_to 'Editer', edit_actualite_path(actualite)
+            |
+            = link_to 'Supprimer', actualite_path(actualite),
+                method: :delete,
+                data: {confirm: "Êtes-vous sur de vouloir supprimer cette actualité ?"}
+
 

@@ -23,6 +23,7 @@ gem 'gibbon'
 gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'fog'
+gem 'comma'
 
 group :development, :test do
   gem 'sqlite3'

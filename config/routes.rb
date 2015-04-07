@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#intro'
   devise_for :contributeurs
   get 'animation' => 'pages#animation'
+  get 'sondages/export' => 'sondages#export', as: :export_sondages
   resources :sondages
 
   get 'mentions' => 'pages#mentions'

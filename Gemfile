@@ -24,6 +24,7 @@ gem 'dotenv-rails'
 gem 'mailgun_rails'
 gem 'carrierwave'
 gem 'fog'
+gem 'comma'
 
 group :development, :test do
   gem 'sqlite3'

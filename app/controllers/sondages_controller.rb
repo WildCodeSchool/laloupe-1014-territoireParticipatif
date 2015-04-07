@@ -1,7 +1,8 @@
 class SondagesController < ApplicationController
 before_action :authenticate_contributeur!, only: [:new, :create]
+before_action :authenticate_animateur!, only: [:export]
 before_action :redirect_home, only: [:new, :create]
-  
+
   def new
     @sondage = Sondage.new
   end
@@ -11,6 +12,12 @@ before_action :redirect_home, only: [:new, :create]
     @sondage.contributeur_id = current_contributeur.id
     @sondage.save
     redirect_to merci_path
+  end
+
+  def export
+    respond_to do |format|
+      format.csv { render csv: Sondage.all, filename: "reponses_sondage_#{Time.now.strftime('%F-%Hh%Mm%Ss')}" }
+    end
   end
 
   private
@@ -26,7 +33,28 @@ before_action :redirect_home, only: [:new, :create]
   end
 
   def sondage_params
-    params_to_string.permit(:created_at, :updated_at, :profession, :equipement, :usage_fixe, :usage_portable, :usage_tablette, :usage_smartphone, :service, :commentaire_service, :competences, :formation, :prestataire, :commentaire_prestataire, :contributeur_id)
+    params_to_string.permit(
+      :created_at,
+      :updated_at,
+      :profession,
+      :equipement,
+      :usage_fixe,
+      :usage_portable,
+      :usage_tablette,
+      :usage_smartphone,
+      :service,
+      :commentaire_service,
+      :competences,
+      :formation,
+      :commentaire_formation,
+      :prestataire,
+      :commentaire_prestataire,
+      :contributeur_id,
+      :autre_usage_fixe,
+      :autre_usage_portable,
+      :autre_usage_tablette,
+      :autre_usage_smartphone,
+    )
   end
 
   def redirect_home

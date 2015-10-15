@@ -9,11 +9,11 @@ Adapt it and use it at your own risk.
 
 ## Running the project locally
 
-* Ruby version: `2.2.0`
+* Install ruby version: `2.2.0`
 * Install dependencies: `bundle install`
-
-* Copy `dotenv` into `.env` and edit the last with your credentials.
-* Database initialization: `rake db:migrate`
+* Copy `dotenv` into `.env` and edit the last with your credentials
+* Database schema creation: `rake db:migrate`
+* Database initialization with the content of `db/seeds.rb`: `rake db:seed`
 
 ## Running tests
 
@@ -28,7 +28,8 @@ deployment process. It has been running successfully on [Scalingo](https://scali
 Requirements:
 
 * Postgresql database
-* Amazon S3 account
+* Amazon S3 account, to host images
+* Sendgrid account, to send transaction emails
 
 ## Licence
 

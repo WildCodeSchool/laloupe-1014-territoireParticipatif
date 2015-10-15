@@ -27,6 +27,7 @@ gem 'comma'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rb-readline'
   gem 'pry-rails'
   gem 'minitest-reporters'
   gem 'guard'

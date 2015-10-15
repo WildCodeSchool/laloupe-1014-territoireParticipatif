@@ -1,6 +1,7 @@
-# Perchons
+# Territoire Participatif
 
-_Application participative pour sourcer les projets Percherons dans le cadre du programme européen LEADER_
+_Application participative développée pour sourcer les projets Percherons
+dans le cadre du programme européen LEADER_
 
 ## Disclaimer
 

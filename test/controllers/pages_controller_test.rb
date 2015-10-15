@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
   def setup
-    @base_title = "Perche Participatif"
+    @base_title = "Territoire Participatif"
   end
 
   test "should get mentions" do

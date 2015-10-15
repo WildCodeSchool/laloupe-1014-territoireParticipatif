@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Default Mailer Host
-  config.action_mailer.default_url_options = { host: 'www.percheparticipatif.fr' }
+  config.action_mailer.default_url_options = { host: ENV['MAILER_HOST'] }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

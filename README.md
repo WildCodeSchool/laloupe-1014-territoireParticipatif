@@ -15,6 +15,7 @@ Adapt it and use it at your own risk.
 * Copy `dotenv` into `.env` and edit the last with your credentials
 * Database schema creation: `rake db:migrate`
 * Database initialization with the content of `db/seeds.rb`: `rake db:seed`
+* Start the server with : `rails server` -> <localhost:3000>
 
 ## Running tests
 

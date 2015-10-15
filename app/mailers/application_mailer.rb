@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Pays Perche <bonjour@percheparticipatif.fr>"
+  default from: ENV['MAILER_SENDER']
   layout 'mailer'
 end

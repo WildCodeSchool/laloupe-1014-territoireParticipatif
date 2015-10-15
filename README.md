@@ -1,5 +1,7 @@
 # Territoire Participatif
 
+[![security](https://hakiri.io/github/WildCodeSchool/territoire_participatif/master.svg)](https://hakiri.io/github/WildCodeSchool/territoire_participatif/master)
+
 _Application participative développée pour sourcer [les projets Percherons](https://www.percheparticipatif.fr/)
 dans le cadre du programme européen LEADER_
 

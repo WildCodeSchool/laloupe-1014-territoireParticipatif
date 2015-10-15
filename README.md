@@ -1,6 +1,6 @@
 # Territoire Participatif
 
-_Application participative développée pour sourcer les projets Percherons
+_Application participative développée pour sourcer [les projets Percherons](https://www.percheparticipatif.fr/)
 dans le cadre du programme européen LEADER_
 
 ## Disclaimer
@@ -32,7 +32,7 @@ Requirements:
 * Amazon S3 account, to host images
 * Sendgrid account, to send transaction emails
 
-## Licence
+## License
 
-MIT - Copyright 2015 Innov'Educ
-See LICENSE.md
+MIT - Copyright 2015 Innov'Educ  
+See  [LICENSE](LICENSE.md)
